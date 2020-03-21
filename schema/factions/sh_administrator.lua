@@ -2,7 +2,7 @@
 FACTION.name = "Administrator"
 FACTION.description = "A human Administrator advised by the Universal Union."
 FACTION.color = Color(255, 200, 100, 255)
-FACTION.pay = 50
+-- FACTION.pay = 50
 FACTION.models = {
 	"models/humans/group17/female_01.mdl",
 	"models/humans/group17/female_02.mdl",
@@ -22,5 +22,12 @@ FACTION.models = {
 }
 FACTION.isDefault = false
 FACTION.isGloballyRecognized = true
+
+function FACTION:OnCharacterCreated(client, character)
+	local inventory = character:GetInventory()
+
+	inventory:Add("357", 1)
+	inventory:Add("357ammo", 2)
+end
 
 FACTION_ADMIN = FACTION.index

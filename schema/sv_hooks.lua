@@ -252,7 +252,7 @@ function Schema:OnNPCKilled(npc, attacker, inflictor)
 end
 
 function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers, rawText)
-	if (chatType == "ic" or chatType == "w" or chatType == "y") then
+	if (chatType == "ic" or chatType == "w" or chatType == "y" or chatType == "dispatch" or chatType == "breencast") then
 		local class = self.voices.GetClass(speaker)
 
 		for k, v in ipairs(class) do
@@ -270,11 +270,13 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 				if (info.sound) then
 					if (info.global) then
 						netstream.Start(nil, "PlaySound", info.sound)
-					elseif (speaker:IsCombine()) then
-						speaker.bTypingBeep = nil
-						ix.util.EmitQueuedSounds(speaker, {info.sound, "NPC_MetroPolice.Radio.Off"}, nil, nil, volume)
 					else
-						ix.util.EmitQueuedSounds(speaker, {info.sound, ""}, nil, nil, volume)
+						if (speaker:IsCombine()) then
+							speaker.bTypingBeep = nil
+							ix.util.EmitQueuedSounds(speaker, {info.sound, "NPC_MetroPolice.Radio.Off"}, nil, nil, volume)
+						else
+							ix.util.EmitQueuedSounds(speaker, {info.sound, nil}, nil, nil, volume)
+						end
 					end
 				end
 

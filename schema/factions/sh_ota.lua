@@ -2,7 +2,7 @@
 FACTION.name = "Overwatch Transhuman Arm"
 FACTION.description = "A transhuman Overwatch soldier produced by the Combine."
 FACTION.color = Color(150, 50, 50, 255)
-FACTION.pay = 40
+-- FACTION.pay = 40
 FACTION.models = {
 	"models/combine_soldier.mdl",
 	"models/ninja/combine/combine_soldier.mdl",
@@ -17,9 +17,10 @@ function FACTION:OnCharacterCreated(client, character)
 	local inventory = character:GetInventory()
 
 	inventory:Add("smg1", 1)
-	inventory:Add("smg1ammo", 2)
-	inventory:Add("health_vial", 1)
+	inventory:Add("smg1ammo", 4)
+	inventory:Add("handheld_radio", 1)
 	inventory:Add("grenade", 1)
+	inventory:Add("health_vial", 2)
 end
 
 function FACTION:GetDefaultName(client)

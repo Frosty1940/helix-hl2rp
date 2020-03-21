@@ -39,6 +39,6 @@ function Schema:CanPlayerEditObjectives(client)
 	return bCanEdit
 end
 
-function Schema:CanDrive()
-	return false
+function Schema:CanDrive(client)
+	return client:IsAdmin()
 end
