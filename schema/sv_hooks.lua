@@ -15,11 +15,13 @@ function Schema:SaveData()
 	self:SaveForceFields()
 end
 
+/*
 function Schema:PlayerSwitchFlashlight(client, enabled)
 	if (client:IsCombine()) then
 		return true
 	end
 end
+*/
 
 function Schema:PlayerUse(client, entity)
 	if (IsValid(client.ixScanner)) then
@@ -268,9 +270,11 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 				if (info.sound) then
 					if (info.global) then
 						netstream.Start(nil, "PlaySound", info.sound)
-					else
+					elseif (speaker:IsCombine()) then
 						speaker.bTypingBeep = nil
 						ix.util.EmitQueuedSounds(speaker, {info.sound, "NPC_MetroPolice.Radio.Off"}, nil, nil, volume)
+					else
+						ix.util.EmitQueuedSounds(speaker, {info.sound, ""}, nil, nil, volume)
 					end
 				end
 
