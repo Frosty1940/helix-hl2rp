@@ -8,10 +8,10 @@ end
 function playerMeta:IsDispatch()
 	local name = self:Name()
 	local faction = self:Team()
-	local bStatus = faction == FACTION_OTA
+	local bStatus = (self:IsAdmin() and faction == FACTION_OTA) or faction == FACTION_ADMIN
 
 	if (!bStatus) then
-		for k, v in ipairs({ "SCN", "DvL", "SeC" }) do
+		for k, v in ipairs({ "OfC", "SCN", "DvL", "SeC" }) do
 			if (Schema:IsCombineRank(name, v)) then
 				bStatus = true
 
@@ -19,6 +19,14 @@ function playerMeta:IsDispatch()
 			end
 		end
 	end
+
+	return bStatus
+end
+
+function playerMeta:IsBreencast()
+	local name = self:Name()
+	local faction = self:Team()
+	local bStatus = faction == FACTION_ADMIN
 
 	return bStatus
 end

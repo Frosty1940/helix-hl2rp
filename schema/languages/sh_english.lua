@@ -1,5 +1,6 @@
 LANGUAGE = {
 	schemaName = "Half-Life 2 Roleplay",
+	schemaDesc = "ATTENTION, SORRY TO FOREIGNERS, WE ARE OPEN FOR SOMEONE WHO HAS A STRONG COMMAND OF KOREAN ONLY!",
 	tying = "Tying...",
 	unTying = "Untying...",
 	isTied = "Tied",
@@ -45,5 +46,20 @@ LANGUAGE = {
 	cLosingContact = "Downloading lost radio contact information...",
 	cLostContact = "WARNING! Radio contact lost for unit at unknown location...",
 
-	voices = "Voices"
+	voices = "Voices",
+
+	charSpawn01 = "You spawned yourself at the spawnpoint.",
+	charSpawn02 = "You spawned %s at the spawnpoint.",
+	charSpawn03 = "%s spawned you at the spawnpoint.",
+	revive01 = "You revived yourself at the death point.",
+	revive02 = "You revived %s at the death point.",
+	revive03 = "%s revived you at the death point.",
+	
+	repair = "Repair",
+
+	smg1Desc = "A compact, fully automatic sub-machine gun.",
+	shotgunDesc = "A powerful pump-action shotgun.",
+	grenadeDesc = "A MK3A2 grenade that explodes a few seconds after it is thrown.",
+	rpgDesc = "A non-guided anti-tank rocket launcher.",
+	-- smg1ammoDesc = "A Box that contains %s of SMG Ammo."
 }

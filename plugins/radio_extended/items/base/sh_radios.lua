@@ -1,7 +1,7 @@
 ITEM.name = "Radio Base"
-ITEM.model = Model("models/namsoldiers/props/backpack_radio.mdl")
-ITEM.width = 2
-ITEM.height = 2
+ITEM.model = Model("models/deadbodies/dead_male_civilian_radio.mdl")
+ITEM.width = 1
+ITEM.height = 1
 ITEM.iconCam = {
 	pos = Vector(469, 394, 290),
 	ang = Angle(25, 220, 0),
