@@ -4,10 +4,7 @@ FACTION.description = "A transhuman Overwatch soldier produced by the Combine."
 FACTION.color = Color(150, 50, 50, 255)
 -- FACTION.pay = 40
 FACTION.models = {
-	"models/combine_soldier.mdl",
-	"models/ninja/combine/combine_soldier.mdl",
-	"models/ninja/combine/combinonew.mdl",
-	"models/ninja/combine/combinonew_armor.mdl"
+	"models/characters/combine_soldier/jqblk/combine_s.mdl"
 }
 FACTION.isDefault = true
 FACTION.isGloballyRecognized = true

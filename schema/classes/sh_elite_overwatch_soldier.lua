@@ -6,7 +6,7 @@ function CLASS:OnSet(client)
 	local character = client:GetCharacter()
 
 	if (character) then
-		character:SetModel("models/combine_super_soldier.mdl")
+		character:SetModel("models/characters/combine_soldier/jqblk/combine_s_super.mdl")
 	end
 end
 

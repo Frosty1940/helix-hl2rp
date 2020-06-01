@@ -32,11 +32,8 @@ ix.anim.SetModelClass("models/policetrench.mdl", "metrocop")
 ix.anim.SetModelClass("models/ninja/combine/combine_soldier.mdl", "overwatch")
 ix.anim.SetModelClass("models/ninja/combine/combine_soldier_prisonguard.mdl", "overwatch")
 ix.anim.SetModelClass("models/ninja/combine/combine_super_soldier.mdl", "overwatch")
-ix.anim.SetModelClass("models/ninja/combine/combinonew.mdl", "overwatch")
-ix.anim.SetModelClass("models/ninja/combine/combinonew_armor.mdl", "overwatch")
-ix.anim.SetModelClass("models/ninja/combine/combinonew_mopp.mdl", "overwatch")
-
-ix.anim.SetModelClass("models/combine_soldiers_redone_playermodels/combine_soldier_redone.mdl", "player")
+ix.anim.SetModelClass("models/characters/combine_soldier/jqblk/combine_s.mdl", "overwatch")
+ix.anim.SetModelClass("models/characters/combine_soldier/jqblk/combine_s_super.mdl", "overwatch")
 
 function Schema:ZeroNumber(number, length)
 	local amount = math.max(0, length - string.len(number))
