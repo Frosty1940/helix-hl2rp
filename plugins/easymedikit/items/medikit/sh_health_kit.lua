@@ -1,6 +1,6 @@
 ITEM.name = "Health Kit"
 ITEM.model = Model("models/Items/HealthKit.mdl")
-ITEM.description = "A white packet filled with medication."
+ITEM.description = "약품이 들어있는 하얀 상자입니다."
 ITEM.price = 65
 ITEM.healthPoint = 50 -- Health point that the player will get
 ITEM.medAttr = 5 -- How much medical attribute the character needs

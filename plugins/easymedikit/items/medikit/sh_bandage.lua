@@ -1,5 +1,5 @@
 ITEM.name = "Bandage"
-ITEM.description = "A piece of material used either to support a medical device such as a dressing or splint, or on its own to provide support to or to restrict the movement of a part of the body."
+ITEM.description = "상처나 부스럼 따위에 감는 소독한 헝겊입니다."
 ITEM.model = "models/props_lab/box01a.mdl"
 ITEM.category = "Medical"
 ITEM.price = 20

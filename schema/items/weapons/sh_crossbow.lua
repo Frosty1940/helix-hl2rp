@@ -1,5 +1,5 @@
 ITEM.name = "Crossbow"
-ITEM.description = "A crossbow that fires a heated bolt."
+ITEM.description = "crossbowDesc"
 ITEM.model = "models/weapons/w_crossbow.mdl"
 ITEM.width = 3
 ITEM.height = 1

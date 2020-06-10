@@ -3,9 +3,9 @@ ITEM.model = Model("models/deadbodies/dead_male_civilian_radio.mdl")
 ITEM.width = 1
 ITEM.height = 1
 ITEM.iconCam = {
-	pos = Vector(469, 394, 290),
+	pos = Vector(150, 128, 103),
 	ang = Angle(25, 220, 0),
-	fov = 2.5
+	fov = 4
 }
 ITEM.exRender = true
 ITEM.description = "A shiny handheld radio%s.\nIt is currently turned %s%s."

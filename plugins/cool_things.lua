@@ -2,85 +2,6 @@ PLUGIN.name = "Miscellaneous"
 PLUGIN.author = "ZeMysticalTaco, Frosty"
 PLUGIN.description = "Cool things."
 PLUGIN.SaveEnts = PLUGIN.SaveEnts or {}
---skinny bars are disgusting
-BAR_HEIGHT = 12
-
---[[-------------------------------------------------------------------------
-	move settings to tab
----------------------------------------------------------------------------]]
-if CLIENT then
-	hook.Add("CreateMenuButtons", "ixSettings", function(tabs)
-		tabs["settings"] = {
-			Create = function(info, container)
-				container:SetTitle(L("settings"))
-
-				local panel = container:Add("ixSettings")
-				panel:SetSearchEnabled(true)
-
-				for category, options in SortedPairs(ix.option.GetAllByCategories(true)) do
-					category = L(category)
-					panel:AddCategory(category)
-
-					-- sort options by language phrase rather than the key
-					table.sort(options, function(a, b)
-						return L(a.phrase) < L(b.phrase)
-					end)
-
-					for _, data in pairs(options) do
-						local key = data.key
-						local row = panel:AddRow(data.type, category)
-						local value = ix.util.SanitizeType(data.type, ix.option.Get(key))
-
-						row:SetText(L(data.phrase))
-						row:Populate(key, data)
-
-						-- type-specific properties
-						if (data.type == ix.type.number) then
-							row:SetMin(data.min or 0)
-							row:SetMax(data.max or 10)
-							row:SetDecimals(data.decimals or 0)
-						end
-
-						row:SetValue(value, true)
-						row:SetShowReset(value != data.default, key, data.default)
-						row.OnValueChanged = function()
-							local newValue = row:GetValue()
-
-							row:SetShowReset(newValue != data.default, key, data.default)
-							ix.option.Set(key, newValue)
-						end
-
-						row.OnResetClicked = function()
-							row:SetShowReset(false)
-							row:SetValue(data.default, true)
-
-							ix.option.Set(key, data.default)
-						end
-
-						row:GetLabel():SetHelixTooltip(function(tooltip)
-							local title = tooltip:AddRow("name")
-							title:SetImportant()
-							title:SetText(key)
-							title:SizeToContents()
-							title:SetMaxWidth(math.max(title:GetMaxWidth(), ScrW() * 0.5))
-
-							local description = tooltip:AddRow("description")
-							description:SetText(L(data.description))
-							description:SizeToContents()
-						end)
-					end
-				end
-
-				panel:SizeToContents()
-				container.panel = panel
-			end,
-
-			OnSelected = function(info, container)
-				container.panel.searchEntry:RequestFocus()
-			end
-		}
-	end)
-end
 
 function PLUGIN:PlayerHurt(client, attacker, health, damage)
 	if attacker:IsPlayer() then
@@ -225,13 +146,5 @@ function playerMeta:GetItemWeapon()
 				end
 			end
 		end
-	end
-end
-
-function PLUGIN:ContextMenuOpen()
-	if (LocalPlayer():IsAdmin()) then
-		return true
-	else
-		return false
 	end
 end

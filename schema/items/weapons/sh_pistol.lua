@@ -1,5 +1,5 @@
 ITEM.name = ".9mm Pistol"
-ITEM.description = "A sidearm utilising 9mm Ammunition."
+ITEM.description = "pistolDesc"
 ITEM.model = "models/weapons/w_pistol.mdl"
 ITEM.class = "weapon_pistol"
 ITEM.weaponCategory = "sidearm"

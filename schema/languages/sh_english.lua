@@ -59,7 +59,21 @@ LANGUAGE = {
 
 	smg1Desc = "A compact, fully automatic sub-machine gun.",
 	shotgunDesc = "A powerful pump-action shotgun.",
+	ar2Desc = "A dark energy powered assault rifle.",
 	grenadeDesc = "A MK3A2 grenade that explodes a few seconds after it is thrown.",
 	rpgDesc = "A non-guided anti-tank rocket launcher.",
-	-- smg1ammoDesc = "A Box that contains %s of SMG Ammo."
+	["357"] = ".357 Revolver",
+	revolverDesc = "A sidearm utilising .357 Caliber ammunition.",
+	crossbowDesc = "A crossbow that fires a heated bolt.",
+	crowbarDesc = "A slightly rusty looking crowbar.",
+
+	-- smg1ammoDesc = "A Box that contains %s of SMG Ammo.",
+
+	suitcaseDesc = "A small suitcase.",
+	combineLockDesc = "A metal apparatus applied to doors.",
+	metropoliceSupplementsDesc = "A tinned can containing a good portion of your daily nutrients.",
+	rationDesc = "A shrink-wrapped packet containing some food and money.",
+	requestDeviceDesc = "A box with rounded corners, housing two buttons.",
+	supplementsDesc = "A white plastic jar containing a good portion of your daily nutrients.",
+	zipTieDesc = "An orange zip-tie used to restrict people.",
 }

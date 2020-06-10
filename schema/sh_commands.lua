@@ -200,3 +200,39 @@ do
 
 	ix.command.Add("CharSearch", COMMAND)
 end
+
+ix.command.Add("CharSpawn", {
+	adminOnly = true,
+	arguments = {
+		ix.type.player
+	},
+	OnRun = function(self, client, target)
+		target:Spawn()
+		
+		if client == target then
+            client:NotifyLocalized("charSpawn01")
+        else
+            client:NotifyLocalized("charSpawn02", target:GetName())
+            target:NotifyLocalized("charSpawn03", client:GetName())
+        end
+	end
+})
+
+ix.command.Add("Revive", {
+	adminOnly = true,
+	arguments = {
+		ix.type.player
+	},
+	OnRun = function(self, client, target)
+		local pos = target:GetPos()
+		target:Spawn()
+		target:SetPos(pos)
+		
+		if client == target then
+            client:NotifyLocalized("revive01")
+        else
+            client:NotifyLocalized("revive02", target:GetName())
+            target:NotifyLocalized("revive03", client:GetName())
+        end
+	end
+})

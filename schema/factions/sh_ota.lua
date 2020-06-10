@@ -4,7 +4,7 @@ FACTION.description = "A transhuman Overwatch soldier produced by the Combine."
 FACTION.color = Color(150, 50, 50, 255)
 -- FACTION.pay = 40
 FACTION.models = {
-	"models/characters/combine_soldier/jqblk/combine_s.mdl"
+	"models/combine_soldier.mdl"
 }
 FACTION.isDefault = true
 FACTION.isGloballyRecognized = true
@@ -21,7 +21,7 @@ function FACTION:OnCharacterCreated(client, character)
 end
 
 function FACTION:GetDefaultName(client)
-	return "OTA.OWS-" .. Schema:ZeroNumber(math.random(1, 999), 3), true
+	return "OTA.OWS-UNKNOWN:" .. Schema:ZeroNumber(math.random(1, 999), 2), true
 end
 
 function FACTION:OnTransfered(client)

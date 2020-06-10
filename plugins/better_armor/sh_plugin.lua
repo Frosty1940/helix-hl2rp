@@ -6,10 +6,14 @@ PLUGIN.desc = "Compatible with bad air and localized damage, plus it adds damage
 ix.lang.AddTable("english", {
 	gasmaskRemoved = "You have removed your gasmask",
 	gasmaskEquipped = "You have put on your gasmask.",
+	repairToolsDesc = "Some tools for repairing armour.",
 })
 ix.lang.AddTable("korean", {
+	["Intelligence"] = "지능",
 	gasmaskRemoved = "방독면 착용을 해제했습니다.",
 	gasmaskEquipped = "방독면을 착용했습니다.",
+	["Repair Tools"] = "수리 공구",
+	repairToolsDesc = "방어구의 수리에 쓰이는 공구를 모아두었습니다.",
 })
 
 ix.util.Include("cl_plugin.lua")

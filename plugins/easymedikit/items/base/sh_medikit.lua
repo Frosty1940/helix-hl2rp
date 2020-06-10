@@ -10,7 +10,7 @@ ITEM.stopBleeding = true
 ITEM.healBroken = true
 
 function ITEM:GetDescription()
-	return L(self.description .. "\n \n 의학 지식:" .. self.medAttr .. "\n 회복력: " .. self.healthPoint)
+	return L(self.description .. "\n \n 의학 지식: " .. self.medAttr .. "\n 회복력: " .. self.healthPoint)
 end
 
 ITEM.functions.selfheal = {
@@ -20,18 +20,6 @@ ITEM.functions.selfheal = {
 		local character = client:GetCharacter()
 		local int = character:GetAttribute("int", 0)
 		if int >= itemTable.medAttr then
-			for hitgroup in pairs(Limb:GetDataHigtroup()) do
-				if (itemTable.stopBleeding == true) then
-					Limb:SetBleeding(client, hitgroup, false)
-				end
-
-				if (itemTable.healBroken == true) then
-					Limb:SetBroken(client, hitgroup, false)
-				end
-
-				Limb:SetHealth(client, hitgroup, -itemTable.healthPoint)
-			end
-
 			client:SetNetworkedFloat("NextBandageuse", 2 + CurTime())
 			client:SetHealth(math.min(client:Health() + itemTable.healthPoint + int, client:GetMaxHealth()))
 			character:SetAttrib("int", int + 0.2)
@@ -57,18 +45,6 @@ ITEM.functions.heal = {
 		-- Check if the entity is a valid door.
 		if (IsValid(entity) and entity:IsPlayer()) then
 			if int >= itemTable.medAttr then
-				for hitgroup in pairs(Limb:GetDataHigtroup()) do
-					if (itemTable.stopBleeding == true) then
-						Limb:SetBleeding(entity, hitgroup, false)
-					end
-
-					if (itemTable.healBroken == true) then
-						Limb:SetBroken(entity, hitgroup, false)
-					end
-
-					Limb:SetHealth(entity, hitgroup, -itemTable.healthPoint)
-				end
-
 				entity:SetNetworkedFloat("NextBandageuse", 2 + CurTime())
 				entity:SetHealth(math.min(client:Health() + itemTable.healthPoint + int, entity:GetMaxHealth()))
 				character:SetAttrib("int", int + 0.2)

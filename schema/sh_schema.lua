@@ -34,6 +34,10 @@ ix.anim.SetModelClass("models/ninja/combine/combine_soldier_prisonguard.mdl", "o
 ix.anim.SetModelClass("models/ninja/combine/combine_super_soldier.mdl", "overwatch")
 ix.anim.SetModelClass("models/characters/combine_soldier/jqblk/combine_s.mdl", "overwatch")
 ix.anim.SetModelClass("models/characters/combine_soldier/jqblk/combine_s_super.mdl", "overwatch")
+ix.anim.SetModelClass("models/hlvr/characters/combine_captain/combine_captain_hlvr_npc.mdl", "overwatch")
+
+ix.anim.SetModelClass("models/cultist/hl_a/vannila_combine/combine_soldier.mdl", "player")
+ix.anim.SetModelClass("models/hlvr/characters/combine_captain/combine_captain_hlvr_player.mdl", "player")
 
 function Schema:ZeroNumber(number, length)
 	local amount = math.max(0, length - string.len(number))

@@ -7,9 +7,7 @@ ix.config.Add("disableContext", true, "Whether or not context menu is enabled.",
 })
 
 if ix.config.Get("disableContext", true) then
-	if CLIENT then
-		function GM:ContextMenuOpen()
-			return LocalPlayer():IsAdmin()
-		end
+	function PLUGIN:ContextMenuOpen()
+		return LocalPlayer():IsAdmin()
 	end
 end

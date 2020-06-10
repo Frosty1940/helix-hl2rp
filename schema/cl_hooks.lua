@@ -24,7 +24,7 @@ function Schema:ChatTextChanged(text)
 	if (LocalPlayer():IsCombine()) then
 		local key = nil
 
-		if (text == COMMAND_PREFIX .. "radio ") then
+		if (text == COMMAND_PREFIX .. "radio") then
 			key = "r"
 		elseif (text == COMMAND_PREFIX .. "w ") then
 			key = "w"
@@ -97,7 +97,7 @@ function Schema:RenderScreenspaceEffects()
 	if (LocalPlayer():IsCombine()) then
 		render.UpdateScreenEffectTexture()
 
-		combineOverlay:SetFloat("$alpha", 0.5)
+		combineOverlay:SetFloat("$alpha", 0.3)
 		combineOverlay:SetInt("$ignorez", 1)
 
 		render.SetMaterial(combineOverlay)

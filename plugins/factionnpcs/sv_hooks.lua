@@ -81,4 +81,5 @@ function PLUGIN:UpdateAllRelations()
 		self:UpdateRelations(v)
 	end
 end
+
 hook.Add( "UpdateAllRelations", "UpdateAllRelations", UpdateAllRelations )
