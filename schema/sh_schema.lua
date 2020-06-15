@@ -155,7 +155,7 @@ do
 
 		local chatRange = ix.config.Get("chatRange", 280)
 
-		return (speaker:Team() == FACTION_CITIZEN and listener:Team() == FACTION_CITIZEN)
+		return (speaker:Team() == FACTION_CITIZEN and !listener:IsCombine())
 		and (speaker:GetPos() - listener:GetPos()):LengthSqr() <= (chatRange * chatRange)
 	end
 

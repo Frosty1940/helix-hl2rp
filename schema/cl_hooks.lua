@@ -45,7 +45,7 @@ function Schema:FinishChat()
 end
 
 function Schema:CanPlayerJoinClass(client, class, info)
-	return false
+	return client:IsAdmin()
 end
 
 function Schema:CharacterLoaded(character)
@@ -97,7 +97,7 @@ function Schema:RenderScreenspaceEffects()
 	if (LocalPlayer():IsCombine()) then
 		render.UpdateScreenEffectTexture()
 
-		combineOverlay:SetFloat("$alpha", 0.3)
+		combineOverlay:SetFloat("$alpha", 0.1)
 		combineOverlay:SetInt("$ignorez", 1)
 
 		render.SetMaterial(combineOverlay)

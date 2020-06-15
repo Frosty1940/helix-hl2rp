@@ -1,4 +1,4 @@
-ITEM.name = "357"
+ITEM.name = ".357 Magnum"
 ITEM.description = "revolverDesc"
 ITEM.model = "models/weapons/w_357.mdl"
 ITEM.class = "weapon_357"

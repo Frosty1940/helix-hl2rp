@@ -28,7 +28,7 @@ ix.config.Add("corpseDecayTime", 0, "How long it takes for a corpse to decay in 
 	category = "Persistent Corpses"
 })
 
-ix.config.Add("dropItemsOnDeath", true, "Whether or not to drop specific items on death.", nil, {
+ix.config.Add("dropItemsOnDeath", false, "Whether or not to drop specific items on death.", nil, {
 	category = "Persistent Corpses"
 })
 

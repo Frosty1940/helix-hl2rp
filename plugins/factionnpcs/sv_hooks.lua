@@ -69,7 +69,6 @@ function PLUGIN:UpdateRelations(client)
 					v:AddEntityRelationship(client, 1)
 				else
 					v:AddEntityRelationship(client, 3)
-					
 				end
 			end
 		end

@@ -1,7 +1,7 @@
 
 FACTION.name = "Metropolice Force"
 FACTION.description = "A metropolice unit working as Civil Protection."
-FACTION.color = Color(50, 100, 150)
+FACTION.color = Color(85, 127, 242)
 -- FACTION.pay = 5
 FACTION.models = {"models/dpfilms/metropolice/hdpolice.mdl"}
 FACTION.weapons = {"ix_stunstick"}

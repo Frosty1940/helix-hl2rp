@@ -1,4 +1,4 @@
-ITEM.name = "Pulse-Rifle"
+ITEM.name = "Overwatch Standard Issue\n(Pulse-Rifle)"
 ITEM.description = "ar2Desc"
 ITEM.model = "models/weapons/w_irifle.mdl"
 ITEM.class = "weapon_ar2"

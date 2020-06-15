@@ -93,6 +93,9 @@ function Schema:PostPlayerLoadout(client)
 		if (factionTable.OnNameChanged) then
 			factionTable:OnNameChanged(client, "", client:GetCharacter():GetName())
 		end
+	else
+		client:SetMaxHealth(40)
+		client:SetHealth(40)
 	end
 end
 
@@ -254,7 +257,7 @@ function Schema:OnNPCKilled(npc, attacker, inflictor)
 end
 
 function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers, rawText)
-	if (chatType == "ic" or chatType == "w" or chatType == "y" or chatType == "dispatch" or chatType == "breencast") then
+	if (chatType == "ic" or chatType == "w" or chatType == "y" or chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper" or chatType == "radio_eavesdrop" or chatType == "radio_eavesdrop_yell" or chatType == "radio_eavesdrop_whisper" or chatType == "dispatch" or chatType == "broadcast") then
 		local class = self.voices.GetClass(speaker)
 
 		for k, v in ipairs(class) do
@@ -263,9 +266,9 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 			if (info) then
 				local volume = 80
 
-				if (chatType == "w") then
+				if (chatType == "w" or chatType == "radio_whisper" or chatType == "radio_eavesdrop_whisper") then
 					volume = 60
-				elseif (chatType == "y") then
+				elseif (chatType == "y" or chatType == "radio_yell" or chatType == "radio_eavesdrop_yell") then
 					volume = 150
 				end
 
@@ -273,11 +276,15 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 					if (info.global) then
 						netstream.Start(nil, "PlaySound", info.sound)
 					else
-						if (speaker:IsCombine()) then
-							speaker.bTypingBeep = nil
-							ix.util.EmitQueuedSounds(speaker, {info.sound, "NPC_MetroPolice.Radio.Off"}, nil, nil, volume)
+						if (chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper") then
+							ix.util.EmitQueuedSounds(receivers, {info.sound, nil}, nil, nil, volume)
 						else
-							ix.util.EmitQueuedSounds(speaker, {info.sound, nil}, nil, nil, volume)
+							if (speaker:IsCombine()) then
+								speaker.bTypingBeep = nil
+								ix.util.EmitQueuedSounds(speaker, {info.sound, "NPC_MetroPolice.Radio.Off"}, nil, nil, volume)
+							else
+								ix.util.EmitQueuedSounds(speaker, {info.sound, nil}, nil, nil, volume)
+							end
 						end
 					end
 				end

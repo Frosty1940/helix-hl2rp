@@ -57,15 +57,17 @@ LANGUAGE = {
 	
 	repair = "Repair",
 
+	pistolDesc = "A semi-automatic pistol utilising 9mm ammunition.",
 	smg1Desc = "A compact, fully automatic sub-machine gun.",
 	shotgunDesc = "A powerful pump-action shotgun.",
 	ar2Desc = "A dark energy powered assault rifle.",
 	grenadeDesc = "A MK3A2 grenade that explodes a few seconds after it is thrown.",
-	rpgDesc = "A non-guided anti-tank rocket launcher.",
-	["357"] = ".357 Revolver",
-	revolverDesc = "A sidearm utilising .357 Caliber ammunition.",
-	crossbowDesc = "A crossbow that fires a heated bolt.",
+	rpgDesc = "A laser-guided anti-tank rocket launcher.",
+	revolverDesc = "A rivolver utilising .357 Magnum ammunition.",
+	crossbowDesc = "A crossbow that fires a heated rebar.",
 	crowbarDesc = "A slightly rusty looking crowbar.",
+	stunstickDesc = "An electrified baton used by Civil Protection officers.",
+	sniperDesc = "A dark energy powered sniper rifle.",
 
 	-- smg1ammoDesc = "A Box that contains %s of SMG Ammo.",
 
@@ -76,4 +78,6 @@ LANGUAGE = {
 	requestDeviceDesc = "A box with rounded corners, housing two buttons.",
 	supplementsDesc = "A white plastic jar containing a good portion of your daily nutrients.",
 	zipTieDesc = "An orange zip-tie used to restrict people.",
+	manhackDesc = "A flying, gyroscopic device with three razor-sharp blades that constantly spin at extremely high speeds.",
+	turretDesc = "A fully autonomous tripodal pulse weapon used by the Combine to guard choke points and vital areas.",
 }
