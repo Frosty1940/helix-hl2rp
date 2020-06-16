@@ -27,7 +27,7 @@ SWEP.AutoSwitchFrom		= false
 
 SWEP.Primary.Sound			= Sound( "Weapon_Mac10.Single" )
 SWEP.Primary.Recoil			= .6
-SWEP.Primary.Damage			= 15
+SWEP.Primary.Damage			= 18
 SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.05
 SWEP.Primary.ClipSize		= 30

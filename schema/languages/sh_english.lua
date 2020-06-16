@@ -71,6 +71,9 @@ LANGUAGE = {
 
 	-- smg1ammoDesc = "A Box that contains %s of SMG Ammo.",
 
+	nvgogDesc = "An optical amplified night vision. Cannot use a flashlight when worn.",
+	irnvGogDesc = "A thermal imaging night vision. Cannot use a flashlight when worn.",
+
 	suitcaseDesc = "A small suitcase.",
 	combineLockDesc = "A metal apparatus applied to doors.",
 	metropoliceSupplementsDesc = "A tinned can containing a good portion of your daily nutrients.",

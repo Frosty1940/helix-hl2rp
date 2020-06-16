@@ -27,7 +27,7 @@ SWEP.AutoSwitchFrom		= false
 
 SWEP.Primary.Sound			= Sound( "Weapon_Glock.Single" )
 SWEP.Primary.Recoil			= .7
-SWEP.Primary.Damage			= 30
+SWEP.Primary.Damage			= 18
 SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.025
 SWEP.Primary.ClipSize		= 20

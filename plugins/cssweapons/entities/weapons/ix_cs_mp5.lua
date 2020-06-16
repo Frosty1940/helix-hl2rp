@@ -27,7 +27,7 @@ SWEP.AutoSwitchFrom		= false
 
 SWEP.Primary.Sound			= Sound( "Weapon_MP5Navy.Single" )
 SWEP.Primary.Recoil			= .5
-SWEP.Primary.Damage			= 20
+SWEP.Primary.Damage			= 17
 SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.02
 SWEP.Primary.ClipSize		= 30

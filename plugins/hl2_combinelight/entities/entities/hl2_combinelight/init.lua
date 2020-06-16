@@ -16,7 +16,7 @@ end
 -- Called when the entity is spawned.
 function ENT:SpawnFunction( ply, tr )
     if ( !tr.Hit ) then return end
-    local ent = ents.Create("hlr_unionlight")
+    local ent = ents.Create("hl2_combinelight")
     ent:SetPos( tr.HitPos + tr.HitNormal * 16 )
     ent:Spawn()
     ent:Activate()

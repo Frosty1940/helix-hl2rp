@@ -27,7 +27,7 @@ SWEP.AutoSwitchFrom		= false
 
 SWEP.Primary.Sound			= Sound( "Weapon_AK47.Single" )
 SWEP.Primary.Recoil			= 2.2
-SWEP.Primary.Damage			= 40
+SWEP.Primary.Damage			= 20
 SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.015
 SWEP.Primary.ClipSize		= 30

@@ -27,7 +27,7 @@ SWEP.AutoSwitchFrom		= false
 
 SWEP.Primary.Sound			= Sound( "Weapon_USP.SilencedShot" )
 SWEP.Primary.Recoil			= 1
-SWEP.Primary.Damage			= 30
+SWEP.Primary.Damage			= 18
 SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.011
 SWEP.Primary.ClipSize		= 10

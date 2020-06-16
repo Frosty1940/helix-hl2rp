@@ -9,7 +9,7 @@ end
 if ( CLIENT ) then
 	include("effect.lua")
 	SWEP.DrawAmmo			= true
-	SWEP.DrawCrosshair		= false
+	SWEP.DrawCrosshair		= true
 	SWEP.ViewModelFOV		= 70
 	SWEP.ViewModelFlip		= false
 	SWEP.CSMuzzleFlashes	= true
@@ -233,7 +233,7 @@ if (CLIENT) then
 		restPos[3] = sin(CT*2)*4
 		restPos[1] = cos(CT*1)*3
 
-		if (self.Owner:isWepRaised()) then
+		if (self.Owner:IsWepRaised()) then
 			swayPos[1] = clamp(int(.1, swayPos[1], self.aimDiff[2]), -swayLimit, swayLimit)
 			swayPos[3] = clamp(int(.1, swayPos[3], -self.aimDiff[1]), -swayLimit, swayLimit)
 
@@ -297,17 +297,17 @@ function SWEP:Think()
 	self.spreadData.curSpreadHandle = math.Clamp(self.spreadData.curSpreadHandle - self.spreadData.rcvrSpreadRate, self.spreadData.minSpread, self.spreadData.maxSpread)
 
 	if (SERVER) then
-		if (self.Owner:isWepRaised()) then
+		if (self.Owner:IsWepRaised()) then
 			if (self.Owner:KeyDown(IN_SPEED) and vel >= self.Owner:GetWalkSpeed()) then
-				if self.Owner:isWepRaised() then
+				if self.Owner:IsWepRaised() then
 					self.Raised = true
 				end
-				self.Owner:setWepRaised(false)
+				self.Owner:SetWepRaised(false)
 			end
 		end
 		if (vel <= self.Owner:GetWalkSpeed()*1.5) then
 			if self.Raised then
-				self.Owner:setWepRaised(true)
+				self.Owner:SetWepRaised(true)
 				self.Raised = false
 			end
 		end

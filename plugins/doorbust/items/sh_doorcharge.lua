@@ -20,17 +20,7 @@ ITEM.functions.throw = {
 		local trace = util.TraceLine(data)
 		local target = trace.Entity
 		
-		if (IsValid(client)) then
-			local char = client:GetCharacter()
-			local class = char:GetClass()
-			local classData = ix.class.list[class]
-			
-			if (!classData.law) then
-				client:NotifyLocalized("notLaw")
-				
-				return false
-			end
-		end
+		if (!IsValid(client)) then return false end
 		
 		local auth = hook.Run("CanUseDoorbust", client, target)
 		

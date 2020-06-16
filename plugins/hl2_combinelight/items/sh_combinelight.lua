@@ -1,38 +1,24 @@
 ITEM.name = "Combine Light"
 ITEM.uniqueID = "comlight"
-ITEM.model = Model("models/props_combine/combine_light001a.mdl")
-ITEM.description = "Portable light sources used to illuminate dark areas in support of Combine operations."
---ITEM.price = 0
---ITEM.flag = ""
-
-ITEM.functions = {}
+ITEM.description = "comlightDesc"
+ITEM.model = "models/props_combine/combine_light001a.mdl"
+ITEM.width = 1
+ITEM.height = 2
+ITEM.iconCam = {
+	pos = Vector(453.60931396484, 381.55184936523, 296.04327392578),
+	ang = Angle(25, 220, 0),
+	fov = 2.75
+}
+ITEM.exRender = true
 ITEM.functions.Place = {
 	icon = "icon16/weather_sun.png",
 	OnRun = function(item, client, data)
-		if (SERVER) then
-		
-			local position
-			if (IsValid(entity)) then
-				position = entity:GetPos() + Vector(0, 0, 4)
-			else
-				local data2 = {
-					start = client:GetShootPos(),
-					endpos = client:GetShootPos() + client:GetAimVector() * 72,
-					filter = client
-				}
-				local trace = util.TraceLine(data2)
-				position = trace.HitPos + Vector(0, 0, 16)
-			end
-			
-			local entity2 = entity
-			local entity = ents.Create("hl2_combinelight")
-			entity:SetPos(position)
-			if (IsValid(entity2)) then
-				entity:SetAngles(entity2:GetAngles())
-			end
-			entity:Spawn()
-			entity:Activate()
-			
-		end
+		local entity = ents.Create("hl2_combinelight")
+		entity:SetPos(item.player:EyePos() + ( item.player:GetAimVector() * 100))
+		entity:SetAngles(item.player:GetAngles())	
+		entity:Spawn()
+		entity:Activate()
+
+		return true
 	end
 }

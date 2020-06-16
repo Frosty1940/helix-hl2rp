@@ -1,9 +1,0 @@
-ENT.Base = "ix_flare"
-ENT.PrintName = "Flare"
-ENT.Author = "Black Tea, Frosty"
-ENT.Spawnable = true
-ENT.AdminOnly = true
-ENT.Category = "Helix Throwable"
-ENT.RenderGroup 		= RENDERGROUP_BOTH
-ENT.configLifetime = 150
-ENT.configColor = Color( 50, 255, 50 )

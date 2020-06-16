@@ -246,6 +246,11 @@ LANGUAGE = {
 	["Sparkling Breen's Water"] = "브린 박사의 탄산수",
 	["Special Breen's Water"] = "브린 박사의 무알코올 맥주",
 
+	["Night Vision"] = "야간투시경",
+	nvgogDesc = "광학증폭식 야간투시경입니다. 착용 시 손전등을 사용할 수 없습니다.",
+	["IR Night Vision"] = "열영상 야간투시경",
+	irnvGogDesc = "열영상투시형 야간투시경입니다. 착용 시 손전등을 사용할 수 없습니다.",
+
 	["Administrator"] = "감시인",
 	["Citizen"] = "시민",
 	["Conscript"] = "민방위",

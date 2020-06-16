@@ -59,7 +59,7 @@ if (SERVER) then
 			if (v:IsDoor()) then
 				local dir = v:GetPos() - self:GetPos()
 				dir:Normalize()
-				v:blastDoor(dir * 300, 20, true)
+				v:BlastDoor(dir * 300, 20, true)
 			end
 
 			if (v.FadeActivate) then -- isFadingdoor

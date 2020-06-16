@@ -2,6 +2,15 @@ PLUGIN.name = "Door Bust Charges"
 PLUGIN.author = "Black Tea"
 PLUGIN.description = "A Charge that can blow up the door."
 
+ix.lang.AddTable("english", {
+	doorChargeDesc = "If you install it on a door, you will break the door.",
+})
+ix.lang.AddTable("korean", {
+	Charge = "파쇄 시작",
+	["Doorbust Charge"] = "문 파쇄기",
+	doorChargeDesc = "문에 대고 설치하면 문을 박살낼 수 있습니다.",
+})
+
 if (CLIENT) then
 
 	local muzzleMaterials = {}
