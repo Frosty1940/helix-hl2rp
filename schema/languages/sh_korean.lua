@@ -201,6 +201,10 @@ LANGUAGE = {
 	["Overwatch Sniper Rifle"] = "감시 부대 저격소총",
 	sniperDesc = "암흑 에너지를 사용하는 저격소총입니다.",
 
+	["Five-Seven"] = "파이브-세븐",
+	["Scout"] = "스카우트",
+	["USP Silenced"] = "소음 USP",
+
 	[".357 Magnum Bullets"] = ".357 매그넘 탄약",
 	["SMG Bullets"] = "기관단총 탄약",
 	["Crossbow Bolts"] = "쇠뇌살",
@@ -232,6 +236,8 @@ LANGUAGE = {
 	manhackDesc = "극도로 빠른 속도로 끊임없이 회전하는 세 개의 날카로운 면도날이 달린 날으는 회전 장치입니다.",
 	["Combine Turret"] = "콤바인 터렛",
 	turretDesc = "콤바인이 거점과 요충지를 경비하기 위해 사용하는 완전자율 삼각대형 펄스 무기입니다.",
+	["Combine Battery"] = "콤바인 전지",
+	batteryDesc = "콤바인 기기나 다양한 장치에 전력을 공급하는 수단입니다.",
 
 	["Breen's Water"] = "브린 박사의 물",
 	["Chinese Takeout"] = "중국식 요리",

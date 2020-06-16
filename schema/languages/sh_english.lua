@@ -80,4 +80,5 @@ LANGUAGE = {
 	zipTieDesc = "An orange zip-tie used to restrict people.",
 	manhackDesc = "A flying, gyroscopic device with three razor-sharp blades that constantly spin at extremely high speeds.",
 	turretDesc = "A fully autonomous tripodal pulse weapon used by the Combine to guard choke points and vital areas.",
+	batteryDesc = "A means of supplying power to devices, such as various Combine technology, and many other things.",
 }

@@ -6,8 +6,6 @@ ITEM.width = 1
 ITEM.height = 1
 ITEM.healthPoint = 0
 ITEM.medAttr = 0
-ITEM.stopBleeding = true
-ITEM.healBroken = true
 
 function ITEM:GetDescription()
 	return L(self.description .. "\n \n 의학 지식: " .. self.medAttr .. "\n 회복력: " .. self.healthPoint)
@@ -21,7 +19,7 @@ ITEM.functions.selfheal = {
 		local int = character:GetAttribute("int", 0)
 		if int >= itemTable.medAttr then
 			client:SetNetworkedFloat("NextBandageuse", 2 + CurTime())
-			client:SetHealth(math.min(client:Health() + itemTable.healthPoint + int, client:GetMaxHealth()))
+			client:SetHealth(math.Clamp(client:Health() + itemTable.healthPoint + int, 0, client:GetMaxHealth()))
 			character:SetAttrib("int", int + 0.2)
 		else
 			client:NotifyLocalized("lackKnowledge")
@@ -46,7 +44,7 @@ ITEM.functions.heal = {
 		if (IsValid(entity) and entity:IsPlayer()) then
 			if int >= itemTable.medAttr then
 				entity:SetNetworkedFloat("NextBandageuse", 2 + CurTime())
-				entity:SetHealth(math.min(client:Health() + itemTable.healthPoint + int, entity:GetMaxHealth()))
+				entity:SetHealth(math.Clamp(client:Health() + itemTable.healthPoint + int, 0, entity:GetMaxHealth()))
 				character:SetAttrib("int", int + 0.2)
 			else
 				client:NotifyLocalized("lackKnowledge")
