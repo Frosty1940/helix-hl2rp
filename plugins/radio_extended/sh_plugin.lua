@@ -5,6 +5,16 @@ PLUGIN.name = "Extended Radio"
 PLUGIN.author = "faust"
 PLUGIN.description = "A standalone radio plugin with extended functionality over the default."
 
+ix.lang.AddTable("english", {
+	radioDesc = 'A shiny handheld radio%s.\nIt is currently turned %s%s."',
+})
+ix.lang.AddTable("korean", {
+	["Handheld Radio"] = "휴대용 무전기",
+	radioDesc = '윤이 나는 휴대용 무전기입니다%s.\n현재 상태: %s%s"',
+	["Walkie Talkie"] = "워키토키",
+	["Long Range Radio"] = "장거리 무전기",
+})
+
 -- Anonymous names, if radio callsigns are anonymous
 local radioanon = {"Somebody", "Someone", "A voice", "A person"}
 local radioTypes = {"walkietalkie","longrange","duplexradio","duplexwalkie","hybridradio","hybridwalkie"}

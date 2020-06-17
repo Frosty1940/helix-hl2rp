@@ -1,6 +1,6 @@
 
-ITEM.name = "방호복"
-ITEM.description = "유해한 환경으로부터 착용자를 보호하는 군용 방호복입니다.\n(남성 캐릭터 전용)"
+ITEM.name = "Hazmat Suit"
+ITEM.description = "hazmatSuitDesc"
 ITEM.model = "models/props_c17/SuitCase_Passenger_Physics.mdl"
 ITEM.height = 2
 ITEM.width = 2

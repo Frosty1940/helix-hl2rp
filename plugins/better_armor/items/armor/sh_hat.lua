@@ -1,5 +1,5 @@
-ITEM.name = "전투모"
-ITEM.description = "군인이 평상시에 착용하도록 만든 모자입니다."
+ITEM.name = "Field Cap"
+ITEM.description = "hatDesc"
 ITEM.model = "models/props_junk/cardboard_box004a.mdl"
 ITEM.height = 1
 ITEM.width = 1

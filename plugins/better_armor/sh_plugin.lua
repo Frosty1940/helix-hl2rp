@@ -7,13 +7,26 @@ ix.lang.AddTable("english", {
 	gasmaskRemoved = "You have removed your gasmask",
 	gasmaskEquipped = "You have put on your gasmask.",
 	repairToolsDesc = "Some tools for repairing armour.",
+	hatDesc = "A cap worn by the military personnel in the field when a combat helmet is not required.\n(CONSCRIPT MODELS ONLY)",
+	hazmatSuitDesc = "A military protective clothing that protects wearers from harmful environments.\n(MALE CONSCRIPT MODELS ONLY)",
+	pasgtBodyArmorDesc = "A Kebler-fiber bulletproof vest that the U.S. Army adopted in 1983 to replace M69 Flak Vest.\n(CONSCRIPT MODELS ONLY)",
+	pasgtHelmetDesc = "A Kebler-fiber bulletproof helmet that the U.S. Army adopted in 1983 to replace the M1 steel helmet.\n(MALE CONSCRIPT MODELS ONLY)",
 })
 ix.lang.AddTable("korean", {
 	["Intelligence"] = "지능",
 	gasmaskRemoved = "방독면 착용을 해제했습니다.",
 	gasmaskEquipped = "방독면을 착용했습니다.",
+	Repair = "수리하기",
 	["Repair Tools"] = "수리 공구",
 	repairToolsDesc = "방어구의 수리에 쓰이는 공구를 모아두었습니다.",
+	["Field Cap"] = "전투모",
+	hatDesc = "군인이 평상시에 착용하도록 만든 모자입니다.\n(징집군 모델 전용)",
+	["Hazmat Suit"] = "방호복",
+	hazmatSuitDesc = "유해한 환경으로부터 착용자를 보호하는 군용 방호복입니다.\n(남성 징집군 모델 전용)",
+	["PASGT Vest"] = "PASGT 방탄복",
+	pasgtBodyArmorDesc = "1983년 미군이 M69 방편복을 대체하여 채용한 케블러 섬유 소재 방탄복입니다.\n(징집군 모델 전용)",
+	["PASGT Helmet"] = "PASGT 방탄모",
+	pasgtHelmetDesc = "1983년 미군이 M1 철모를 대체하여 채용한 케블러 섬유 소재 방탄모입니다.\n(남성 징집군 모델 전용)",
 })
 
 ix.util.Include("cl_plugin.lua")

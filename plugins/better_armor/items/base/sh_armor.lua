@@ -281,8 +281,7 @@ ITEM.functions.Equip = {
 	end
 }
 
-ITEM.functions.repair = {
-	name = "repair",
+ITEM.functions.Repair = {
 	icon = "icon16/bullet_wrench.png",
 	OnRun = function(item)
 		local client = item.player

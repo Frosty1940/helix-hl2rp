@@ -5,7 +5,7 @@ ENT.PrintName = "Doorbust Charge"
 ENT.Author = "Black Tea, Frosty"
 ENT.Spawnable = true
 ENT.AdminOnly = true
-ENT.Category = "Helix - Weapons"
+ENT.Category = "Helix Weapons"
 ENT.RenderGroup 		= RENDERGROUP_BOTH
 ENT.radius = 32
 ENT.burstTime = 5
@@ -71,6 +71,7 @@ if (SERVER) then
 		local e = EffectData()
 		e:SetStart(self:GetPos() + self:OBBCenter())
 		util.Effect( "doorCharge", e )
+		util.BlastDamage( nil, nil, e, 50, 100 )
 	end
 
 	function ENT:OnRemove()

@@ -13,7 +13,7 @@ end
 
 SWEP.HoldType			= "revolver"
 SWEP.Base				= "weapon_ixcs_base"
-SWEP.Category			= "HL2 RP"
+SWEP.Category			= "Helix Weapons"
 
 SWEP.Spawnable			= true
 SWEP.AdminSpawnable		= true

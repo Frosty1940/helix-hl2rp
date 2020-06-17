@@ -1,6 +1,6 @@
 
-ITEM.name = "PASGT 방탄복"
-ITEM.description = "1983년 미군이 M69 방편복을 대체하여 채용한 케블러 섬유 소재 방탄복입니다."
+ITEM.name = "PASGT Vest"
+ITEM.description = "pasgtBodyArmorDesc"
 ITEM.model = "models/props_c17/SuitCase_Passenger_Physics.mdl"
 ITEM.height = 2
 ITEM.width = 2

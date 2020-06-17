@@ -1,6 +1,6 @@
 
-ITEM.name = "PASGT 방탄모"
-ITEM.description = "1983년 미군이 M1 철모를 대체하여 채용한 케블러 섬유 소재 방탄모입니다.\n(남성 캐릭터 전용)"
+ITEM.name = "PASGT Helmet"
+ITEM.description = "pasgtHelmetDesc"
 ITEM.model = "models/props_junk/cardboard_box004a.mdl"
 ITEM.height = 1
 ITEM.width = 1
