@@ -17,9 +17,7 @@ end
 
 /*
 function Schema:PlayerSwitchFlashlight(client, enabled)
-	if (client:IsCombine()) then
-		return true
-	end
+	return false
 end
 */
 
@@ -68,6 +66,12 @@ function Schema:PlayerLoadout(client)
 end
 
 function Schema:PostPlayerLoadout(client)
+	client:AllowFlashlight(true)
+
+	local char = client:GetCharacter()
+
+
+
 	if (client:IsCombine()) then
 		if (client:Team() == FACTION_OTA) then
 			client:SetMaxHealth(50)

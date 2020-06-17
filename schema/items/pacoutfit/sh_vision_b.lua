@@ -31,31 +31,6 @@ ITEM.pacData = {
 	},
 }
 
-if (CLIENT) then
-    local sndOn = Sound( "items/nvg_on.wav" )
-    local sndOff = Sound( "items/nvg_off.wav" )
-	
-	netstream.Hook("ixFLIRToggle", function(bool)
-		if not LocalPlayer():Alive() then
-			return
-		end
-        
-        NV_Status = bool
-		NV_NIGHTTYPE = 2
-        
-        if bool then        
-            CurScale = 0.2
-            surface.PlaySound( sndOn )
-            hook.Add("RenderScreenspaceEffects", "NV_FX", NV_FX)
-            hook.Add("PostDrawViewModel", "NV_PostDrawViewModel", NV_PostDrawViewModel)
-        else
-            surface.PlaySound( sndOff )
-            hook.Remove("RenderScreenspaceEffects", "NV_FX")
-            hook.Remove("PostDrawViewModel", "NV_PostDrawViewModel")
-        end
-	end)
-end
-
 local function OnEquipped(item, result)
 	if (item:GetData("equip")) then
 		netstream.Start(item.player, "ixFLIRToggle", true)

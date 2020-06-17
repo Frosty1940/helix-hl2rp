@@ -198,6 +198,8 @@ LANGUAGE = {
 	stunstickDesc = "시민 보호 기동대원이 사용하는 전기 충격봉입니다.",
 	["Overwatch Sniper Rifle"] = "감시 부대 저격소총",
 	sniperDesc = "암흑 에너지를 사용하는 저격소총입니다.",
+	["Flare Gun"] = "조명탄 권총",
+	flaregunDesc = "조명탄을 쏘는 권총입니다.",
 
 	[".357 Magnum Bullets"] = ".357 매그넘 탄약",
 	["SMG Bullets"] = "기관단총 탄약",

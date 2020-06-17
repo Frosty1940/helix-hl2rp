@@ -68,6 +68,7 @@ LANGUAGE = {
 	crowbarDesc = "A slightly rusty looking crowbar.",
 	stunstickDesc = "An electrified baton used by Civil Protection officers.",
 	sniperDesc = "A dark energy powered sniper rifle.",
+	flaregunDesc = "A large-bore handgun that discharges flares.",
 
 	-- smg1ammoDesc = "A Box that contains %s of SMG Ammo.",
 
