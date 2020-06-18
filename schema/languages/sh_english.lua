@@ -54,8 +54,6 @@ LANGUAGE = {
 	revive01 = "You revived yourself at the death point.",
 	revive02 = "You revived %s at the death point.",
 	revive03 = "%s revived you at the death point.",
-	
-	repair = "Repair",
 
 	pistolDesc = "A semi-automatic pistol utilising 9mm ammunition.",
 	smg1Desc = "A compact, fully automatic sub-machine gun.",
