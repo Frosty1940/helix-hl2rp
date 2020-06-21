@@ -283,12 +283,14 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 						if (chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper") then
 							ix.util.EmitQueuedSounds(receivers, {info.sound, nil}, nil, nil, volume)
 						else
+							local sounds = {info.sound}
+
 							if (speaker:IsCombine()) then
 								speaker.bTypingBeep = nil
-								ix.util.EmitQueuedSounds(speaker, {info.sound, "NPC_MetroPolice.Radio.Off"}, nil, nil, volume)
-							else
-								ix.util.EmitQueuedSounds(speaker, {info.sound, nil}, nil, nil, volume)
+								sounds[#sounds + 1] = "NPC_MetroPolice.Radio.Off"
 							end
+
+							ix.util.EmitQueuedSounds(speaker, sounds, nil, nil, volume)
 						end
 					end
 				end
