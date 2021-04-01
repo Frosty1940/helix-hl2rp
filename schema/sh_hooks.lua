@@ -1,20 +1,9 @@
 
 function Schema:CanPlayerUseBusiness(client, uniqueID)
-	if (client:Team() == FACTION_CITIZEN) then
-		local itemTable = ix.item.list[uniqueID]
-
-		if (itemTable) then
-			if (itemTable.permit) then
-				local character = client:GetCharacter()
-				local inventory = character:GetInventory()
-
-				if (!inventory:HasItem("permit_"..itemTable.permit)) then
-					return false
-				end
-			elseif (itemTable.base ~= "base_permit") then
-				return false
-			end
-		end
+	if (client:IsAdmin()) then
+		return true
+	else
+		return false
 	end
 end
 
@@ -50,6 +39,6 @@ function Schema:CanPlayerEditObjectives(client)
 	return bCanEdit
 end
 
-function Schema:CanDrive()
-	return false
+function Schema:CanDrive(client)
+	return client:IsAdmin()
 end
