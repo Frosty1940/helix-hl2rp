@@ -16,9 +16,7 @@ function Schema:SaveData()
 end
 
 function Schema:PlayerSwitchFlashlight(client, enabled)
-	if (client:IsCombine()) then
-		return true
-	end
+	return false
 end
 
 function Schema:PlayerUse(client, entity)
@@ -26,7 +24,7 @@ function Schema:PlayerUse(client, entity)
 		return false
 	end
 
-	if (client:IsCombine() and entity:IsDoor() and IsValid(entity.ixLock) and client:KeyDown(IN_SPEED)) then
+	if ((client:IsCombine() or client:GetCharacter():GetInventory():HasItem("comkey"))and entity:IsDoor() and IsValid(entity.ixLock) and client:KeyDown(IN_SPEED)) then
 		entity.ixLock:Toggle(client)
 		return false
 	end
@@ -54,7 +52,7 @@ function Schema:PlayerUse(client, entity)
 end
 
 function Schema:PlayerUseDoor(client, door)
-	if (client:IsCombine()) then
+	if ((client:IsCombine() or client:GetCharacter():GetInventory():HasItem("comkey"))) then
 		if (!door:HasSpawnFlags(256) and !door:HasSpawnFlags(1024)) then
 			door:Fire("open")
 		end
@@ -66,16 +64,24 @@ function Schema:PlayerLoadout(client)
 end
 
 function Schema:PostPlayerLoadout(client)
+	client:AllowFlashlight(true)
+
+	local char = client:GetCharacter()
+
+
+
 	if (client:IsCombine()) then
 		if (client:Team() == FACTION_OTA) then
-			client:SetMaxHealth(150)
-			client:SetHealth(150)
-			client:SetArmor(150)
+			client:SetMaxHealth(50)
+			client:SetHealth(50)
+			client:SetArmor(100)
+		elseif (client:Team() == FACTION_MPF) then
+			client:SetHealth(40)
+			client:SetMaxHealth(40)
 		elseif (client:IsScanner()) then
-			if (client.ixScanner:GetClass() == "npc_clawscanner") then
-				client:SetHealth(200)
-				client:SetMaxHealth(200)
-			end
+			client:SetHealth(30)
+			client:SetMaxHealth(30)
+			client:SetArmor(200)
 
 			client.ixScanner:SetHealth(client:Health())
 			client.ixScanner:SetMaxHealth(client:GetMaxHealth())
@@ -89,6 +95,9 @@ function Schema:PostPlayerLoadout(client)
 		if (factionTable.OnNameChanged) then
 			factionTable:OnNameChanged(client, "", client:GetCharacter():GetName())
 		end
+	else
+		client:SetMaxHealth(40)
+		client:SetHealth(40)
 	end
 end
 
@@ -250,7 +259,7 @@ function Schema:OnNPCKilled(npc, attacker, inflictor)
 end
 
 function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers, rawText)
-	if (chatType == "ic" or chatType == "w" or chatType == "y" or chatType == "dispatch") then
+	if (chatType == "ic" or chatType == "w" or chatType == "y" or chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper" or chatType == "radio_eavesdrop" or chatType == "radio_eavesdrop_yell" or chatType == "radio_eavesdrop_whisper" or chatType == "dispatch" or chatType == "broadcast") then
 		local class = self.voices.GetClass(speaker)
 
 		for k, v in ipairs(class) do
@@ -259,9 +268,9 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 			if (info) then
 				local volume = 80
 
-				if (chatType == "w") then
+				if (chatType == "w" or chatType == "radio_whisper" or chatType == "radio_eavesdrop_whisper") then
 					volume = 60
-				elseif (chatType == "y") then
+				elseif (chatType == "y" or chatType == "radio_yell" or chatType == "radio_eavesdrop_yell") then
 					volume = 150
 				end
 
@@ -269,14 +278,18 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 					if (info.global) then
 						netstream.Start(nil, "PlaySound", info.sound)
 					else
-						local sounds = {info.sound}
+						if (chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper") then
+							ix.util.EmitQueuedSounds(receivers, {info.sound, nil}, nil, nil, volume)
+						else
+							local sounds = {info.sound}
 
-						if (speaker:IsCombine()) then
-							speaker.bTypingBeep = nil
-							sounds[#sounds + 1] = "NPC_MetroPolice.Radio.Off"
+							if (speaker:IsCombine()) then
+								speaker.bTypingBeep = nil
+								sounds[#sounds + 1] = "NPC_MetroPolice.Radio.Off"
+							end
+
+							ix.util.EmitQueuedSounds(speaker, sounds, nil, nil, volume)
 						end
-
-						ix.util.EmitQueuedSounds(speaker, sounds, nil, nil, volume)
 					end
 				end
 
