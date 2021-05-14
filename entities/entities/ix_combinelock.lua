@@ -61,21 +61,21 @@ if (SERVER) then
 
 	function ENT:SpawnFunction(client, trace)
 		local door = trace.Entity
-
-		if (!IsValid(door) or !door:IsDoor() or IsValid(door.ixLock)) then
+	
+		if (!IsValid(door) or !door:isDoor() or IsValid(door.lock)) then
 			return client:NotifyLocalized("dNotValid")
 		end
-
-		local normal = client:GetEyeTrace().HitNormal:Angle()
-		local position, angles = self:GetLockPosition(door, normal)
-
+	
+		local position, angles = self:GetLockPosition(client, door)
+	
 		local entity = ents.Create("ix_combinelock")
 		entity:SetPos(trace.HitPos)
 		entity:Spawn()
 		entity:Activate()
 		entity:SetDoor(door, position, angles)
-
-		Schema:SaveCombineLocks()
+	
+		PLUGIN:SaveCombineLocks()
+	
 		return entity
 	end
 
@@ -149,7 +149,9 @@ if (SERVER) then
 			return
 		end
 
-		if (!client:IsCombine() and client:Team() != FACTION_ADMIN) then
+		local comkey = client:GetCharacter():GetInventory():HasItem("comkey")
+
+		if (!client:IsCombine() and client:Team() != FACTION_ADMIN and !comkey) then
 			self:DisplayError()
 			self.nextUseTime = CurTime() + 2
 

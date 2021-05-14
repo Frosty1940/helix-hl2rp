@@ -6,7 +6,7 @@ FACTION.color = Color(181, 110, 60, 255)
 FACTION.models = {
 	"models/cultist/hl_a/vannila_combine/combine_soldier.mdl"
 }
-FACTION.isDefault = true
+FACTION.isDefault = false
 FACTION.isGloballyRecognized = true
 FACTION.runSounds = {[0] = "NPC_CombineS.RunFootstepLeft", [1] = "NPC_CombineS.RunFootstepRight"}
 

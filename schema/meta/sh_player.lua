@@ -8,7 +8,7 @@ end
 function playerMeta:IsDispatch()
 	local name = self:Name()
 	local faction = self:Team()
-	local bStatus = (self:IsAdmin() and faction == FACTION_OTA) or faction == FACTION_ADMIN
+	local bStatus = (self:IsAdmin() and faction == FACTION_OTA) or faction == FACTION_ADMIN or self:IsAdmin()
 
 	if (!bStatus) then
 		for k, v in ipairs({ "OfC", "SCN", "DvL", "SeC" }) do
@@ -26,7 +26,7 @@ end
 function playerMeta:IsBreencast()
 	local name = self:Name()
 	local faction = self:Team()
-	local bStatus = faction == FACTION_ADMIN
+	local bStatus = faction == FACTION_ADMIN or self:IsAdmin()
 
 	return bStatus
 end

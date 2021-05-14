@@ -324,7 +324,7 @@ end
 
 -- Called after the item is registered into the item tables.
 function ITEM:OnRegistered()
-	ix.item.RegisterInv(self.uniqueID, self.invWidth, self.invHeight, true)
+	ix.inventory.Register(self.uniqueID, self.invWidth, self.invHeight, true)
 end
 
 -- Inventory drawing

@@ -29,7 +29,7 @@ SWEP.Primary.ClipSize = -1
 SWEP.Primary.DefaultClip = -1
 SWEP.Primary.Automatic = false
 SWEP.Primary.Ammo = ""
-SWEP.Primary.Damage = 50
+SWEP.Primary.Damage = 15
 SWEP.Primary.Delay = 0.7
 
 SWEP.Secondary.ClipSize = -1
@@ -183,7 +183,7 @@ function SWEP:PrimaryAttack()
 	local damage = self.Primary.Damage
 
 	if (self:GetActivated()) then
-		damage = 25
+		damage = 5
 	end
 
 	self.Owner:SetAnimation(PLAYER_ATTACK1)
@@ -222,7 +222,7 @@ function SWEP:PrimaryAttack()
 
 				entity:ViewPunch(Angle(-20, math.random(-15, 15), math.random(-10, 10)))
 
-				if (self:GetActivated() and entity.ixStuns > 3) then
+				if (self:GetActivated() and entity.ixStuns > 2) then
 					entity:SetRagdolled(true, 60)
 					entity.ixStuns = 0
 

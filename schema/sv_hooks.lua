@@ -15,18 +15,16 @@ function Schema:SaveData()
 	self:SaveForceFields()
 end
 
-/*
 function Schema:PlayerSwitchFlashlight(client, enabled)
 	return false
 end
-*/
 
 function Schema:PlayerUse(client, entity)
 	if (IsValid(client.ixScanner)) then
 		return false
 	end
 
-	if (client:IsCombine() and entity:IsDoor() and IsValid(entity.ixLock) and client:KeyDown(IN_SPEED)) then
+	if ((client:IsCombine() or client:GetCharacter():GetInventory():HasItem("comkey"))and entity:IsDoor() and IsValid(entity.ixLock) and client:KeyDown(IN_SPEED)) then
 		entity.ixLock:Toggle(client)
 		return false
 	end
@@ -54,7 +52,7 @@ function Schema:PlayerUse(client, entity)
 end
 
 function Schema:PlayerUseDoor(client, door)
-	if (client:IsCombine()) then
+	if ((client:IsCombine() or client:GetCharacter():GetInventory():HasItem("comkey"))) then
 		if (!door:HasSpawnFlags(256) and !door:HasSpawnFlags(1024)) then
 			door:Fire("open")
 		end

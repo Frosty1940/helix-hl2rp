@@ -83,4 +83,14 @@ LANGUAGE = {
 	manhackDesc = "A flying, gyroscopic device with three razor-sharp blades that constantly spin at extremely high speeds.",
 	turretDesc = "A fully autonomous tripodal pulse weapon used by the Combine to guard choke points and vital areas.",
 	batteryDesc = "A means of supplying power to devices, such as various Combine technology, and many other things.",
+	cidDesc = "A citizen identification card.",
+	cidDesc2 = "\n ID #",
+	cidDesc3 = "\n NAME: ",
+
+	itemCombineKeycardDesc = "A Combine security keycard.",
+	itemUnionKeycardDesc = "A Civil Workers Union security keycard.",
+
+	bookDesc = "A readable book.",
+
+	itemEmptyCanDesc = "An empty aluminium can."
 }

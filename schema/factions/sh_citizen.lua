@@ -2,8 +2,8 @@
 FACTION.name = "Citizen"
 FACTION.description = "A regular human citizen enslaved by the Universal Union."
 FACTION.color = Color(53, 156, 56, 255)
--- FACTION.pay = 5
-FACTION.isDefault = false
+FACTION.pay = 5
+FACTION.isDefault = true
 FACTION.models = {
 	"models/tnb/citizens/aphelion/male_01.mdl",
 	"models/tnb/citizens/aphelion/male_02.mdl",
@@ -26,16 +26,25 @@ FACTION.models = {
 }
 
 function FACTION:OnCharacterCreated(client, character)
+	local id = Schema:ZeroNumber(math.random(1, 99999), 5)
 	local inventory = character:GetInventory()
 
-	inventory:Add("smg1", 1)
-	inventory:Add("smg1ammo", 3)
-	inventory:Add("pistol", 1)
-	inventory:Add("pistolammo", 2)
-	inventory:Add("grenade", 1)
-	inventory:Add("walkietalkie", 1)
-	inventory:Add("bandage", 3)
-	inventory:Add("flashlight", 1)
+	character:SetData("cid", id)
+
+	inventory:Add("suitcase", 1)
+	inventory:Add("cid", 1, {
+		name = character:GetName(),
+		id = id
+	})
+
+	--inventory:Add("smg1", 1)
+	--inventory:Add("smg1ammo", 3)
+	--inventory:Add("pistol", 1)
+	--inventory:Add("pistolammo", 2)
+	--inventory:Add("grenade", 1)
+	--inventory:Add("walkietalkie", 1)
+	--inventory:Add("bandage", 3)
+	--inventory:Add("flashlight", 1)
 end
 
 FACTION_CITIZEN = FACTION.index

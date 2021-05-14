@@ -160,7 +160,7 @@ if (SERVER) then
 			return
 		end
 
-		if (activator:IsCombine()) then
+		if (activator:IsCombine() or activator:GetCharacter():GetInventory():HasItem("comkey")) then
 			self:SetMode(self:GetMode() + 1)
 
 			if (self:GetMode() > #MODES) then
@@ -198,6 +198,8 @@ if (SERVER) then
 		if (IsValid(entity) and entity:GetClass() == "ix_forcefield") then
 			if (IsValid(client)) then
 				if (client:IsCombine() or client:Team() == FACTION_ADMIN) then
+					return false
+				elseif (client:GetCharacter():GetInventory():HasItem("comkey")) then
 					return false
 				end
 

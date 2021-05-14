@@ -12,9 +12,9 @@ ENT.bNoPersist = true
 ENT.MaxRenderDistance = math.pow(256, 2)
 ENT.MaxStock = 4
 ENT.Items = {
-	{"REGULAR", "water", 15},
-	{"SPARKLING", "water_sparkling", 25},
-	{"SPECIAL", "water_special", 35}
+	{"REGULAR", "water", 1},
+	{"SPARKLING", "water_sparkling", 3},
+	{"SPEICAL", "water_special", 6}
 }
 
 function ENT:GetStock(id)
@@ -27,7 +27,7 @@ end
 
 if (SERVER) then
 	function ENT:Initialize()
-		self:SetModel("models/props_interiors/vendingmachinesoda01a.mdl")
+		self:SetModel("models/leak_props/props_interior/vendingmachinesoda01a.mdl")
 		self:PhysicsInit(SOLID_VPHYSICS)
 		self:SetSolid(SOLID_VPHYSICS)
 		self:SetUseType(SIMPLE_USE)
@@ -129,7 +129,7 @@ if (SERVER) then
 				return false
 			end
 
-			if (self:GetStock(buttonID) > 0) then
+			if (self:GetStock(buttonID)) then
 				ix.item.Spawn(itemInfo[2], self:GetPos() + self:GetForward() * 19 + self:GetRight() * 4 + self:GetUp() * -26, function(item, entity)
 					self:EmitSound("buttons/button4.wav", 60)
 

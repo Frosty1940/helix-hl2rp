@@ -222,6 +222,7 @@ LANGUAGE = {
 	metropoliceSupplementsDesc = "하얀 플라스틱 병 안에 하루치 영양소의 상당 부분을 함유하고 있는 배급식이 들어 있습니다.",
 	["Ration"] = "배급 포대",
 	rationDesc = "진공포장된 포대에 약간의 음식과 돈이 들어 있습니다.",
+	["Open"] = "열기",
 	["Request Device"] = "신고 장치",
 	requestDeviceDesc = "가까운 시민 보호 기동대원에게 신고를 접수할 수 있는 작은 단방향 통신 장치입니다.",
 	["Supplements"] = "배급식",
@@ -246,6 +247,22 @@ LANGUAGE = {
 	nvgogDesc = "광학증폭식 야간투시경입니다. 착용 시 손전등을 사용할 수 없습니다.",
 	["IR Night Vision"] = "열영상 야간투시경",
 	irnvGogDesc = "열영상투시형 야간투시경입니다. 착용 시 손전등을 사용할 수 없습니다.",
+
+	["Combine Keycard"] = "콤바인 보안카드",
+	itemCombineKeycardDesc = "콤바인 잠금장치와 방벽을 조작할 수 있게 해주는 금속 보안카드입니다.",
+	["Union Keycard"] = "시민 노동 조합 보안카드",
+	itemUnionKeycardDesc = "시민 노동 조합 잠금장치를 조작할 수 있게 해주는 금속 보안카드입니다.",
+
+	["Book"] = "책",
+	bookDesc = "읽을 만한 책입니다.",
+	Read = "읽기",
+
+	cidDesc = "시민 신분증입니다.",
+	cidDesc2 = "\n ID #",
+	cidDesc3 = "\n 이름: ",
+
+	["Empty Can"] = "빈 캔",
+	itemEmptyCanDesc = "내용물이 없는 빈 알루미늄 캔입니다."
 
 	["Administrator"] = "감시인",
 	["Citizen"] = "시민",

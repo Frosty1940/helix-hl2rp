@@ -70,6 +70,16 @@ function Schema:SaveForceFields()
 	ix.data.Set("forceFields", data)
 end
 
+function Schema:SaveCoffeeMachines()
+	local data = {}
+
+	for _, v in ipairs(ents.FindByClass("ix_coffeemachine")) do
+		data[#data + 1] = {v:GetPos(), v:GetAngles(), v:GetAllStock()}
+	end
+
+	ix.data.Set("coffeeMachines", data)
+end
+
 -- data loading
 function Schema:LoadRationDispensers()
 	for _, v in ipairs(ix.data.Get("rationDispensers") or {}) do
@@ -116,6 +126,17 @@ function Schema:LoadForceFields()
 		field:SetAngles(v[2])
 		field:Spawn()
 		field:SetMode(v[3])
+	end
+end
+
+function Schema:LoadCoffeeMachines()
+	for _, v in ipairs(ix.data.Get("coffeeMachines") or {}) do
+		local vendor = ents.Create("ix_coffeemachine")
+
+		vendor:SetPos(v[1])
+		vendor:SetAngles(v[2])
+		vendor:Spawn()
+		vendor:SetStock(v[3])
 	end
 end
 
