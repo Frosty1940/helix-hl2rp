@@ -264,6 +264,11 @@ LANGUAGE = {
 	["Empty Can"] = "빈 캔",
 	itemEmptyCanDesc = "내용물이 없는 빈 알루미늄 캔입니다."
 
+	["Metropolice Uniform"] = "시민 보호 기동대 유니폼",
+	itemMetropoliceDesc = "시민 보호 기동대원이 입는 유니폼.\n착용자의 신원이 맞지 않으면 부가 기능이 작동하지 않습니다.",
+	["Combine Soldier Suit"] = "콤바인 병사 수트",
+	itemCombineSoldierDesc = "콤바인 병사가 입는 수트.\n착용자의 신원이 맞지 않으면 부가 기능이 작동하지 않습니다.",
+
 	["Administrator"] = "감시인",
 	["Citizen"] = "시민",
 	["Conscript"] = "민방위",

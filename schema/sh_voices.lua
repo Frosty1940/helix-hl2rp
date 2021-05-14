@@ -1004,7 +1004,7 @@ Schema.voices.Add("CitizenFemale", "터질일", "언젠간 터질 일이였어�
 Schema.voices.Add("CitizenFemale", "끝장", "이제 이 동네도 끝장이로군요.", "vo/trainyard/female01/cit_window_use04.wav")
 
 Schema.voices.AddClass("Combine", function(client)
-	return client:IsCombine()
+	return client:IsCombine() or client:GetModel() == "models/dpfilms/metropolice/hdpolice.mdl" or client:GetModel() == "models/combine_soldier.mdl"
 end)
 
 Schema.voices.AddClass("Dispatch", function(client)

@@ -92,5 +92,8 @@ LANGUAGE = {
 
 	bookDesc = "A readable book.",
 
-	itemEmptyCanDesc = "An empty aluminium can."
+	itemEmptyCanDesc = "An empty aluminium can.",
+
+	itemMetropoliceDesc = "An uniform that metropolicue unit wears.\nIf wearer's identity is not correct, additional features will not work.",
+	itemCombineSoldierDesc = "An powered suit that Combine soldier wears.\nIf wearer's identity is not correct, additional features will not work.",
 }
