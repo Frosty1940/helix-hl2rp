@@ -4,6 +4,7 @@ ITEM.description = "itemBeerDesc"
 ITEM.skin = 2
 ITEM.force = 5
 ITEM.thirst = 20
+ITEM.price = 6
 ITEM.empty = "water_special_empty"
 
 ITEM:Hook("Eat", function(item)

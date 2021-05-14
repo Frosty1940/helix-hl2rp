@@ -2,7 +2,7 @@ ITEM.name = "Breen's Water"
 ITEM.model = "models/props_junk/PopCan01a.mdl"
 ITEM.description = "itemWaterDesc"
 ITEM.thirst = 50
-ITEM.price = 15
+ITEM.price = 1
 ITEM.empty = "water_empty"
 
 ITEM:Hook("Eat", function(item)
