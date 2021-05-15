@@ -8,8 +8,15 @@ pl.author = "Nforce"
 ix.util.Include("cl_overlay.lua")
 
 ix.lang.AddTable("english", {
-	optFpsEnabled = "Show FPS",
-	optdFpsEnabled = "Show FPS counter at the right of the screen.",
+	cIdleConnection = "Idle connection...",
+    cPingingLoopback = "Pinging loopback...",
+    cUpdatingBiosignal = "Updating biosignal coordinates...",
+    cEstablishingDC = "Establishing DC link...",
+    cCheckingExodus = "Checking exodus protocol status...",
+    cSendingCommdata = "Sending commdata to dispatch...",
+    cCheckingBiosignal = "Checking biosignal data...",
+    cCheckingBOL = "Checking BOL list...",
+    cPurportingDisp = "Purporting disp updates...",
 })
 ix.lang.AddTable("korean", {
 	["9mm Pistol"] = "9mm 권총",
@@ -26,13 +33,13 @@ ix.lang.AddTable("korean", {
     ["BIOSIGNAL ZONE: "] = "생체 신호 구역: ",
     ["BIOSIGNAL GRID: "] = "생체 신호 좌표: ",
     ["ARM: "] = "무장: ",
-    ["Idle connection..."] = "대기 연결...",
-    ["Pinging loopback..."] = "되돌림 신호 중...",
-    ["Updating biosignal coordinates..."] = "생체 신호 좌표 갱신 중...",
-    ["Establishing DC link..."] = "DC 연결 수립 중...",
-    ["Checking exodus protocol status..."] = "이주 프로토콜 상태 확인 중...",
-    ["Sending commdata to dispatch..."] = "디스패치에 통신 정보 보내는 중...",
-    ["Checking biosignal data..."] = "생체 신호 확인 중...",
-    ["Checking BOL list..."] = "BOL 목록 확인 중...",
-    ["Purporting disp updates..."] = "디스패치 업데이트 적용 중...",
+    cIdleConnection = "대기 연결...",
+    cPingingLoopback = "되돌림 신호 중...",
+    cUpdatingBiosignal = "생체 신호 좌표 갱신 중...",
+    cEstablishingDC = "DC 연결 수립 중...",
+    cCheckingExodus = "이주 프로토콜 상태 확인 중...",
+    cSendingCommdata = "디스패치에 통신 정보 보내는 중...",
+    cCheckingBiosignal = "생체 신호 확인 중...",
+    cCheckingBOL = "BOL 목록 확인 중...",
+    cPurportingDisp = "디스패치 업데이트 적용 중...",
 })

@@ -14,12 +14,15 @@ ix.config.Add("VortHealMax", 20, "Maximum health value that can be healed by vor
 
 ix.lang.AddTable("english", {
 	vortigauntDesc = "An extra-dimensional creature from Xen.",
+	dontKnowVort = "You don't know Vortigese!",
 })
 
 ix.lang.AddTable("korean", {
 	["Enslaved Vortigaunt"] = "노예 보르티곤트",
 	["Vortigaunt"] = "보르티곤트",
 	vortigauntDesc = "젠에서 온 이차원 생물입니다.",
+	vortigeseFormat = "%s님의 보르트어 \"%s\"",
+	dontKnowVort = "당신은 보르트어를 모릅니다!",
 })
 
 
@@ -165,7 +168,7 @@ ix.chat.Register("Vortigese", {
 		if (speaker:GetCharacter():IsVortigaunt()) then
 			return true
 		else
-			speaker:NotifyLocalized("You don't know Vortigese!")
+			speaker:NotifyLocalized("dontKnowVort")
 			return false
 		end
 	end,

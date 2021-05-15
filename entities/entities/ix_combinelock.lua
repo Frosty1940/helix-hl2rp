@@ -61,21 +61,21 @@ if (SERVER) then
 
 	function ENT:SpawnFunction(client, trace)
 		local door = trace.Entity
-	
-		if (!IsValid(door) or !door:isDoor() or IsValid(door.lock)) then
+
+		if (!IsValid(door) or !door:IsDoor() or IsValid(door.ixLock)) then
 			return client:NotifyLocalized("dNotValid")
 		end
-	
-		local position, angles = self:GetLockPosition(client, door)
-	
+
+		local normal = client:GetEyeTrace().HitNormal:Angle()
+		local position, angles = self:GetLockPosition(door, normal)
+
 		local entity = ents.Create("ix_combinelock")
 		entity:SetPos(trace.HitPos)
 		entity:Spawn()
 		entity:Activate()
 		entity:SetDoor(door, position, angles)
-	
-		PLUGIN:SaveCombineLocks()
-	
+
+		Schema:SaveCombineLocks()
 		return entity
 	end
 
