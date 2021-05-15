@@ -96,4 +96,5 @@ LANGUAGE = {
 
 	itemMetropoliceDesc = "An uniform that metropolicue unit wears.\nIf wearer's identity is not correct, additional features will not work.",
 	itemCombineSoldierDesc = "An powered suit that Combine soldier wears.\nIf wearer's identity is not correct, additional features will not work.",
+	itemAntiDepressantsDesc = "A pill that makes the world a better place.",
 }

@@ -12,6 +12,7 @@ LANGUAGE = {
 	itemChineseTakeoutDesc = "A takeout carton, it's filled with noodles.",
 	itemMelonDesc = "A juicy, delicious watermelon.",
 	itemOrangeSodaDesc = "A bottle of orange soda that tastes like good orange.",
-	itemChocolateDesc = "A chocolate that is not that sweet and has texture something like chewing rubber."
-	itemCoffeeDesc = "A bitter but fragrant drink."
+	itemChocolateDesc = "A chocolate that is not that sweet and has texture something like chewing rubber.",
+	itemCoffeeDesc = "A bitter but fragrant drink.",
+	itemBleachDesc = "Cleaning solution often used for disinfecting surfaces.",
 }

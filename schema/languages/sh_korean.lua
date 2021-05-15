@@ -200,7 +200,6 @@ LANGUAGE = {
 	sniperDesc = "암흑 에너지를 사용하는 저격소총입니다.",
 	["Flare Gun"] = "조명탄 권총",
 	flaregunDesc = "조명탄을 쏘는 권총입니다.",
-
 	[".357 Magnum Bullets"] = ".357 매그넘 탄약",
 	["SMG Bullets"] = "기관단총 탄약",
 	["Crossbow Bolts"] = "쇠뇌살",
@@ -212,7 +211,6 @@ LANGUAGE = {
 	["SMG Grenade"] = "기관단총 유탄",
 	["Pulse-Rifle Orb"] = "암흑 에너지 코어",
 	["Sniper Rifle Ammo"] = "저격소총 탄약",
-
 	["Suitcase"] = "여행 가방",
 	suitcaseDesc = "작은 여행용 가방입니다.",
 	["Citizen ID"] = "시민 신분증",
@@ -235,39 +233,35 @@ LANGUAGE = {
 	turretDesc = "콤바인이 거점과 요충지를 경비하기 위해 사용하는 완전자율 삼각대형 펄스 무기입니다.",
 	["Combine Battery"] = "콤바인 전지",
 	batteryDesc = "콤바인 기기나 다양한 장치에 전력을 공급하는 수단입니다.",
-
 	["Breen's Water"] = "브린 박사의 물",
 	["Chinese Takeout"] = "중국식 요리",
 	["Melon"] = "수박",
 	["Milk Carton"] = "우유",
 	["Sparkling Breen's Water"] = "브린 박사의 탄산수",
 	["Special Breen's Water"] = "브린 박사의 무알코올 맥주",
-
 	["Night Vision"] = "야간투시경",
 	nvgogDesc = "광학증폭식 야간투시경입니다. 착용 시 손전등을 사용할 수 없습니다.",
 	["IR Night Vision"] = "열영상 야간투시경",
 	irnvGogDesc = "열영상투시형 야간투시경입니다. 착용 시 손전등을 사용할 수 없습니다.",
-
 	["Combine Keycard"] = "콤바인 보안카드",
 	itemCombineKeycardDesc = "콤바인 잠금장치와 방벽을 조작할 수 있게 해주는 금속 보안카드입니다.",
 	["Union Keycard"] = "시민 노동 조합 보안카드",
 	itemUnionKeycardDesc = "시민 노동 조합 잠금장치를 조작할 수 있게 해주는 금속 보안카드입니다.",
-
 	["Book"] = "책",
 	bookDesc = "읽을 만한 책입니다.",
 	Read = "읽기",
-
 	cidDesc = "시민 신분증입니다.",
 	cidDesc2 = "\n ID #",
 	cidDesc3 = "\n 이름: ",
-
 	["Empty Can"] = "빈 캔",
 	itemEmptyCanDesc = "내용물이 없는 빈 알루미늄 캔입니다."
-
 	["Metropolice Uniform"] = "시민 보호 기동대 유니폼",
 	itemMetropoliceDesc = "시민 보호 기동대원이 입는 유니폼.\n착용자의 신원이 맞지 않으면 부가 기능이 작동하지 않습니다.",
 	["Combine Soldier Suit"] = "콤바인 병사 수트",
 	itemCombineSoldierDesc = "콤바인 병사가 입는 수트.\n착용자의 신원이 맞지 않으면 부가 기능이 작동하지 않습니다.",
+	["Anti-Depressants"] = "항우울제",
+	itemAntiDepressantsDesc = "세상을 더 나은 곳으로 만들어 주는 약입니다.",
+	["Swallow"] = "삼키기",
 
 	["Administrator"] = "감시인",
 	["Citizen"] = "시민",
