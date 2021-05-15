@@ -31,6 +31,6 @@ LANGUAGE = {
 	itemChocolateDesc = "그다지 달지도 않고 고무 씹는 느낌이 나는 하급 초콜릿 가공품입니다.",
 	["Coffee"] = "커피",
 	itemCoffeeDesc = "씁쓸하지만 향이 좋은 음료입니다.",
-	["Bleach"] = "세제"
+	["Bleach"] = "세제",
 	itemBleachDesc = "더러움을 닦아내는 데 종종 쓰입니다.",
 }

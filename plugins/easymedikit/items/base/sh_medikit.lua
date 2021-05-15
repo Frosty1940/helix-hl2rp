@@ -19,6 +19,7 @@ ITEM.functions.selfheal = {
 		local client = itemTable.player
 		local character = client:GetCharacter()
 		local int = character:GetAttribute("int", 0)
+		local PLUGIN = PLUGIN
 		if int >= itemTable.medAttr then
 			client:SetNetworkedFloat("NextBandageuse", 2 + CurTime())
 			client:SetHealth(math.Clamp(client:Health() + itemTable.healthPoint + int, 0, client:GetMaxHealth()))
@@ -47,6 +48,7 @@ ITEM.functions.heal = {
 			data.filter = client
 		local trace = util.TraceLine(data)
 		local entity = trace.Entity
+		local PLUGIN = PLUGIN
 
 		-- Check if the entity is a valid door.
 		if (IsValid(entity) and entity:IsPlayer()) then

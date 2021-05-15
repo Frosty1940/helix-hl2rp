@@ -193,7 +193,6 @@ if (SERVER) then
 		elseif (b:IsPlayer()) then
 			client = b
 			entity = a
-		end
 		elseif (a:IsRagdoll()) then
 			ragdoll = a
 			entity = b

@@ -2,8 +2,6 @@ PLUGIN.name = "Vortigaunt Faction"
 PLUGIN.author = "JohnyReaper | Voicelines: sQubany | Modified by Frosty"
 PLUGIN.description = "Adds some features for vortigaunts."
 
-ix.util.Include("sh_voices.lua")
-
 ix.config.Add("VortHealMin", 5, "Minimum health value that can be healed by vortigaunt" , nil, {
 	data = {min = 1, max = 100},
 	category = "Vortigaunt Healing Swep"
@@ -19,7 +17,7 @@ ix.lang.AddTable("english", {
 })
 
 ix.lang.AddTable("korean", {
-	["Enslaved Vortigaunt"] = "노예 보르티곤트"
+	["Enslaved Vortigaunt"] = "노예 보르티곤트",
 	["Vortigaunt"] = "보르티곤트",
 	vortigauntDesc = "젠에서 온 이차원 생물입니다.",
 })

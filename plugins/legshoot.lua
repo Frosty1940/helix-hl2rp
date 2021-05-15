@@ -26,8 +26,8 @@ if SERVER then
             if resFactions[char:GetFaction()] then return end
             if ply:Armor() > 0 then return end
             if legs[hitgroup] then
-                local luck = char:GetAttribute(lck, 0)
-                local endurance = char:GetAttribute(end, 0)
+                local luck = char:GetAttribute("lck", 0)
+                local endurance = char:GetAttribute("end", 0)
                 local chance = math.random(1,100) - luck * ix.config.Get("agilityMultiplier", 1) - endurance * ix.config.Get("enduranceMultiplier", 0.2)
                 if (chance<=40) then
                     ply:SetRagdolled(true, 10)   
