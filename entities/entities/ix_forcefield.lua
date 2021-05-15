@@ -194,8 +194,20 @@ if (SERVER) then
 			client = b
 			entity = a
 		end
+		elseif (a:IsRagdoll()) then
+			ragdoll = a
+			entity = b
+		elseif (b:IsRagdoll()) then
+			ragdoll = b
+			entity = a
+		end
 
 		if (IsValid(entity) and entity:GetClass() == "ix_forcefield") then
+			if (IsValid(ragdoll)) then
+				if (entity:GetMode() == 1) then
+					return false
+				end
+			end
 			if (IsValid(client)) then
 				if (client:IsCombine() or client:Team() == FACTION_ADMIN) then
 					return false

@@ -6,6 +6,8 @@ ITEM.width = 1
 ITEM.height = 1
 ITEM.healthPoint = 0
 ITEM.medAttr = 0
+ITEM.bleeding = false
+ITEM.fracture = false
 
 function ITEM:GetDescription()
 	return (L(self.description) .. L("itemMedkitDesc01") .. self.medAttr .. L("itemMedkitDesc02") .. self.healthPoint)
@@ -21,6 +23,12 @@ ITEM.functions.selfheal = {
 			client:SetNetworkedFloat("NextBandageuse", 2 + CurTime())
 			client:SetHealth(math.Clamp(client:Health() + itemTable.healthPoint + int, 0, client:GetMaxHealth()))
 			character:SetAttrib("int", int + 0.2)
+			if itemTable.bleeding then
+				PLUGIN:SetBleeding(client, false)
+			end
+			if itemTable.fracture then
+				PLUGIN:SetFracture(client, false)
+			end
 		else
 			client:NotifyLocalized("lackKnowledge")
 			return false
@@ -46,6 +54,12 @@ ITEM.functions.heal = {
 				entity:SetNetworkedFloat("NextBandageuse", 2 + CurTime())
 				entity:SetHealth(math.Clamp(client:Health() + itemTable.healthPoint + int, 0, entity:GetMaxHealth()))
 				character:SetAttrib("int", int + 0.2)
+				if itemTable.bleeding then
+					PLUGIN:SetBleeding(entity, false)
+				end
+				if itemTable.fracture then
+					PLUGIN:SetFracture(entity, false)
+				end
 			else
 				client:NotifyLocalized("lackKnowledge")
 				return false
