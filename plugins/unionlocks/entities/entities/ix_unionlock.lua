@@ -69,7 +69,7 @@ if (SERVER) then
 		local normal = client:GetEyeTrace().HitNormal:Angle()
 		local position, angles = self:GetLockPosition(door, normal)
 
-		local entity = ents.Create("ix_combinelock")
+		local entity = ents.Create("ix_unionlock")
 		entity:SetPos(trace.HitPos)
 		entity:Spawn()
 		entity:Activate()

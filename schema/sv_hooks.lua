@@ -26,7 +26,7 @@ function Schema:PlayerUse(client, entity)
 		return false
 	end
 
-	if ((client:IsCombine() or client:GetCharacter():GetInventory():HasItem("comkey"))and entity:IsDoor() and IsValid(entity.ixLock) and client:KeyDown(IN_SPEED)) then
+	if ((client:IsCombine() or client:GetCharacter():GetInventory():HasItem("comkey") or client:GetCharacter():GetInventory():HasItem("unionkey")) and entity:IsDoor() and IsValid(entity.ixLock) and client:KeyDown(IN_SPEED)) then
 		entity.ixLock:Toggle(client)
 		return false
 	end
@@ -70,13 +70,15 @@ function Schema:PostPlayerLoadout(client)
 
 	local char = client:GetCharacter()
 
-
-
 	if (client:IsCombine()) then
 		if (client:Team() == FACTION_OTA) then
 			client:SetMaxHealth(50)
 			client:SetHealth(50)
 			client:SetArmor(100)
+			client:GetCharacter():SetAttrib("str", 10)
+			client:GetCharacter():SetAttrib("end", 10)
+			client:GetCharacter():SetAttrib("stm", 10)
+			client:GetCharacter():SetAttrib("int", 5)
 		elseif (client:Team() == FACTION_MPF) then
 			client:SetHealth(40)
 			client:SetMaxHealth(40)
@@ -84,6 +86,10 @@ function Schema:PostPlayerLoadout(client)
 			client:SetHealth(30)
 			client:SetMaxHealth(30)
 			client:SetArmor(200)
+			client:GetCharacter():SetAttrib("str", 0)
+			client:GetCharacter():SetAttrib("end", 0)
+			client:GetCharacter():SetAttrib("stm", 0)
+			client:GetCharacter():SetAttrib("int", 0)
 
 			client.ixScanner:SetHealth(client:Health())
 			client.ixScanner:SetMaxHealth(client:GetMaxHealth())
@@ -97,6 +103,17 @@ function Schema:PostPlayerLoadout(client)
 		if (factionTable.OnNameChanged) then
 			factionTable:OnNameChanged(client, "", client:GetCharacter():GetName())
 		end
+	elseif client:GetCharacter():IsVortigaunt() then
+		local str = client:GetCharacter():GetAttribute("str", 0)
+		local endurance = client:GetCharacter():GetAttribute("end", 0)
+		local stm = client:GetCharacter():GetAttribute("stm", 0)
+		local int = client:GetCharacter():GetAttribute("int", 0)
+		client:SetMaxHealth(100)
+		client:SetHealth(100)
+		client:GetCharacter():SetAttrib("str", math.Clamp(str + 3, 0, 10))
+		client:GetCharacter():SetAttrib("end", math.Clamp(endurance + 3, 0, 10))
+		client:GetCharacter():SetAttrib("stm", math.Clamp(stm + 3, 0, 10))
+		client:GetCharacter():SetAttrib("int", math.Clamp(int + 3, 0, 10))
 	else
 		client:SetMaxHealth(40)
 		client:SetHealth(40)

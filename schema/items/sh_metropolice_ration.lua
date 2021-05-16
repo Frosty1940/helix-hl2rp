@@ -1,6 +1,6 @@
 
-ITEM.name = "Ration"
-ITEM.model = Model("models/weapons/w_package.mdl")
+ITEM.name = "High-class Ration"
+ITEM.model = Model("models/weapons/w_packatm.mdl")
 ITEM.description = "rationDesc"
 ITEM.items = {"metropolice_supplements", "biscuits", "water"}
 

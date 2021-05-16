@@ -1,6 +1,6 @@
 
 ITEM.name = "Metropolice Supplements"
-ITEM.model = Model("models/props_lab/jar01b.mdl")
+ITEM.model = Model("models/pg_plops/pg_food/pg_tortellinac.mdl")
 ITEM.description = "metropoliceSupplementsDesc"
 ITEM.factions = {FACTION_MPF, FACTION_OTA}
 ITEM.hunger = 100
