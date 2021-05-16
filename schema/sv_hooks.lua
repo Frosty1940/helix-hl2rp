@@ -297,12 +297,8 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 					if (info.global) then
 						netstream.Start(nil, "PlaySound", info.sound)
 					else
-						if (chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper" or chatType == "radio_eavesdrop" or chatType == "radio_eavesdrop_yell" or chatType == "radio_eavesdrop_whisper") then
+						if (chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper") then
 							for k, v in pairs(receivers) do
-								if (receivers == speaker) then
-									continue
-								end
-
 								ix.util.EmitQueuedSounds(receivers, {info.sound, nil}, nil, nil, volume)
 							end
 						else
