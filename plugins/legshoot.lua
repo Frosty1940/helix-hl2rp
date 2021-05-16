@@ -27,10 +27,12 @@ if SERVER then
             if ply:Armor() > 0 then return end
             if legs[hitgroup] then
                 local luck = char:GetAttribute("lck", 0)
+                local luckMlt = ix.config.Get("agilityMultiplier", 1)
                 local endurance = char:GetAttribute("end", 0)
-                local chance = math.random(1,100) - luck * ix.config.Get("agilityMultiplier", 1) - endurance * ix.config.Get("enduranceMultiplier", 0.2)
+                local endMlt = ix.config.Get("enduranceMultiplier", 0.2)
+                local chance = math.random(1,100) - luck * luckMlt - endurance * endMlt
                 if (chance<=40) then
-                    ply:SetRagdolled(true, 10)   
+                    ply:SetRagdolled(true, math.max(math.random(10) - luck * luckMlt, 1))   
                     /*else // negotiable, I havent tested this.
                     char:AddBoost("legShoot","stm",-50)   
                     char:AddBoost("legShoot","stamina",-60)  */   
