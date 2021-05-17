@@ -63,16 +63,6 @@ function PLUGIN:UpdateRelations(client)
 				else
 					v:AddEntityRelationship(client, 1)
 				end
-				
-				local comkey = client:GetCharacter():GetInventory():HasItem("comkey")
-				local unionkey = client:GetCharacter():GetInventory():HasItem("unionkey")
-				local cid = client:GetCharacter():GetInventory():HasItem("cid")
-
-				if (client:GetCharacter()) then
-					if (v == "npc_combine_camera" and (comkey or unionkey or cid)) then
-						v:AddEntityRelationship(client, 3)
-					end
-				end
 			elseif(self:IsNPCRebel(v)) then
 				if(client:IsCombine() or client:Team() == FACTION_ADMIN or client:Team() == FACTION_CONSCRIPT) then
 					v:AddEntityRelationship(client, 1)
