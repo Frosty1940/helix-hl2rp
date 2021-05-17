@@ -1,8 +1,8 @@
 ITEM.name = "Coffee"
-ITEM.model = "models/shibcuppy.mdl"
+ITEM.model = "models/bioshockinfinite/xoffee_mug_closed.mdl"
 ITEM.description = "itemCoffeeDesc"
-ITEM.thirst = 25
-ITEM.price = 10
+ITEM.thirst = 50
+ITEM.price = 20
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

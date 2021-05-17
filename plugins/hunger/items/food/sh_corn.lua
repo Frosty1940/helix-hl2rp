@@ -1,9 +1,8 @@
 ITEM.name = "Corn"
-ITEM.model = "models/bioschockinfinite/corn_on_cob.mdl"
+ITEM.model = "models/bioshockinfinite/porn_on_cob.mdl"
 ITEM.description = "itemCornDesc"
-ITEM.price = 6
+ITEM.price = 10
 ITEM.hunger = 10
-ITEM.radiation = 3
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

@@ -2,6 +2,8 @@ ITEM.name = "Supplements"
 ITEM.model = Model("models/pg_plops/pg_food/pg_tortellinar.mdl")
 ITEM.description = "supplementsDesc"
 ITEM.hunger = 70
+ITEM.thirst = -10
+ITEM.price = 5
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

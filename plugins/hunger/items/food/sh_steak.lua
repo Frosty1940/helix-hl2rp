@@ -1,7 +1,9 @@
 ITEM.name = "Steak"
-ITEM.model = "models/mosi/fallout4/props/food/steak.mdl"
+ITEM.model = "models/mosi/fallout4/props/food/moleratsteak.mdl"
 ITEM.description = "itemSteakDesc"
-ITEM.hunger = 40
+ITEM.hunger = 70
+ITEM.thirst = -10
+ITEM.price = 15
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

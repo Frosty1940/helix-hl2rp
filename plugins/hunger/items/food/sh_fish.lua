@@ -1,8 +1,9 @@
-ITEM.name = "Crackers"
-ITEM.model = "models/props_lab/box01a.mdl"
-ITEM.description = "itemCrackersDesc"
-ITEM.hunger = 10
-ITEM.price = 3
+ITEM.name = "Canned Fish"
+ITEM.model = "models/bioshockinfinite/cardine_can_open.mdl"
+ITEM.description = "itemFishDesc"
+ITEM.hunger = 50
+ITEM.thirst = -10
+ITEM.price = 12
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player
@@ -13,5 +14,5 @@ ITEM:Hook("Eat", function(item)
 		timer.Simple(i, function()
 			client:SetHealth(math.Clamp(client:Health() + 1, 0, client:GetMaxHealth()))
 		end)
-	end
+	end	
 end)

@@ -1,9 +1,9 @@
-ITEM.name = "Melon"
-ITEM.model = "models/hlvr/food/watermelon01.mdl"
-ITEM.description = "itemMelonDesc"
-ITEM.price = 6
-ITEM.hunger = 20
-ITEM.third = 30
+ITEM.name = "Tomato"
+ITEM.model = "models/mosi/fallout4/props/food/tato.mdl"
+ITEM.description = "itemTomatoDesc"
+ITEM.price = 10
+ITEM.hunger = 10
+ITEM.thirst = 10
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

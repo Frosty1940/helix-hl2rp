@@ -15,4 +15,9 @@ LANGUAGE = {
 	itemChocolateDesc = "A chocolate that is not that sweet and has texture something like chewing rubber.",
 	itemCoffeeDesc = "A bitter but fragrant drink.",
 	itemBleachDesc = "Cleaning solution often used for disinfecting surfaces.",
+	itemCheeseDesc = "A dairy product, derived from milk.",
+	itemTomatoDesc = "A small tomato that is dried.",
+	itemNoodlesDesc = "A bowl with well cooked noodles in a broth.",
+	itemMeatSoupDesc = "A bowl of meat soup that is brought to a simme",
+	itemVegetableSoupDesc = "A bowl of thin soup boiled with various vegetables.",
 }

@@ -1,7 +1,9 @@
 ITEM.name = "Bread"
 ITEM.model = "models/bioshockinfinite/dread_loaf.mdl"
 ITEM.description = "itemBreadDesc"
-ITEM.hunger = 15
+ITEM.hunger = 40
+ITEM.thirst = -10
+ITEM.price = 5
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

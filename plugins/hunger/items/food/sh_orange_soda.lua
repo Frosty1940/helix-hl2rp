@@ -1,7 +1,8 @@
 ITEM.name = "Orange Soda"
 ITEM.model = "models/props_junk/garbage_plasticbottle003a.mdl"
 ITEM.description = "itemOrangeSodaDesc"
-ITEM.thirst = 10
+ITEM.thirst = 25
+ITEM.price = 6
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

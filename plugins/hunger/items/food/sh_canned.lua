@@ -2,6 +2,8 @@ ITEM.name = "Canned Soup"
 ITEM.model = "models/bioschockinfinite/canned_soup.mdl"
 ITEM.description = "itemCannedDesc"
 ITEM.hunger = 40
+ITEM.thirst = 10
+ITEM.price = 5
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

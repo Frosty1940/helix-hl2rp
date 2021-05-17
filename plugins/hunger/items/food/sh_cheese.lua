@@ -1,8 +1,8 @@
-ITEM.name = "Crackers"
-ITEM.model = "models/props_lab/box01a.mdl"
-ITEM.description = "itemCrackersDesc"
-ITEM.hunger = 10
-ITEM.price = 3
+ITEM.name = "Cheese"
+ITEM.model = "models/bioshockinfinite/pound_cheese.mdl"
+ITEM.description = "itemCheeseDesc"
+ITEM.hunger = 30
+ITEM.price = 8
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

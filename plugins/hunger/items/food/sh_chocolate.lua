@@ -1,7 +1,9 @@
 ITEM.name = "Chocolate"
-ITEM.model = "models/props_lab/box01a.mdl"
+ITEM.model = "models/bioshockinfinite/hext_candy_chocolate.mdl"
 ITEM.description = "itemChocolateDesc"
-ITEM.hunger = 7
+ITEM.hunger = 15
+ITEM.price = 8
+ITEM.thirst = -7
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

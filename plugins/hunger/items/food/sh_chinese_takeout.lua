@@ -1,7 +1,9 @@
 ITEM.name = "Chinese Takeout"
 ITEM.model = "models/props_junk/garbage_takeoutcarton001a.mdl"
 ITEM.description = "itemChineseTakeoutDesc"
-ITEM.hunger = 15
+ITEM.hunger = 35
+ITEM.thirst = -10
+ITEM.price = 6
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

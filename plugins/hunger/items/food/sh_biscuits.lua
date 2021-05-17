@@ -1,7 +1,8 @@
 ITEM.name = "Biscuits"
 ITEM.model = "models/props_lab/box01a.mdl"
 ITEM.description = "itemBiscuitsDesc"
-ITEM.hunger = 5
+ITEM.hunger = 10
+ITEM.price = 3
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player
