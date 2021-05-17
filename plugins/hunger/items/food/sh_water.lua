@@ -7,8 +7,11 @@ ITEM.empty = "water_empty"
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player
+	local char = client:GetCharacter()
+	local stm = char:GetAttribute("stm", 0)
 	
 	client:EmitSound("npc/barnacle/barnacle_gulp2.wav")
+	char:AddBoost("water", "stm", stm * 0.9 )
 
 	for i = 1, 5 do
 		timer.Simple(i, function()

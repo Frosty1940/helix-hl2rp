@@ -20,4 +20,5 @@ LANGUAGE = {
 	itemNoodlesDesc = "A bowl with well cooked noodles in a broth.",
 	itemMeatSoupDesc = "A bowl of meat soup that is brought to a simme",
 	itemVegetableSoupDesc = "A bowl of thin soup boiled with various vegetables.",
+	itemPurifiedWaterDesc = "A bottle of purified water that is clean and feels good.",
 }
