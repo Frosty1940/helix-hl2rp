@@ -1,5 +1,0 @@
-ITEM.name = "CWU Wristband"
-ITEM.model = "models/props_lab/clipboard.mdl"
-ITEM.description = "itemCWUBandDesc"
-ITEM.category = "Bands"
-ITEM.band = "cwu"

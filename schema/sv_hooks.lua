@@ -278,7 +278,7 @@ function Schema:OnNPCKilled(npc, attacker, inflictor)
 end
 
 function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers, rawText)
-	if (chatType == "ic" or chatType == "w" or chatType == "y" or chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper" or chatType == "radio_eavesdrop" or chatType == "radio_eavesdrop_yell" or chatType == "radio_eavesdrop_whisper" or chatType == "dispatch" or chatType == "broadcast") then
+	if (chatType == "ic" or chatType == "w" or chatType == "y" or chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper" or chatType == "radio_eavesdrop" or chatType == "radio_eavesdrop_yell" or chatType == "radio_eavesdrop_whisper" or chatType == "dispatch" or chatType == "broadcast" or chatType == "request" or chatType == "request_eavesdrop") then
 		local class = self.voices.GetClass(speaker)
 
 		for k, v in ipairs(class) do
@@ -288,7 +288,7 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 				local volume = 80
 
 				if (chatType == "w" or chatType == "radio_whisper" or chatType == "radio_eavesdrop_whisper") then
-					volume = 60
+					volume = 30
 				elseif (chatType == "y" or chatType == "radio_yell" or chatType == "radio_eavesdrop_yell") then
 					volume = 150
 				end

@@ -1,5 +1,0 @@
-ITEM.name = "Violet Wristband"
-ITEM.model = "models/props_lab/clipboard.mdl"
-ITEM.description = "Fioletowa opaska lojalisty."
-ITEM.category = "Bands"
-ITEM.band = "violet"
