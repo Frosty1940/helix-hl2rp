@@ -5,7 +5,7 @@ local bands = { --taka tablica, żeby nie zapierdalać po tabelach itemku
 	["blue"] = {Color(41, 128, 185),"Blue loyalist wristband"},
 	["white"] = {Color(221, 221, 221),"White loyalist wristband"},
 	["gold"] = {Color(241, 196, 15),"Gold loyalist wristband"},
-	["violet"] = {Color(142, 68, 173),"Purple loyalist wristband"}
+	["violet"] = {Color(142, 68, 173),"Purple loyalist wristband"},
 	["cwu"] = {Color(245, 226, 142), "itemCWUBandDesc"}
 }
 
