@@ -1,0 +1,5 @@
+ITEM.name = "Blue Wristband"
+ITEM.model = "models/props_lab/clipboard.mdl"
+ITEM.description = "Niebieska opaska lojalisty."
+ITEM.category = "Bands"
+ITEM.band = "blue"

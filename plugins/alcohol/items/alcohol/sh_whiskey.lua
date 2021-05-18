@@ -3,7 +3,7 @@ ITEM.description = "itemWhiskeyDesc"
 ITEM.model = "models/mosi/fallout4/props/alcohol/whiskey.mdl"
 ITEM.force = 10
 ITEM.thirst = 25
-ITEM.price = 10
+ITEM.price = 40
 
 ITEM:Hook("Drink", function(item)
 	local client = item.player

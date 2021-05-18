@@ -1,6 +1,6 @@
 ITEM.name = "Armor"
 ITEM.description = "An Armor Base."
-ITEM.category = "방어구"
+ITEM.category = "Clothing"
 ITEM.model = "models/props_c17/SuitCase_Passenger_Physics.mdl"
 ITEM.width = 1
 ITEM.armorAmount = 1
@@ -35,9 +35,9 @@ ITEM.bodyGroups = {
 
 function ITEM:GetDescription()
 	if (self.entity) then
-		return L(self.description .. "\n \n 내구도:" .. math.floor(self:GetData("Durability", self.maxDurability)).. " / ".. self.maxDurability)
+		return (L(self.description) .. L("durabilityDesc") .. math.floor(self:GetData("Durability", self.maxDurability)).. " / ".. self.maxDurability)
 	else
-        return L(self.description .. "\n \n 내구도:" .. math.floor(self:GetData("Durability", self.maxDurability)) .. " / ".. self.maxDurability .. "\n \n피해 저항: \n  방탄: " .. (self.damage[1]) .. "\n  방검: " .. (self.damage[2]) .. "\n  전격 저항: " .. (self.damage[3]) .. "\n  화염 저항: " .. (self.damage[4]) .. "\n  방사선 피폭 저항: " .. (self.damage[5]) .. "\n  독성 저항: " .. (self.damage[6]) .. "\n  충격 저항: " .. (self.damage[7]))
+        return (L(self.description) .. L("durabilityDesc") .. math.floor(self:GetData("Durability", self.maxDurability)) .. " / ".. self.maxDurability .. L("bulletproof") .. (self.damage[1]) .. L("stabProof") .. (self.damage[2]) .. L("electricResistance") .. (self.damage[3]) .. L("fireResistance") .. (self.damage[4]) .. L("radiationResistance") .. (self.damage[5]) .. L("poisonResistance") .. (self.damage[6]) .. L("shockResistance") .. (self.damage[7]))
 	end
 end
 

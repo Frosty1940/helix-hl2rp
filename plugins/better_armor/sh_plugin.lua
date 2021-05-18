@@ -12,6 +12,14 @@ ix.lang.AddTable("english", {
 	hazmatSuitCitizenDesc = "A protective clothing that protects wearers from harmful environments.",
 	pasgtBodyArmorDesc = "A Kebler-fiber bulletproof vest that the U.S. Army adopted in 1983 to replace M69 Flak Vest.\n(CONSCRIPT MODELS ONLY)",
 	pasgtHelmetDesc = "A Kebler-fiber bulletproof helmet that the U.S. Army adopted in 1983 to replace the M1 steel helmet.\n(MALE CONSCRIPT MODELS ONLY)",
+	durabilityDesc = "\n \n Durability:",
+	bulletproof = "\n \nDamage Resistance: \n  Bulletproof: ",
+	stabProof = "\n  Stab Proof: ",
+	electricResistance = "\n  Electric Resistance: ",
+	fireResistance = "\n  Fire Resistance: ",
+	radiationResistance = "\n  Radiation Resistance: ",
+	poisonResistance = "\n  Poison Resistance: ",
+	shockResistance = "\n  Shock Resistance: ",
 })
 ix.lang.AddTable("korean", {
 	["Intelligence"] = "지능",
@@ -29,6 +37,14 @@ ix.lang.AddTable("korean", {
 	pasgtBodyArmorDesc = "1983년 미군이 M69 방편복을 대체하여 채용한 케블러 섬유 소재 방탄복입니다.\n(징집군 모델 전용)",
 	["PASGT Helmet"] = "PASGT 방탄모",
 	pasgtHelmetDesc = "1983년 미군이 M1 철모를 대체하여 채용한 케블러 섬유 소재 방탄모입니다.\n(남성 징집군 모델 전용)",
+	durabilityDesc = "\n \n 내구도:",
+	bulletproof = "\n \n피해 저항: \n  방탄: ",
+	stabProof = "\n  방검: ",
+	electricResistance = "\n  전격 저항: ",
+	fireResistance = "\n  화염 저항: ",
+	radiationResistance = "\n  방사선 피폭 저항: ",
+	poisonResistance = "\n  독성 저항: ",
+	shockResistance = "\n  충격 저항: ",
 })
 
 ix.util.Include("cl_plugin.lua")
