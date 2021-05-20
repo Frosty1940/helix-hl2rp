@@ -25,7 +25,7 @@ if (CLIENT) then
 	function ITEM:PopulateTooltip(tooltip)
 		local data = tooltip:AddRow("data")
 		data:SetBackgroundColor(derma.GetColor("Warning", tooltip))
-		data:SetText(L("sociosidalItemTooltip"))
+		data:SetText(L("sociocidalItemTooltip"))
 		data:SetExpensiveShadow(0.5)
 		data:SizeToContents()
 	end

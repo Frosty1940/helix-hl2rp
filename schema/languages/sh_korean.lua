@@ -289,8 +289,8 @@ LANGUAGE = {
 	["Overwatch Soldier"] = "감시인 신인류 부대원",
 	["Resistance"] = "저항군",
 
-	securitizedItemTooltip = "등급: 보안",
-	sociocidalItemTooltip = "등급: 반사회",
+	securitizedItemTooltip = "보안 등급",
+	sociocidalItemTooltip = "반사회 등급",
 
 	[""] = "",
 	Desc = "",
