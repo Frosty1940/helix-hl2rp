@@ -2,10 +2,16 @@ PLUGIN.Name = "AntiBhop"
 PLUGIN.Author = "Duck -> Dobytchick"
 PLUGIN.Description = "Ported from clockwork"
 
+ix.config.Add("jumpStamina", ix.config.Get("jumpStamina", 20), "How much stamina jumps use up.", nil, {
+	data = {min = 0, max = 100},
+	category = "characters"
+})
+
 if SERVER then
 	util.AddNetworkString( "Jump" )
 	net.Receive("Jump",function(len,client)
-		client:SetLocalVar("stm", math.Clamp(client:GetLocalVar("stm",0) - math.random(5, 10), 1, 100))
+		local endurance = client:GetCharacter():GetAttribute("end", 0)
+		client:SetLocalVar("stm", math.Clamp(client:GetLocalVar("stm",0) - ix.config.Get("jumpStamina", 20) + endurance, 1, 100))
 	end)
 end
 
