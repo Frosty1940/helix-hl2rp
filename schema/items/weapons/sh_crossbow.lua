@@ -11,3 +11,13 @@ ITEM.iconCam = {
 ITEM.class = "weapon_crossbow"
 ITEM.weaponCategory = "primary"
 ITEM.price = 750
+
+if (CLIENT) then
+	function ITEM:PopulateTooltip(tooltip)
+		local data = tooltip:AddRow("data")
+		data:SetBackgroundColor(derma.GetColor("Warning", tooltip))
+		data:SetText(L("sociosidalItemTooltip"))
+		data:SetExpensiveShadow(0.5)
+		data:SizeToContents()
+	end
+end

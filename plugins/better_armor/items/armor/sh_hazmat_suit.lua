@@ -19,3 +19,13 @@ ITEM.damage = { -- It is scaled; so 100 damage * 0.8 will makes the damage be 80
 ITEM.replacements = "models/ddok1994/1980_hazmat.mdl"
 ITEM.outfitCategory = "torso"
 ITEM.maxDurability = 100
+
+if (CLIENT) then
+	function ITEM:PopulateTooltip(tooltip)
+		local data = tooltip:AddRow("data")
+		data:SetBackgroundColor(Color(85, 127, 242))
+		data:SetText(L("securitizedItemTooltip"))
+		data:SetExpensiveShadow(0.5)
+		data:SizeToContents()
+	end
+end

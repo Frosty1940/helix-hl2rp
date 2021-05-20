@@ -11,3 +11,13 @@ ITEM.iconCam = {
 	fov	= 10.780103254469,
 	pos	= Vector(0, 200, 0)
 }
+
+if (CLIENT) then
+	function ITEM:PopulateTooltip(tooltip)
+		local data = tooltip:AddRow("data")
+		data:SetBackgroundColor(derma.GetColor("Warning", tooltip))
+		data:SetText(L("sociosidalItemTooltip"))
+		data:SetExpensiveShadow(0.5)
+		data:SizeToContents()
+	end
+end

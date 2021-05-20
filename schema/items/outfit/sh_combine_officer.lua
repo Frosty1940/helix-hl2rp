@@ -1,5 +1,5 @@
-ITEM.name = "일반 감시인 유니폼"
-ITEM.description = "감시 체계의 행정 역할을 맡은 감시인의 유니폼입니다."
+ITEM.name = "General Overwatch Uniform"
+ITEM.description = "itemOverwatchUniformDesc"
 -- ITEM.category = "Outfit"
 ITEM.model = "models/props_c17/SuitCase_Passenger_Physics.mdl"
 ITEM.skin = 0
@@ -11,6 +11,16 @@ ITEM.replacements = {
 	{"tnb/citizens", "humans"},
 	{"aphelion", "combine"}
 }
+
+if (CLIENT) then
+	function ITEM:PopulateTooltip(tooltip)
+		local data = tooltip:AddRow("data")
+		data:SetBackgroundColor(Color(85, 127, 242))
+		data:SetText(L("securitizedItemTooltip"))
+		data:SetExpensiveShadow(0.5)
+		data:SizeToContents()
+	end
+end
 
 /*
 -- This will change a player's skin after changing the model. Keep in mind it starts at 0.

@@ -37,7 +37,7 @@ function ITEM:GetDescription()
 	if (self.entity) then
 		return (L(self.description) .. L("durabilityDesc") .. math.floor(self:GetData("Durability", self.maxDurability)).. " / ".. self.maxDurability)
 	else
-        return (L(self.description) .. L("durabilityDesc") .. math.floor(self:GetData("Durability", self.maxDurability)) .. " / ".. self.maxDurability .. L("bulletproof") .. (self.damage[1]) .. L("stabProof") .. (self.damage[2]) .. L("electricResistance") .. (self.damage[3]) .. L("fireResistance") .. (self.damage[4]) .. L("radiationResistance") .. (self.damage[5]) .. L("poisonResistance") .. (self.damage[6]) .. L("shockResistance") .. (self.damage[7]))
+		return (L(self.description) .. L("durabilityDesc") .. math.floor(self:GetData("Durability", self.maxDurability)) .. " / ".. self.maxDurability .. L("bulletproof") .. (self.damage[1]) .. L("stabProof") .. (self.damage[2]) .. L("electricResistance") .. (self.damage[3]) .. L("fireResistance") .. (self.damage[4]) .. L("radiationResistance") .. (self.damage[5]) .. L("poisonResistance") .. (self.damage[6]) .. L("shockResistance") .. (self.damage[7]))
 	end
 end
 
@@ -296,7 +296,7 @@ ITEM.functions.Repair = {
 		for k, v in pairs(items) do
 			if (v.uniqueID == "repair_tools") then
 				item:SetData("Durability", math.min(item:GetData("Durability") + item:GetRepairAmount(client), item.maxDurability))
-				character:SetAttrib("int", int + 0.2)
+				character:SetAttrib("int", math.Clamp(int + 0.2, 0, 10))
 				client:EmitSound(randomsound)
 				v:Remove()
 				
@@ -318,16 +318,16 @@ function ITEM:GetRepairAmount(client)
 	local character = client:GetCharacter()
 	local int = character:GetAttribute("int", 0)
 	
-    if (int < 9) then
-       return self.maxDurability * 0.1
-    elseif (int < 17) then
-		return self.maxDurability * 0.15
-	elseif (int < 28) then
-		return self.maxDurability * 0.2
-	elseif (int < 30) then
-		return self.maxDurability * 0.25
+	if (int < 2) then
+	   return self.maxDurability * 0.2
+	elseif (int < 4) then
+		return self.maxDurability * 0.4
+	elseif (int < 6) then
+		return self.maxDurability * 0.6
+	elseif (int < 8) then
+		return self.maxDurability * 0.8
 	else
-		return self.maxDurability * 0.3
+		return self.maxDurability * 1
 	end
 end
 		

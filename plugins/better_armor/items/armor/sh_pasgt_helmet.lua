@@ -22,3 +22,13 @@ ITEM.bodyGroups = {
 }
 ITEM.outfitCategory = "head"
 ITEM.maxDurability = 100
+
+if (CLIENT) then
+	function ITEM:PopulateTooltip(tooltip)
+		local data = tooltip:AddRow("data")
+		data:SetBackgroundColor(Color(85, 127, 242))
+		data:SetText(L("securitizedItemTooltip"))
+		data:SetExpensiveShadow(0.5)
+		data:SizeToContents()
+	end
+end

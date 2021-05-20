@@ -66,10 +66,10 @@ if (!CLIENT) then
 					end
 
 					if (client:Alive() and char) then
-						if (!client:GetNetVar("gasmask")) then
+						if (!client:GetNetVar("gasmask") and !client:IsCombine()) then
 							client:TakeDamage(3)
 							client:ScreenFade(1, ColorAlpha(color_white, 150), .5, 0)
-						end		
+						end
 
 						break
 					end

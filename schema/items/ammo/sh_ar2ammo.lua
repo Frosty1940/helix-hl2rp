@@ -5,3 +5,13 @@ ITEM.ammoAmount = 30 -- amount of the ammo
 ITEM.description = "A Cartridge that contains %s of AR2 Ammo"
 ITEM.classes = {CLASS_EOW, CLASS_OWS, CLASS_EMP}
 ITEM.price = 75
+
+if (CLIENT) then
+	function ITEM:PopulateTooltip(tooltip)
+		local data = tooltip:AddRow("data")
+		data:SetBackgroundColor(Color(85, 127, 242))
+		data:SetText(L("securitizedItemTooltip"))
+		data:SetExpensiveShadow(0.5)
+		data:SizeToContents()
+	end
+end

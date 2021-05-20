@@ -16,3 +16,13 @@ ITEM:Hook("heal", function(item)
 	local client = item.player
 	client:EmitSound("items/smallmedkit1.wav")
 end)
+
+if (CLIENT) then
+	function ITEM:PopulateTooltip(tooltip)
+		local data = tooltip:AddRow("data")
+		data:SetBackgroundColor(Color(85, 127, 242))
+		data:SetText(L("securitizedItemTooltip"))
+		data:SetExpensiveShadow(0.5)
+		data:SizeToContents()
+	end
+end

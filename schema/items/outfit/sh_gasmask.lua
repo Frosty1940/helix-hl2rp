@@ -11,6 +11,16 @@ ITEM.bodyGroups = {
 	["headgear"] = 2
 }
 
+if (CLIENT) then
+	function ITEM:PopulateTooltip(tooltip)
+		local data = tooltip:AddRow("data")
+		data:SetBackgroundColor(derma.GetColor("Warning", tooltip))
+		data:SetText(L("sociosidalItemTooltip"))
+		data:SetExpensiveShadow(0.5)
+		data:SizeToContents()
+	end
+end
+
 /*
 -- This will change a player's skin after changing the model. Keep in mind it starts at 0.
 ITEM.newSkin = 1

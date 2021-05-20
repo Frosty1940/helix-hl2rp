@@ -257,6 +257,7 @@ LANGUAGE = {
 	cidDesc = "시민 신분증입니다.",
 	cidDesc2 = "\n ID #",
 	cidDesc3 = "\n 이름: ",
+	["Assign"] = "할당하기",
 	["Empty Can"] = "빈 캔",
 	itemEmptyCanDesc = "내용물이 없는 빈 알루미늄 캔입니다.",
 	["Metropolice Uniform"] = "시민 보호 기동대 유니폼",
@@ -266,6 +267,11 @@ LANGUAGE = {
 	["Anti-Depressants"] = "항우울제",
 	itemAntiDepressantsDesc = "세상을 더 나은 곳으로 만들어 주는 약입니다.",
 	["Swallow"] = "삼키기",
+	["General Overwatch Uniform"] = "일반 감시인 유니폼",
+	itemOverwatchUniformDesc = "감시 체계의 행정 역할을 맡은 감시인의 유니폼입니다.",
+	["Rebel Clothing (Blue)"] = "파란색 저항군 복장",
+	["Rebel Clothing (Green)"] = "초록색 저항군 복장",
+	itemRebelDesc = "저항을 상징하는 람다 마크가 칠해져 있습니다.",
 
 	["Administrator"] = "감시인",
 	["Citizen"] = "시민",
@@ -282,6 +288,9 @@ LANGUAGE = {
 	["Metropolice Unit"] = "시민 보호 기동대원",
 	["Overwatch Soldier"] = "감시인 신인류 부대원",
 	["Resistance"] = "저항군",
+
+	securitizedItemTooltip = "등급: 보안",
+	sociocidalItemTooltip = "등급: 반사회",
 
 	[""] = "",
 	Desc = "",

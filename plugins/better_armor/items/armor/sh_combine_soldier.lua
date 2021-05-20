@@ -5,9 +5,31 @@ ITEM.model = "models/props_c17/SuitCase_Passenger_Physics.mdl"
 ITEM.skin = 0
 ITEM.width = 1
 ITEM.height = 1
-ITEM.outfitCategory = "outfit"
+ITEM.gasmask = true -- It will protect you from bad air
+ITEM.resistance = true -- This will activate the protection bellow
+ITEM.damage = { -- It is scaled; so 100 damage * 0.8 will makes the damage be 80.
+			.9, -- Bullets
+			.9, -- Slash
+			.9, -- Shock
+			.9, -- Burn
+			.7, -- Radiation
+			.7, -- Acid
+			.9, -- Explosion
+}
+ITEM.maxDurability = 500
+ITEM.outfitCategory = "torso"
 ITEM.pacData = {}
 ITEM.replacements = "models/combine_soldier.mdl"
+
+if (CLIENT) then
+	function ITEM:PopulateTooltip(tooltip)
+		local data = tooltip:AddRow("data")
+		data:SetBackgroundColor(Color(85, 127, 242))
+		data:SetText(L("securitizedItemTooltip"))
+		data:SetExpensiveShadow(0.5)
+		data:SizeToContents()
+	end
+end
 
 /*
 -- This will change a player's skin after changing the model. Keep in mind it starts at 0.
