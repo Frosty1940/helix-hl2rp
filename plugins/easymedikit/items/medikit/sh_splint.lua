@@ -6,7 +6,7 @@ ITEM.description = "itemSplintDesc"
 ITEM.category = "Medical"
 ITEM.price = 25
 ITEM.healthPoint = 0 -- Health point that the player will get
-ITEM.medAttr = 5 -- How much medical attribute the character needs
+ITEM.medAttr = 3 -- How much medical attribute the character needs
 ITEM.bleeding = false
 ITEM.fracture = true
 

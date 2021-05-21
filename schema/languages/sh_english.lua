@@ -68,7 +68,17 @@ LANGUAGE = {
 	sniperDesc = "A dark energy powered sniper rifle.",
 	flaregunDesc = "A large-bore handgun that discharges flares.",
 
-	-- smg1ammoDesc = "A Box that contains %s of SMG Ammo.",
+	smg1ammoDesc = "A Box that contains %s of SMG Ammo.",
+	ar2ammoDesc = "A Cartridge that contains %s of Pulse Plug.",
+	magnumammoDesc = "A Box that contains %s of .357 Ammo",
+	ar2orbammoDesc = "A dark energy orb for AR2.",
+	crossbowammoDesc = "A Bundle of %s Crossbow Bolts",
+	pistolammoDesc = "A Box that contains %s of Pistol Ammo",
+	rocketammoDesc = "A Package of %s Rockets",
+	shotgunammoDesc = "A Box of %s Shotgun Shells",
+	smg1ammoDesc = "A Box that contains %s of SMG Ammo.",
+	smg1grenadeammoDesc = "A grenade for SMG.",
+	sniperammoDesc = "A Box that contains %s of Sniper Rifle Ammo",
 
 	nvgogDesc = "An optical amplified night vision. Cannot use a flashlight when worn.",
 	irnvGogDesc = "A thermal imaging night vision. Cannot use a flashlight when worn.",

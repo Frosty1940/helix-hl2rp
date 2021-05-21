@@ -21,12 +21,14 @@ ITEM.functions.Use = {
 		return false
 	end,
 	OnCanRun = function(itemTable)
-		return itemTable.player:IsCombine()
+		local client = itemTable.player
+
+		return !IsValid(itemTable.entity) and IsValid(client) and itemTable.invID == client:GetCharacter():GetInventory():GetID() and (client:IsCombine() or client:Team() == FACTION_ADMIN or client:Team() == FACTION_CONSCRIPT)
 	end
 }
 
 function ITEM:GetDescription()
-	if (!self.entity) then
+	if (!IsValid(self.entity)) then
 		return (L(self.description) .. L("cidDesc2") .. self:GetData("id", "00000") .. L("cidDesc3") .. self:GetData("name", "nobody"))
 	end
 end
