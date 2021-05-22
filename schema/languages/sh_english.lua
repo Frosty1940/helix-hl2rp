@@ -84,6 +84,7 @@ LANGUAGE = {
 	irnvGogDesc = "A thermal imaging night vision. Cannot use a flashlight when worn.",
 
 	suitcaseDesc = "A small suitcase.",
+	bagDesc = "A small bag.",
 	combineLockDesc = "A metal apparatus applied to doors.",
 	metropoliceSupplementsDesc = "A tinned can containing a good portion of your daily nutrients.",
 	rationDesc = "A shrink-wrapped packet containing some food and money.",
@@ -103,6 +104,15 @@ LANGUAGE = {
 	bookDesc = "A readable book.",
 
 	itemEmptyCanDesc = "An empty aluminium can.",
+	itemManhackPartsDesc = "A part that consists a Manhack.",
+	itemScannerDesc = "A flying machine that a camera installed.",
+	itemScannerPartsDesc = "A part that consists a Combine Scanner.",
+	itemWaterDrugDesc = "A drug known that has feature cleaning dirty water.",
+	itemWrenchDesc = "A normal, simple wrench.",
+
+	ak74Desc = "Kalashnikov automatic rifle, model 1974\nAn AK Rifle that is developed to be use high-velocity rounds like .223 Remington.\nIt fires 5.45×39mm M74 rifle rounds.",
+	akmDesc = "It fires 7.62×39mm M43 rifle rounds.",
+	m16Desc = "It fires 5.56×45mm NATO rifle rounds.",
 
 	itemMetropoliceDesc = "An uniform that metropolicue unit wears.\nIf wearer's identity is not correct, additional features will not work.",
 	itemCombineSoldierDesc = "An powered suit that Combine soldier wears.\nIf wearer's identity is not correct, additional features will not work.",

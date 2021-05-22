@@ -47,4 +47,6 @@ LANGUAGE = {
 	itemVegetableSoupDesc = "여러가지 채소를 넣고 걸죽하게 끓인 허여멀건 수프입니다.",
 	["Purified Water"] = "정제된 물",
 	itemPurifiedWaterDesc = "음용에 문제 없을 정도로 정제했을 뿐만 아니라 상쾌한 기분까지 드는 물입니다.",
+	["Headcrab"] = "헤드크랩",
+	itemHeadcrabDesc = "헤드크랩 한 마리를 용기에 넣고 비닐 랩으로 포장했습니다.",
 }

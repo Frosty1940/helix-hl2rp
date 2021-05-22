@@ -3,6 +3,7 @@ ITEM.model = "models/mosi/fallout4/props/drink/water.mdl"
 ITEM.description = "itemPurifiedWaterDesc"
 ITEM.thirst = 100
 ITEM.price = 10
+ITEM.empty = "empty_can"
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

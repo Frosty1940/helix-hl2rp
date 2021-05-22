@@ -4,6 +4,7 @@ ITEM.description = "itemCannedDesc"
 ITEM.hunger = 40
 ITEM.thirst = 10
 ITEM.price = 5
+ITEM.empty = "empty_can"
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player
