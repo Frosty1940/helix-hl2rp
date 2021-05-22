@@ -7,7 +7,7 @@ SWEP.Purpose				= "A Third Necessity." --Purpose Tooltip
 SWEP.Instructions				= "" --Instructions Tooltip
 SWEP.Spawnable				= true --Can you, as a normal user, spawn this?
 SWEP.AdminSpawnable			= true --Can an adminstrator spawn this?  Does not tie into your admin mod necessarily, unless its coded to allow for GMod's default ranks somewhere in its code.  Evolve and ULX should work, but try to use weapon restriction rather than these.
-SWEP.DrawCrosshair			= true		-- Draw the crosshair?
+SWEP.DrawCrosshair			= false		-- Draw the crosshair?
 SWEP.DrawCrosshairIS = false --Draw the crosshair in ironsights?
 SWEP.PrintName				= "AKS-74U"		-- Weapon name (Shown on HUD)
 SWEP.Slot				= 2			-- Slot in the weapon selection menu.  Subtract 1, as this starts at 0.
@@ -180,7 +180,7 @@ SWEP.SafetyPos = Vector(0, 0, 0)
 SWEP.SafetyAng = Vector(-10, 16, 0)
 --[[IRONSIGHTS]]--
 SWEP.data = {}
-SWEP.data.ironsights = 1 --Enable Ironsights
+SWEP.data.ironsights = 0 --Enable Ironsights
 SWEP.Secondary.IronFOV = 80 -- How much you 'zoom' in. Less is more!  Don't have this be <= 0.  A good value for ironsights is like 70.
 SWEP.IronSightsPos = Vector(-2.69, -3.193, 1.5)
 SWEP.IronSightsAng = Vector(0.1, 0, 0)

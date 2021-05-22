@@ -53,11 +53,13 @@ SWEP.Secondary.IronFOV			= 70		-- How much you 'zoom' in. Less is more!
 
 SWEP.data 				= {}				--The starting firemode
 
-SWEP.Primary.Damage		= 7	-- Base damage per bullet
-SWEP.Primary.Spread		= .019	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
+SWEP.Primary.Damage		= 10	-- Base damage per bullet
+SWEP.Primary.Spread		= .016	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
 SWEP.Primary.IronAccuracy = .016 -- Ironsight accuracy, should be the same for shotguns
 
 -- Enter iron sight info and bone mod info below
+SWEP.data = {}
+SWEP.data.ironsights = 0 --Enable Ironsights
 SWEP.IronSightsPos = Vector(-1.349, 0, 0.2)
 SWEP.IronSightsAng = Vector(0.14, 0, 0)
 SWEP.IronSightsPos_GL = Vector(-1.299, -11.1, -0.1)
