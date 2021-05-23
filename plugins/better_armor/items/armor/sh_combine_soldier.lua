@@ -5,6 +5,7 @@ ITEM.model = "models/props_c17/SuitCase_Passenger_Physics.mdl"
 ITEM.skin = 0
 ITEM.width = 1
 ITEM.height = 1
+ITEM.price = 5000
 ITEM.gasmask = true -- It will protect you from bad air
 ITEM.resistance = true -- This will activate the protection bellow
 ITEM.damage = { -- It is scaled; so 100 damage * 0.8 will makes the damage be 80.

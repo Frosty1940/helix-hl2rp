@@ -11,6 +11,7 @@ ITEM.iconCam = {
 	ang = Angle(0, 270, 0),
 	fov = 17.5
 }
+ITEM.price = 2000
 ITEM.exRender = true
 
 if (CLIENT) then

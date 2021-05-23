@@ -5,6 +5,7 @@ ITEM.model = "models/tnb/items/aphelion/shirt_citizen2.mdl"
 ITEM.skin = 0
 ITEM.width = 1
 ITEM.height = 1
+ITEM.price = 100
 ITEM.outfitCategory = "torso"
 ITEM.pacData = {}
 ITEM.bodyGroups = {

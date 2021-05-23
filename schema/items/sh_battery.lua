@@ -2,6 +2,7 @@
 ITEM.name = "Combine Battery"
 ITEM.model = Model("models/Items/battery.mdl")
 ITEM.description = "batteryDesc"
+ITEM.price = 50
 
 ITEM.functions.Use = {
 	OnRun = function(item)

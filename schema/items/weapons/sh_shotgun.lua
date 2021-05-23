@@ -11,6 +11,7 @@ ITEM.iconCam = {
     ang = Angle(0, 270, 0),
     fov = 10
 }
+ITEM.price = 600
 ITEM.factions = {FACTION_CONSCRIPT}
 
 if (CLIENT) then

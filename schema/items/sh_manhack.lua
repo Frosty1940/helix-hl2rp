@@ -4,6 +4,7 @@ ITEM.description = "manhackDesc"
 ITEM.model = Model("models/manhack.mdl")
 ITEM.width = 1
 ITEM.height = 1
+ITEM.price = 75
 
 ITEM.functions.Use = {
 	name = "Place It",

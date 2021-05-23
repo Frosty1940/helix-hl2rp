@@ -2,7 +2,7 @@ ITEM.name = "Metropolice Uniform"
 ITEM.description = "itemMetropoliceDesc"
 -- ITEM.category = "Outfit"
 ITEM.model = "models/props_c17/SuitCase_Passenger_Physics.mdl"
-ITEM.skin = 0
+ITEM.price = 750
 ITEM.width = 1
 ITEM.height = 1
 ITEM.gasmask = true -- It will protect you from bad air
@@ -16,7 +16,7 @@ ITEM.damage = { -- It is scaled; so 100 damage * 0.8 will makes the damage be 80
 			.7, -- Acid
 			.9, -- Explosion
 }
-ITEM.maxDurability = 300
+ITEM.maxDurability = 150
 ITEM.outfitCategory = "torso"
 ITEM.pacData = {}
 ITEM.replacements = "models/dpfilms/metropolice/hdpolice.mdl"

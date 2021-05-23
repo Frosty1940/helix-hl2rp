@@ -10,6 +10,7 @@ ITEM.iconCam = {
 	ang = Angle(0, 270, 0),
 	fov = 16
 }
+ITEM.price = 2000
 
 if (CLIENT) then
 	function ITEM:PopulateTooltip(tooltip)

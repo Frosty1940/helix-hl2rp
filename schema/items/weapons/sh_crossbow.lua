@@ -10,7 +10,7 @@ ITEM.iconCam = {
 }
 ITEM.class = "weapon_crossbow"
 ITEM.weaponCategory = "primary"
-ITEM.price = 750
+ITEM.price = 1750
 
 if (CLIENT) then
 	function ITEM:PopulateTooltip(tooltip)

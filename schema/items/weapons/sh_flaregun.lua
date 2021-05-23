@@ -7,6 +7,7 @@ ITEM.classes = {CLASS_REBEL}
 ITEM.model = "models/vj_weapons/w_flaregun.mdl"
 ITEM.width = 2
 ITEM.height = 1
+ITEM.price = 250
 ITEM.iconCam = {
 	pos = Vector(4, 200, 0.30000001192093),
 	ang = Angle(0, 270, 0),

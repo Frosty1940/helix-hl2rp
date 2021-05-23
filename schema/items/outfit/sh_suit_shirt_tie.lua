@@ -5,6 +5,7 @@ ITEM.model = "models/props_c17/SuitCase_Passenger_Physics.mdl"
 ITEM.skin = 0
 ITEM.width = 1
 ITEM.height = 1
+ITEM.price = 800
 ITEM.outfitCategory = "outfit"
 ITEM.pacData = {}
 ITEM.replacements = {

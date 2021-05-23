@@ -4,6 +4,7 @@ ITEM.description = "comlightDesc"
 ITEM.model = "models/props_combine/combine_light001a.mdl"
 ITEM.width = 1
 ITEM.height = 2
+ITEM.price = 100
 ITEM.iconCam = {
 	pos = Vector(453.60931396484, 381.55184936523, 296.04327392578),
 	ang = Angle(25, 220, 0),

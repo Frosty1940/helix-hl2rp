@@ -4,6 +4,7 @@ ITEM.description = "turretDesc"
 ITEM.model = Model("models/Items/item_item_crate.mdl")
 ITEM.width = 2
 ITEM.height = 2
+ITEM.price = 200
 
 ITEM.functions.Use = {
 	name = "Place It",

@@ -5,11 +5,22 @@ ITEM.model = "models/tnb/items/aphelion/shirt_citizen2.mdl"
 ITEM.skin = 2
 ITEM.width = 1
 ITEM.height = 1
+ITEM.price = 100
 ITEM.outfitCategory = "torso"
 ITEM.pacData = {}
 ITEM.bodyGroups = {
 	["torso"] = 3
 }
+
+if (CLIENT) then
+	function ITEM:PopulateTooltip(tooltip)
+		local data = tooltip:AddRow("data")
+		data:SetBackgroundColor(Color(218, 24, 24))
+		data:SetText(L("sociocidalItemTooltip"))
+		data:SetExpensiveShadow(0.5)
+		data:SizeToContents()
+	end
+end
 
 /*
 -- This will change a player's skin after changing the model. Keep in mind it starts at 0.

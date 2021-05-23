@@ -4,7 +4,7 @@ ITEM.ammo = "ar2" -- type of the ammo
 ITEM.ammoAmount = 30 -- amount of the ammo
 ITEM.description = "ar2ammoDesc"
 ITEM.classes = {CLASS_EOW, CLASS_OWS, CLASS_EMP}
-ITEM.price = 75
+ITEM.price = 175
 
 if (CLIENT) then
 	function ITEM:PopulateTooltip(tooltip)

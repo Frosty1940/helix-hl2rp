@@ -5,6 +5,7 @@ ITEM.description = "metropoliceSupplementsDesc"
 ITEM.factions = {FACTION_MPF, FACTION_OTA}
 ITEM.hunger = 100
 ITEM.thirst = 15
+ITEM.price = 20
 
 ITEM:Hook("Eat", function(item)
 	local client = item.player

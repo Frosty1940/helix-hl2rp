@@ -3,7 +3,7 @@ ITEM.model = "models/props_c17/paper01.mdl"
 ITEM.width = 1
 ITEM.height = 1
 ITEM.description = "paperDesc"
-ITEM.price = 0
+ITEM.price = 10
 
 ITEM.functions.use = {
 	name = "Lire",
