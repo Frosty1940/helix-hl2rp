@@ -38,7 +38,7 @@ function PLUGIN:ScalePlayerDamage(client, hitgroup, dmginfo)
 			dmginfo:ScaleDamage(ix.config.Get("ArmsScaleDamage", 0.4))
 		end
 
-		if ((client:GetNetVar("resistance") == true) or client:IsCombine() or (ply:Armor() > 0)) then -- This is for another plugin I will upload when I have time
+		if ((client:GetNetVar("resistance") == true) or client:IsCombine() or (client:Armor() > 0)) then -- This is for another plugin I will upload when I have time
 			if (hitgroup == HITGROUP_HEAD) then
 				dmginfo:ScaleDamage(ix.config.Get("HeadScaleDamage", 3) / 2)
 			elseif ((hitgroup == HITGROUP_LEFTLEG) or (hitgroup == HITGROUP_RIGHTLEG)) then

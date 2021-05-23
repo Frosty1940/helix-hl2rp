@@ -2,13 +2,16 @@
 ITEM.name = "Combine Battery"
 ITEM.model = Model("models/Items/battery.mdl")
 ITEM.description = "batteryDesc"
-ITEM.price = 50
 
 ITEM.functions.Use = {
 	OnRun = function(item)
 		local client = item.player
 
-		client:SetArmor(math.Clamp(client:Armor() + 15, 0, 255))
+		if client:Team() == FACTION_OTA then
+			client:SetArmor(math.Clamp(client:Armor() + 15, 0, 255))
+		else
+			client:SetArmor(math.Clamp(client:Armor() + 15, 0, 100))
+		end
 		client:EmitSound("items/battery_pickup.wav")
 	end,
 	OnCanRun = function(item)

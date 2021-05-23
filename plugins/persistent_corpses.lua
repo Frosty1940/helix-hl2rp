@@ -240,9 +240,9 @@ if (SERVER) then
 			local char = client:GetCharacter()
 			local lck = char:GetAttribute("lck", 0)
 			local lckMlt = ix.config.Get("luckMultiplier", 1)
-			local amount = math.random(char:GetMoney() / ( 2 / ( lck * lckMlt ) ) )
+			local amount = math.floor(math.random(char:GetMoney() / ( 2 / ( lck * lckMlt ) ) ))
 			
-			if (amout > 0) then
+			if (amount > 0) then
 				char:TakeMoney(amount)
 				ix.currency.Spawn(client:GetPos() + Vector( math.Rand(-8,8), math.Rand(-8,8), 5), amount)
 				

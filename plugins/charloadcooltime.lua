@@ -29,3 +29,7 @@ function PLUGIN:CanPlayerUseCharacter(client, character)
 
 	client.lastCharSwitch = CurTime()
 end
+
+function PLUGIN:PlayerDeath(client)
+	client.lastCharSwitch = CurTime()
+end

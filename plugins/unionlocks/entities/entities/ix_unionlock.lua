@@ -75,7 +75,7 @@ if (SERVER) then
 		entity:Activate()
 		entity:SetDoor(door, position, angles)
 
-		Schema:SaveUnionLocks()
+		PLUGIN:SaveUnionLocks()
 		return entity
 	end
 
