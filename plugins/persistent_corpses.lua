@@ -228,12 +228,18 @@ if (SERVER) then
 					end
 				end
 			end
-			
-			timer.Simple(ix.config.Get("spawnTime", 5) + 1, function()
+
+			if client:Alive() then
 				for j, name in pairs(itemNames) do
 					client:NotifyLocalized("itemLost", name)
 				end
-			end)
+			else
+				-- timer.Simple(ix.config.Get("spawnTime", 5) + 1, function()
+					for j, name in pairs(itemNames) do
+						client:NotifyLocalized("itemLost", name)
+					end
+				-- end)
+			end
 		end
 		
 		if (ix.config.Get("dropMoneyOnDeath", false)) then
