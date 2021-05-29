@@ -24,6 +24,8 @@ LANGUAGE = {
 	radioRequired = "You need a radio to do this.",
 	radioAlreadyOn = "You already have a radio that is turned on!",
 	economy = "Economy",
+	cantChangeClassTied = "You cannot change classes when you are restrained!",
+	cantChangeCharTied = "You cannot change characters when you are restrained!",
 
 	-- combine display messages
 	cViewData = "Downloading citizen profile data...",

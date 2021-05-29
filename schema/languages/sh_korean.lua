@@ -1,8 +1,8 @@
 LANGUAGE = {
 	schemaName = "하프 라이프 2 역할극",
 	schemaDesc = '"지상 병력 주목, 임무 완수 실패는 곧 외계로 영구히 추방되는 처벌로 연결된다. 코드 강조: 희생, 응집, 탄압."',
-	tying = "구속 풀어주는 중...",
-	unTying = "구속하는 중...",
+	tying = "구속하는 중...",
+	unTying = "구속 풀어주는 중...",
 	isTied = "구속됨",
 	fTiedUp = "손이 묶였습니다.",
 	fBeingTied = "손이 묶이고 있습니다.",
@@ -24,6 +24,8 @@ LANGUAGE = {
 	radioRequired = "그것을 하려면 무전기가 있어야 합니다.",
 	radioAlreadyOn = "이미 무전기가 켜져 있습니다!",
 	economy = "경제",
+	cantChangeClassTied = "구속된 상태에서 클래스를 변경할 수 없습니다!",
+	cantChangeCharTied = "구속된 상태에서 캐릭터를 변경할 수 없습니다!",
 
 	-- combine display messages
 	cViewData = "시민 프로필 정보 내려받는 중...",

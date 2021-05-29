@@ -9,9 +9,11 @@ ix.config.Add("charCooltime", ix.config.Get("charCooltime", 60), "How much shoul
 
 ix.lang.AddTable("english", {
 	charCooltimeNotify = "You must wait %s second(s) until to be allowed to changing characters.",
+	charDeathtimeNotify = "You must wait to respawn until to be allowed to changing characters.",
 })
 ix.lang.AddTable("korean", {
 	charCooltimeNotify = "캐릭터를 다시 변경하려면 %s초 더 기다려야 합니다.",
+	charDeathtimeNotify = "캐릭터를 다시 변경하려면 부활할 때까지 기다려야 합니다.",
 })
 
 function PLUGIN:CanPlayerUseCharacter(client, character)
@@ -22,14 +24,15 @@ function PLUGIN:CanPlayerUseCharacter(client, character)
 	local deltaT = CurTime() - client.lastCharSwitch
 	local cooldown = ix.config.Get("charCooltime")
 
-	if deltaT < cooldown then 
-		client:NotifyLocalized("charCooltimeNotify", cooldown - deltaT)
-		return false
+	if (deltaT < cooldown) or !client:Alive() then
+		if !client:Alive() then
+			client:NotifyLocalized("charDeathtimeNotify")
+			return false
+		else
+			client:NotifyLocalized("charCooltimeNotify", cooldown - deltaT)
+			return false
+		end
 	end
 
-	client.lastCharSwitch = CurTime()
-end
-
-function PLUGIN:PlayerDeath(client)
 	client.lastCharSwitch = CurTime()
 end

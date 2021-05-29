@@ -160,7 +160,7 @@ function Schema:PlayerFootstep(client, position, foot, soundName, volume)
 end
 
 function Schema:PlayerSpawn(client)
-	client:SetCanZoom(client:IsCombine())
+	client:SetCanZoom(client:IsCombine() or client:IsAdmin())
 end
 
 function Schema:PlayerDeath(client, inflicter, attacker)
@@ -248,6 +248,8 @@ function Schema:GetPlayerPainSound(client)
 		end
 
 		return sound
+	elseif (client:GetCharacter() and client:GetCharacter():IsVortigaunt()) then
+		return false
 	end
 end
 
@@ -268,6 +270,8 @@ function Schema:GetPlayerDeathSound(client)
 		end
 
 		return sound
+	elseif (client:GetCharacter() and client:GetCharacter():IsVortigaunt)
+		return false
 	end
 end
 
@@ -330,7 +334,7 @@ end
 
 function Schema:CanPlayerJoinClass(client, class, info)
 	if (client:IsRestricted()) then
-		client:Notify("You cannot change classes when you are restrained!")
+		client:NotifyLocalized("cantChangeClassTied")
 
 		return false
 	end
@@ -382,7 +386,24 @@ function Schema:PlayerSpawnObject(client)
 end
 
 function Schema:PlayerSpray(client)
-	return true
+	local character = client:GetCharacter()
+	local inventory = character:GetInventory()
+	local hasItem = inventory:HasItem("spraycan")
+
+	if (client:IsAdmin() or hasIteam) then
+		return true
+	else
+		return false
+	end
+end
+
+function Schema:CanPlayerUseCharacter(client, character)
+	if client:IsAdmin() then return end
+
+	if (client:IsRestricted()) then
+		client:NotifyLocalized("cantChangeCharTied")
+		return false
+	end
 end
 
 netstream.Hook("PlayerChatTextChanged", function(client, key)
