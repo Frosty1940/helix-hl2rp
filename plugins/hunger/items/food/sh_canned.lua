@@ -9,7 +9,7 @@ ITEM.empty = "empty_can"
 ITEM:Hook("Eat", function(item)
 	local client = item.player
 	
-	client:EmitSound("npc/barnacle/barnacle_gulp2.wav")
+	client:EmitSound("interface/inv_eat_can.ogg")
 	for i = 1, 5 do
 		timer.Simple(i, function()
 			client:SetHealth(math.Clamp(client:Health() + 1, 0, client:GetMaxHealth()))

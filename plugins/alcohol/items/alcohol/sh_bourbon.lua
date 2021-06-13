@@ -8,6 +8,5 @@ ITEM.price = 40
 ITEM:Hook("Drink", function(item)
 	local client = item.player
 	
-	client:EmitSound("ui/drink.wav")
-	client:GetCharacter():GiveMoney(1)
+	client:EmitSound("interface/inv_beer.ogg")
 end)

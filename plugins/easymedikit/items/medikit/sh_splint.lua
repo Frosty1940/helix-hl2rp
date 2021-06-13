@@ -12,10 +12,10 @@ ITEM.fracture = true
 
 ITEM:Hook("selfheal", function(item)
 	local client = item.player
-	client:EmitSound("physics/body/body_medium_scrape_rough_loop1.wav")
+	client:EmitSound("interface/inv_bandage_3p7.ogg")
 end)
 
 ITEM:Hook("heal", function(item)
 	local client = item.player
-	client:EmitSound("physics/body/body_medium_scrape_rough_loop1.wav")
+	client:EmitSound("interface/inv_bandage_3p7.ogg")
 end)

@@ -2,7 +2,7 @@ local PLUGIN = PLUGIN
 PLUGIN.author = "Round"
 PLUGIN.name = "Character Cooltime"
 
-ix.config.Add("charCooltime", ix.config.Get("charCooltime", 60), "How much should time passed by for changing characters?", nil, {
+ix.config.Add("charCooltime", 60, "How much should time passed by for changing characters?", nil, {
 	data = {min = 0, max = 300},
 	category = "characters"
 })
@@ -22,17 +22,16 @@ function PLUGIN:CanPlayerUseCharacter(client, character)
 	client.lastCharSwitch = client.lastCharSwitch or 0
 
 	local deltaT = CurTime() - client.lastCharSwitch
-	local cooldown = ix.config.Get("charCooltime")
+	local cooldown = ix.config.Get("charCooltime", 60)
 
-	if (deltaT < cooldown) or !client:Alive() then
-		if !client:Alive() then
-			client:NotifyLocalized("charDeathtimeNotify")
-			return false
-		else
-			client:NotifyLocalized("charCooltimeNotify", cooldown - deltaT)
-			return false
-		end
+	if (deltaT < cooldown) then
+		client:NotifyLocalized("charCooltimeNotify", cooldown - deltaT)
+		return false
 	end
 
+	client.lastCharSwitch = CurTime()
+end
+
+function PLUGIN:PlayerDeath(client)
 	client.lastCharSwitch = CurTime()
 end

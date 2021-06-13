@@ -270,7 +270,7 @@ function Schema:GetPlayerDeathSound(client)
 		end
 
 		return sound
-	elseif (client:GetCharacter() and client:GetCharacter():IsVortigaunt)
+	elseif (client:GetCharacter() and client:GetCharacter():IsVortigaunt()) then
 		return false
 	end
 end

@@ -10,7 +10,7 @@ ITEM:Hook("Eat", function(item)
 	local char = client:GetCharacter()
 	local stm = char:GetAttribute("stm", 0)
 	
-	client:EmitSound("npc/barnacle/barnacle_gulp2.wav")
+	client:EmitSound("interface/inv_drink_can2.ogg")
 	char:AddBoost("water", "stm", stm * 0.9 )
 
 	for i = 1, 5 do

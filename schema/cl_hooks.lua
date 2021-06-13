@@ -73,6 +73,7 @@ local COLOR_BLACK_WHITE = {
 }
 
 local combineOverlay = ix.util.GetMaterial("effects/combine_binocoverlay")
+local cinematicOverlay = ix.util.GetMaterial("nco/cinover")
 local scannerFirstPerson = false
 
 function Schema:RenderScreenspaceEffects()
@@ -101,6 +102,10 @@ function Schema:RenderScreenspaceEffects()
 		combineOverlay:SetInt("$ignorez", 1)
 
 		render.SetMaterial(combineOverlay)
+		render.DrawScreenQuad()
+	else
+		render.UpdateScreenEffectTexture()
+		render.SetMaterial(cinematicOverlay)
 		render.DrawScreenQuad()
 	end
 end

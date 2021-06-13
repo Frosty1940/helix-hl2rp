@@ -8,7 +8,7 @@ ITEM.thirst = -7
 ITEM:Hook("Eat", function(item)
 	local client = item.player
 	
-	client:EmitSound("npc/barnacle/barnacle_gulp2.wav")
+	client:EmitSound("interface/inv_eat_paperwrap.ogg")
 
 	for i = 1, 5 do
 		timer.Simple(i, function()
