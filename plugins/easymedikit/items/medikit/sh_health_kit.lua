@@ -3,7 +3,7 @@ ITEM.model = Model("models/Items/HealthKit.mdl")
 ITEM.description = "healthKitDesc"
 ITEM.price = 35
 ITEM.healthPoint = 25 -- Health point that the player will get
-ITEM.medAttr = 5 -- How much medical attribute the character needs
+ITEM.medAttr = 3 -- How much medical attribute the character needs
 ITEM.bleeding = true
 ITEM.fracture = true
 

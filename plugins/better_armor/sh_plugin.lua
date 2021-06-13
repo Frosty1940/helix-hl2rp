@@ -102,7 +102,7 @@ ix.command.Add("Gasmask", {
 		local inventory = character:GetInventory()
 		local items = inventory:GetItems()
 		for k, v in pairs(items) do
-			if (v.base == "base_armor") and (v.gasmask == true) then
+			if (v.gasmask == true) then
 				if client:GetNetVar("gasmask") then
 					client:SetNetVar("gasmask", false)
 					client:NotifyLocalized("gasmaskRemoved")

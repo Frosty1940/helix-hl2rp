@@ -281,56 +281,56 @@ function Schema:OnNPCKilled(npc, attacker, inflictor)
 	end
 end
 
-function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers, rawText)
-	if (chatType == "ic" or chatType == "w" or chatType == "y" or chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper" or chatType == "radio_eavesdrop" or chatType == "radio_eavesdrop_yell" or chatType == "radio_eavesdrop_whisper" or chatType == "dispatch" or chatType == "broadcast" or chatType == "request" or chatType == "request_eavesdrop") then
-		local class = self.voices.GetClass(speaker)
+-- function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers, rawText)
+-- 	if (chatType == "ic" or chatType == "w" or chatType == "y" or chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper" or chatType == "radio_eavesdrop" or chatType == "radio_eavesdrop_yell" or chatType == "radio_eavesdrop_whisper" or chatType == "dispatch" or chatType == "broadcast" or chatType == "request" or chatType == "request_eavesdrop") then
+-- 		local class = self.voices.GetClass(speaker)
 
-		for k, v in ipairs(class) do
-			local info = self.voices.Get(v, rawText)
+-- 		for k, v in ipairs(class) do
+-- 			local info = self.voices.Get(v, rawText)
 
-			if (info) then
-				local volume = 80
+-- 			if (info) then
+-- 				local volume = 80
 
-				if (chatType == "w" or chatType == "radio_whisper" or chatType == "radio_eavesdrop_whisper") then
-					volume = 30
-				elseif (chatType == "y" or chatType == "radio_yell" or chatType == "radio_eavesdrop_yell") then
-					volume = 150
-				end
+-- 				if (chatType == "w" or chatType == "radio_whisper" or chatType == "radio_eavesdrop_whisper") then
+-- 					volume = 30
+-- 				elseif (chatType == "y" or chatType == "radio_yell" or chatType == "radio_eavesdrop_yell") then
+-- 					volume = 150
+-- 				end
 
-				if (info.sound) then
-					if (info.global) then
-						netstream.Start(nil, "PlaySound", info.sound)
-					else
-						if (chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper") then
-							for k, v in pairs(receivers) do
-								ix.util.EmitQueuedSounds(receivers, {info.sound, nil}, nil, nil, volume)
-							end
-						else
-							local sounds = {info.sound}
+-- 				if (info.sound) then
+-- 					if (info.global) then
+-- 						netstream.Start(nil, "PlaySound", info.sound)
+-- 					else
+-- 						if (chatType == "radio" or chatType == "radio_yell" or chatType == "radio_whisper") then
+-- 							for k, v in pairs(receivers) do
+-- 								ix.util.EmitQueuedSounds(receivers, {info.sound, nil}, nil, nil, volume)
+-- 							end
+-- 						else
+-- 							local sounds = {info.sound}
 
-							if (speaker:IsCombine()) then
-								speaker.bTypingBeep = nil
-								sounds[#sounds + 1] = "NPC_MetroPolice.Radio.Off"
-							end
+-- 							if (speaker:IsCombine()) then
+-- 								speaker.bTypingBeep = nil
+-- 								sounds[#sounds + 1] = "NPC_MetroPolice.Radio.Off"
+-- 							end
 
-							ix.util.EmitQueuedSounds(speaker, sounds, nil, nil, volume)
-						end
-					end
-				end
+-- 							ix.util.EmitQueuedSounds(speaker, sounds, nil, nil, volume)
+-- 						end
+-- 					end
+-- 				end
 
-				if (speaker:IsCombine()) then
-					return string.format("<:: %s ::>", info.text)
-				else
-					return info.text
-				end
-			end
-		end
+-- 				if (speaker:IsCombine()) then
+-- 					return string.format("<:: %s ::>", info.text)
+-- 				else
+-- 					return info.text
+-- 				end
+-- 			end
+-- 		end
 
-		if (speaker:IsCombine()) then
-			return string.format("<:: %s ::>", text)
-		end
-	end
-end
+-- 		if (speaker:IsCombine()) then
+-- 			return string.format("<:: %s ::>", text)
+-- 		end
+-- 	end
+-- end
 
 function Schema:CanPlayerJoinClass(client, class, info)
 	if (client:IsRestricted()) then
@@ -406,20 +406,20 @@ function Schema:CanPlayerUseCharacter(client, character)
 	end
 end
 
-netstream.Hook("PlayerChatTextChanged", function(client, key)
-	if (client:IsCombine() and !client.bTypingBeep
-	and (key == "y" or key == "w" or key == "r" or key == "t")) then
-		client:EmitSound("NPC_MetroPolice.Radio.On")
-		client.bTypingBeep = true
-	end
-end)
+-- netstream.Hook("PlayerChatTextChanged", function(client, key)
+-- 	if (client:IsCombine() and !client.bTypingBeep
+-- 	and (key == "y" or key == "w" or key == "r" or key == "t")) then
+-- 		client:EmitSound("NPC_MetroPolice.Radio.On")
+-- 		client.bTypingBeep = true
+-- 	end
+-- end)
 
-netstream.Hook("PlayerFinishChat", function(client)
-	if (client:IsCombine() and client.bTypingBeep) then
-		client:EmitSound("NPC_MetroPolice.Radio.Off")
-		client.bTypingBeep = nil
-	end
-end)
+-- netstream.Hook("PlayerFinishChat", function(client)
+-- 	if (client:IsCombine() and client.bTypingBeep) then
+-- 		client:EmitSound("NPC_MetroPolice.Radio.Off")
+-- 		client.bTypingBeep = nil
+-- 	end
+-- end)
 
 netstream.Hook("ViewDataUpdate", function(client, target, text)
 	if (IsValid(target) and hook.Run("CanPlayerEditData", client, target) and client:GetCharacter() and target:GetCharacter()) then

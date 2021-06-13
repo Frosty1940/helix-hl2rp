@@ -30,5 +30,7 @@ ITEM.functions.Use = {
 function ITEM:GetDescription()
 	if (!IsValid(self.entity)) then
 		return (L(self.description) .. L("cidDesc2") .. self:GetData("id", "00000") .. L("cidDesc3") .. self:GetData("name", "nobody"))
+	else
+		return L(self.description)
 	end
 end
