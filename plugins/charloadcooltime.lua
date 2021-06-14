@@ -32,6 +32,6 @@ function PLUGIN:CanPlayerUseCharacter(client, character)
 	client.lastCharSwitch = CurTime()
 end
 
-function PLUGIN:PlayerDeath(client)
+function PLUGIN:DoPlayerDeath(client)
 	client.lastCharSwitch = CurTime()
 end

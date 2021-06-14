@@ -1,6 +1,5 @@
 ITEM.name = "Black Jacket and Dark Blue Shirt"
 ITEM.description = "itemBlackJacket2Desc"
--- ITEM.category = "Outfit"
 ITEM.model = "models/tnb/items/aphelion/shirt_citizen2.mdl"
 ITEM.skin = 3
 ITEM.width = 1

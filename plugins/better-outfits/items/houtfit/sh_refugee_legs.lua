@@ -1,32 +1,32 @@
-ITEM.name = "검은 청바지"
-ITEM.description = "검은 색상의 청바지입니다."
--- ITEM.category = "Outfit"
+ITEM.name = "Black Jeans"
+ITEM.description = "itemBlackJeansDesc"
 ITEM.model = "models/tnb/items/aphelion/pants_citizen.mdl"
 ITEM.skin = 2
 ITEM.width = 1
 ITEM.height = 1
+ITEM.price = 75
 ITEM.outfitCategory = "legs"
-ITEM.pacData = {}
+ITEM.noResetBodyGroups = true
 ITEM.bodyGroups = {
 	["legs"] = 2
 }
-
-/*
--- This will change a player's skin after changing the model. Keep in mind it starts at 0.
-ITEM.newSkin = 1
--- This will change a certain part of the model.
-ITEM.replacements = {"group01", "group02"}
--- This will change the player's model completely.
-ITEM.replacements = "models/manhack.mdl"
--- This will have multiple replacements.
-ITEM.replacements = {
-	{"male", "female"},
-	{"group01", "group02"}
+ITEM.allowedModels = {
+	"models/tnb/citizens/aphelion/male_01.mdl",
+	"models/tnb/citizens/aphelion/male_02.mdl",
+	"models/tnb/citizens/aphelion/male_03.mdl",
+	"models/tnb/citizens/aphelion/male_04.mdl",
+	"models/tnb/citizens/aphelion/male_05.mdl",
+	"models/tnb/citizens/aphelion/male_06.mdl",
+	"models/tnb/citizens/aphelion/male_07.mdl",
+	"models/tnb/citizens/aphelion/male_09.mdl",
+	"models/tnb/citizens/aphelion/male_16.mdl",
+	"models/tnb/citizens/aphelion/female_01.mdl",
+	"models/tnb/citizens/aphelion/female_02.mdl",
+	"models/tnb/citizens/aphelion/female_03.mdl",
+	"models/tnb/citizens/aphelion/female_04.mdl",
+	"models/tnb/citizens/aphelion/female_05.mdl",
+	"models/tnb/citizens/aphelion/female_08.mdl",
+	"models/tnb/citizens/aphelion/female_09.mdl",
+	"models/tnb/citizens/aphelion/female_10.mdl",
+	"models/tnb/citizens/aphelion/female_11.mdl"
 }
-
--- This will apply body groups.
-ITEM.bodyGroups = {
-	["blade"] = 1,
-	["bladeblur"] = 1
-}
-*/

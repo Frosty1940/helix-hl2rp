@@ -21,7 +21,18 @@ ITEM.bodyGroups = {
 	["helmet"] = 1
 }
 ITEM.outfitCategory = "head"
+ITEM.noResetBodyGroups = true
 ITEM.maxDurability = 100
+ITEM.allowedModels = {
+	"models/wichacks/erdimnovest.mdl",
+	"models/wichacks/ericnovest.mdl",
+	"models/wichacks/joenovest.mdl",
+	"models/wichacks/mikenovest.mdl",
+	"models/wichacks/sandronovest.mdl",
+	"models/wichacks/tednovest.mdl",
+	"models/wichacks/vannovest.mdl",
+	"models/wichacks/vancenovest.mdl",
+}
 
 if (CLIENT) then
 	function ITEM:PopulateTooltip(tooltip)

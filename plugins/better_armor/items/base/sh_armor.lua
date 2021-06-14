@@ -248,6 +248,16 @@ ITEM.functions.Equip = {
 				item.player:SetSkin(item.newSkin)
 			end
 
+			local groups = char:GetData("groups", {})
+
+			if (!table.IsEmpty(groups)) then
+				char:SetData("oldGroups" .. item.outfitCategory, groups)
+	
+				if !item.noResetBodyGroups then
+					client:ResetBodygroups()
+				end
+			end
+
 			if (item.bodyGroups) then
 				groups = {}
 	
@@ -286,6 +296,7 @@ ITEM.functions.Equip = {
 	OnCanRun = function(item)
 		local client = item.player
 
+		if item.allowedModels and !table.HasValue(item.allowedModels, item.player:GetModel()) then return false end
 		return !IsValid(item.entity) and IsValid(client) and item:GetData("equip") != true and item:CanEquipOutfit() and
 			hook.Run("CanPlayerEquipItem", client, item) != false and item.invID == client:GetCharacter():GetInventory():GetID()
 	end
