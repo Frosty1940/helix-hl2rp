@@ -74,10 +74,8 @@ LANGUAGE = {
 	["Consumables"] = "일용품",
 	["Storage"] = "가방",
 	["Permits"] = "허가서",
+	["Outfit"] = "의상",
 
-	/*
-		CONFIG TRANSLATION
-	*/
 	Permakill = "영구 사망",
 	pkActive = "목숨 1개",
 	pkWorld = "월드에서 사망",
@@ -150,12 +148,7 @@ LANGUAGE = {
 	sbWidth = "스코어보드 넓이",
 	server = "서버",
 	visual = "",
-	/*
-		UI TRANSLATION
-	*/
-	/*
-		MISC.
-	*/
+
 	Unequip = "장착 해제",
 	Equip = "장착하기",
 	Preview = "미리 보기",
