@@ -1,7 +1,7 @@
 ITEM.name = "Flare Gun"
 ITEM.description = "flaregunDesc"
 ITEM.model = "models/vj_weapons/w_flaregun.mdl"
-ITEM.class = "weapon_vj_flaregun"
+ITEM.class = "ix_flaregun"
 ITEM.weaponCategory = "sidearm"
 ITEM.classes = {CLASS_REBEL}
 ITEM.model = "models/vj_weapons/w_flaregun.mdl"

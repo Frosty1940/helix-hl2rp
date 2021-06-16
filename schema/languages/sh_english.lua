@@ -68,7 +68,15 @@ LANGUAGE = {
 	crowbarDesc = "A slightly rusty looking crowbar.",
 	stunstickDesc = "An electrified baton used by Civil Protection officers.",
 	sniperDesc = "A dark energy powered sniper rifle.",
-	flaregunDesc = "A large-bore handgun that discharges flares.",
+	flaregunDesc = "A large-bore handgun that discharges flares, and is used to create illumination for improved vision or as a distress signal.",
+	ak74Desc = "Kalashnikov automatic rifle, model 1974\nAn AK Rifle that is developed to be use high-velocity rounds like .223 Remington.\nIt fires 5.45×39mm M74 rifle rounds.",
+	akmDesc = "Kalashnikov's Automatic Rifle Modernised\nAn assault rifle that has excellent durability and reliability.\nIt fires 7.62×39mm M43 rifle rounds.",
+	m16a2Desc = "M16A2 Assault Rifle\nThe M16A1E1, improved model 645, changed to 3-rounds burst firing instead of fully automatic firing, following the lessons of Marine Corps in Vietnamese War.\nIt fires 5.56×45mm NATO rifle rounds.",
+	extinguisherDesc = "An active fire protection device used to extinguish or control small fires, often in emergency situations.",
+	rpg7Desc = "A non-guided anti-tank rocket launcher.",
+	mp5kDesc = "Heckler & Koch Maschinenpistole 5 Kurz\nA shortened machine pistol version of the MP5A2 was introduced, designed for close quarters battle use by clandestine operations and special services.\nIt fires 9×19mm Parabellum pistol rounds.",
+	oicwDesc = "One of a series of prototypes of a new type of assault rifle that fired 20 mm HE airbursting projectiles.\nIt fires 5.56×45mm NATO rifle rounds.",
+	panzerfaustDesc = "An non-guided anti-tank rocket launchar that fires high effective armor piercing rockets.",
 
 	smg1ammoDesc = "A Box that contains %s of SMG Ammo.",
 	ar2ammoDesc = "A Cartridge that contains %s of Pulse Plug.",
@@ -111,10 +119,6 @@ LANGUAGE = {
 	itemScannerPartsDesc = "A part that consists a Combine Scanner.",
 	itemWaterDrugDesc = "A drug known that has feature cleaning dirty water.",
 	itemWrenchDesc = "A normal, simple wrench.",
-
-	ak74Desc = "Kalashnikov automatic rifle, model 1974\nAn AK Rifle that is developed to be use high-velocity rounds like .223 Remington.\nIt fires 5.45×39mm M74 rifle rounds.",
-	akmDesc = "It fires 7.62×39mm M43 rifle rounds.",
-	m16Desc = "It fires 5.56×45mm NATO rifle rounds.",
 
 	itemMetropoliceDesc = "An uniform that metropolicue unit wears.\nIf wearer's identity is not correct, additional features will not work.",
 	itemCombineSoldierDesc = "An powered suit that Combine soldier wears.\nIf wearer's identity is not correct, additional features will not work.",

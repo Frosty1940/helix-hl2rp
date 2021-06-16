@@ -1,19 +1,19 @@
-ITEM.name = "M16A2"
-ITEM.description = "m16a2Desc"
-ITEM.class = "ix_m16a2"
+ITEM.name = "MP5K"
+ITEM.description = "mp5kDesc"
+ITEM.class = "ix_mp5k"
 ITEM.weaponCategory = "primary"
-ITEM.classes = {CLASS_OWS, CLASS_EMP}
-ITEM.price = 500
-ITEM.model = "models/weapons/w_m16a2.mdl"
-ITEM.width = 4
+ITEM.classes = {CLASS_EMP, CLASS_MPU, CLASS_OWS, CLASS_REBEL}
+ITEM.price = 510
+ITEM.factions = {FACTION_CONSCRIPT}
+ITEM.model = "models/weapons/tfa_ins2/w_mp5k.mdl"
+ITEM.width = 2
 ITEM.height = 2
 ITEM.iconCam = {
-	pos = Vector(8, 200, 1),
+	pos = Vector(3, 200, 0.5),
 	ang = Angle(0, 270, 0),
-	fov = 14,
+	fov = 4.5,
 }
 ITEM.exRender = true
-ITEM.factions = {FACTION_CONSCRIPT}
 
 if (CLIENT) then
 	function ITEM:PopulateTooltip(tooltip)
