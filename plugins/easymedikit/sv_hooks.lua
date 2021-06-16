@@ -13,11 +13,11 @@ PLUGIN.BulletDamages = {
 
 function PLUGIN:EntityTakeDamage(target, info)
 	if ( target:IsValid() and target:IsPlayer() ) then
-		if ( self.BulletDamages[info:GetDamageType()] ) then
+		if ( self.BulletDamages[info:GetDamageType()] and target:Armor() < 0 ) then
 			if ( math.random(10) > 7 ) then
 				self:SetBleeding(target, true)
 			end
-		elseif ( info:GetDamageType() == DMG_FALL ) then
+		elseif ( info:GetDamageType() == DMG_FALL and target:Team() != FACTION_OTA ) then
 			if math.random(10) > 7 then
 				self:SetFracture(target, true)
 			end

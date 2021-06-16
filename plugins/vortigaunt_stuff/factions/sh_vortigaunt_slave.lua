@@ -10,7 +10,7 @@ FACTION.isGloballyRecognized = false
 function FACTION:OnTransfered(client)
 	local character = client:GetCharacter()
 
-	character:SetModel(self.models[1])
+	character:SetModel("models/vortigaunt_slave.mdl")
 end
 
 FACTION_ENSLAVEDVORTIGAUNT = FACTION.index

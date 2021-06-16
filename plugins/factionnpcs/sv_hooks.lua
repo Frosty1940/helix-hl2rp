@@ -33,7 +33,8 @@ local rebelNPCs = {
 	"npc_citizen",
 	"npc_vortigaunt",
 	"npc_alyx",
-	"npc_barney"
+	"npc_barney",
+	"npc_sniper_rebel"
 }
 
 -- A function to get whether or not an NPC belongs to the rebel faction.
