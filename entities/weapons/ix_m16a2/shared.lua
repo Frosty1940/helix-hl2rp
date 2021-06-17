@@ -59,7 +59,7 @@ SWEP.ViewModelBoneMods = {
 
 
 SWEP.Primary.Damage		= 10	-- Base damage per bullet
-SWEP.Primary.Spread		= .021	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
+SWEP.Primary.Spread		= .017	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
 SWEP.Primary.IronAccuracy = .017 -- Ironsight accuracy, should be the same for shotgun
 
 -- Enter iron sight info and bone mod info below

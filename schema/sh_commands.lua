@@ -210,11 +210,11 @@ ix.command.Add("CharSpawn", {
 		target:Spawn()
 		
 		if client == target then
-            client:NotifyLocalized("charSpawn01")
-        else
-            client:NotifyLocalized("charSpawn02", target:GetName())
-            target:NotifyLocalized("charSpawn03", client:GetName())
-        end
+			client:NotifyLocalized("charSpawn01")
+		else
+			client:NotifyLocalized("charSpawn02", target:GetName())
+			target:NotifyLocalized("charSpawn03", client:GetName())
+		end
 	end
 })
 
@@ -229,10 +229,36 @@ ix.command.Add("Revive", {
 		target:SetPos(pos)
 		
 		if client == target then
-            client:NotifyLocalized("revive01")
-        else
-            client:NotifyLocalized("revive02", target:GetName())
-            target:NotifyLocalized("revive03", client:GetName())
-        end
+			client:NotifyLocalized("revive01")
+		else
+			client:NotifyLocalized("revive02", target:GetName())
+			target:NotifyLocalized("revive03", client:GetName())
+		end
+	end
+})
+
+ix.command.Add("CharSetDesc", {
+	description = "@cmdCharDesc",
+	adminOnly = true,
+	arguments = {
+		ix.type.character,
+		bit.bor(ix.type.text, ix.type.optional)
+	},
+	OnRun = function(self, client, target, description)
+		-- display string request panel if no name was specified
+		if (!description:find("%S")) then
+			return client:RequestString("@cmdCharDescTitle", "@cmdCharDescDescription", function(text)
+				ix.command.Run(client, "CharSetDesc", {target:GetName(), text})
+			end, target:GetCharacter():GetDescription())
+		end
+
+		local info = ix.char.vars.description
+		local result, fault, count = info:OnValidate(description)
+
+		if (result == false) then
+			return "@" .. fault, count
+		end
+
+		target:GetCharacter():SetDescription(description)
 	end
 })
