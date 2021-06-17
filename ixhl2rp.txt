@@ -2,7 +2,7 @@
 {
 	"base"		"helix"
 	"title"		"HL2 RP"
-	"author"	"nebuolus.cloud"
+	"author"	"nebulous.cloud"
 	"category"	"rp"
 	"menusystem" "1"
 }
