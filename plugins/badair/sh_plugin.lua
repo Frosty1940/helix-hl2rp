@@ -67,7 +67,7 @@ if (!CLIENT) then
 
 					if (client:Alive() and char) then
 						if (!client:GetNetVar("gasmask") and !client:IsCombine()) then
-							client:TakeDamage(3)
+							client:TakeDamage(math.Clamp(1, client:GetMaxHealth() / 33))
 							client:ScreenFade(1, ColorAlpha(color_white, 150), .5, 0)
 						end
 
