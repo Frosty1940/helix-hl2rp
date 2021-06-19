@@ -26,6 +26,7 @@ LANGUAGE = {
 	economy = "Economy",
 	cantChangeClassTied = "You cannot change classes when you are restrained!",
 	cantChangeCharTied = "You cannot change characters when you are restrained!",
+	needComkey = "You need a Combine keycard to do this.",
 
 	-- combine display messages
 	cViewData = "Downloading citizen profile data...",
@@ -69,13 +70,13 @@ LANGUAGE = {
 	stunstickDesc = "An electrified baton used by Civil Protection officers.",
 	sniperDesc = "A dark energy powered sniper rifle.",
 	flaregunDesc = "A large-bore handgun that discharges flares, and is used to create illumination for improved vision or as a distress signal.",
-	ak74Desc = "Kalashnikov automatic rifle, model 1974\nAn AK Rifle that is developed to be use high-velocity rounds like .223 Remington.\nIt fires 5.45×39mm M74 rifle rounds.",
-	akmDesc = "Kalashnikov's Automatic Rifle Modernised\nAn assault rifle that has excellent durability and reliability.\nIt fires 7.62×39mm M43 rifle rounds.",
-	m16a2Desc = "M16A2 Assault Rifle\nThe M16A1E1, improved model 645, changed to 3-rounds burst firing instead of fully automatic firing, following the lessons of Marine Corps in Vietnamese War.\nIt fires 5.56×45mm NATO rifle rounds.",
+	ak74Desc = "Kalashnikov automatic rifle, model 1974\nAn AK Rifle that is developed to be use high-velocity rounds like .223 Remington.\nIt fires 5.45×39mm M74 Rifle Rounds.",
+	akmDesc = "Kalashnikov's Automatic Rifle Modernised\nAn assault rifle that has excellent durability and reliability.\nIt fires 7.62×39mm M43 Rifle Rounds.",
+	m16a2Desc = "M16A2 Assault Rifle\nThe M16A1E1, improved model 645, changed to 3-rounds burst firing instead of fully automatic firing, following the lessons of Marine Corps in Vietnamese War.\nIt fires 5.56×45mm NATO Rifle Rounds.",
 	extinguisherDesc = "An active fire protection device used to extinguish or control small fires, often in emergency situations.",
 	rpg7Desc = "A non-guided anti-tank rocket launcher.",
 	mp5kDesc = "Heckler & Koch Maschinenpistole 5 Kurz\nA shortened machine pistol version of the MP5A2 was introduced, designed for close quarters battle use by clandestine operations and special services.\nIt fires 9×19mm Parabellum pistol rounds.",
-	oicwDesc = "One of a series of prototypes of a new type of assault rifle that fired 20 mm HE airbursting projectiles.\nIt fires 5.56×45mm NATO rifle rounds.",
+	oicwDesc = "One of a series of prototypes of a new type of assault rifle that fired 20 mm HE airbursting projectiles.\nIt fires 5.56×45mm NATO Rifle Rounds.",
 	panzerfaustDesc = "An non-guided anti-tank rocket launchar that fires high effective armor piercing rockets.",
 
 	smg1ammoDesc = "A Box that contains %s of SMG Ammo.",
@@ -89,6 +90,9 @@ LANGUAGE = {
 	smg1ammoDesc = "A Box that contains %s of SMG Ammo.",
 	smg1grenadeammoDesc = "A grenade for SMG.",
 	sniperammoDesc = "A Box that contains %s of Sniper Rifle Ammo",
+	item545AmmoDesc = "An Ammo Box that contains %s of 5.45×39mm M74 Rifle Rounds.",
+	item556AmmoDesc = "An Ammo Box that contains %s of 5.56×45mm NATO Rifle Rounds.",
+	item762x39AmmoDesc = "An Ammo Box that contains %s of 7.62×39mm M43 Rifle Rounds.",
 
 	nvgogDesc = "An optical amplified night vision. Cannot use a flashlight when worn.",
 	irnvGogDesc = "A thermal imaging night vision. Cannot use a flashlight when worn.",
