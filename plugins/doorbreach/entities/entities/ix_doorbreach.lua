@@ -20,7 +20,11 @@ if (SERVER) then
 			position = door:GetBonePosition(index)
 		end
 
-		position = position + normal:Forward() * 4 + normal:Up() * 8 + normal:Right() * -21
+		position = position + normal:Forward() * 4 + normal:Up() * 8 + normal:Right()
+
+		if (IsValid(door.ixLock)) then
+			position = position + normal:Forward() * 6 + normal:Up() * 8 + normal:Right() * -1
+		end
 
 		normal:RotateAroundAxis(normal:Up(), 180)
 		normal:RotateAroundAxis(normal:Forward(), 180)

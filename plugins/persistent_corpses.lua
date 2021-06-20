@@ -193,37 +193,34 @@ if (SERVER) then
 			local counter = 0
 
 			for k, item in pairs( items ) do
-				if (item:GetData("equip", false) and item.base == ("base_armor" or "base_outfit" or "base_pacoutfit")) then
-					if item:GetData("Durability", false) then
-						if ix.config.Get("deathWeaponDura") then
-							item:SetData("Durability", math.max( item:GetData("Durability") - math.random(ix.config.Get("deathWeaponDuraDmg", 4) * item.maxDurability * 0.1), 0))
-						end
+				if ix.config.Get("deathWeaponDura") then
+					if (item:GetData("Durability", false)) then
+						item:SetData("Durability", math.max( item:GetData("Durability") - math.random(ix.config.Get("deathWeaponDuraDmg", 4) * item.maxDurability * 0.1), 0))
 					end
-				else
-					if (item:GetData("equip", false)) then
-						item:SetData("equip", nil)
-					end
-					
-					if item:GetData("Durability", false) then
-						if ix.config.Get("deathWeaponDura") then
-							item:SetData("Durability", math.max( item:GetData("Durability") - math.random(ix.config.Get("deathWeaponDuraDmg",4) * item.maxDurability * 0.1), 0))
-						end
-					end
-					
-					if (item.noDeathDrop != true) then
-						if (counter < ix.config.Get("deathItemMaxDrop", 1)) then
-							if math.random(100) < ix.config.Get("deathItemDropChance", 50) then
-								if (ix.config.Get("dropItemsOnDeath")) then
-									item:Transfer()
-									if item:GetEntity() then
-										item:GetEntity():SetPos(client:GetPos() + Vector( math.Rand(-8,8), math.Rand(-8,8), counter * 5 ))
-									end
-								else
-									item:remove()
+				end
+
+				if (item.noDeathDrop != true) then
+					if (counter < ix.config.Get("deathItemMaxDrop", 1)) then
+						if math.random(100) < ix.config.Get("deathItemDropChance", 50) then
+							if (item:GetData("equip", false)) then
+								if (item.base == ("base_armor" or "base_outfit" or "base_houtfit")) then
+									item:RemoveOutfit()
+								elseif (item.base == "base_pacoutfit") then
+									item:RemovePart()
 								end
-								table.Add(itemNames, {item.name})
-								counter = counter + 1
+								item:SetData("equip", false)
 							end
+
+							if (ix.config.Get("dropItemsOnDeath")) then
+								item:Transfer()
+								if item:GetEntity() then
+									item:GetEntity():SetPos(client:GetPos() + Vector( math.Rand(-8,8), math.Rand(-8,8), counter * 5 ))
+								end
+							else
+								item:remove()
+							end
+							table.Add(itemNames, {item.name})
+							counter = counter + 1
 						end
 					end
 				end
@@ -252,9 +249,9 @@ if (SERVER) then
 				char:TakeMoney(amount)
 				ix.currency.Spawn(client:GetPos() + Vector( math.Rand(-8,8), math.Rand(-8,8), 5), amount)
 				
-				timer.Simple(ix.config.Get("spawnTime", 5) + 1, function()
+				-- timer.Simple(ix.config.Get("spawnTime", 5) + 1, function()
 					client:NotifyLocalized( "moneyLost", ix.currency.Get(amount) )
-				end)
+				-- end)
 			end
 		end
 	end

@@ -1,6 +1,6 @@
 
 ITEM.name = "Flashlight"
-ITEM.model = Model("models/Items/battery.mdl")
+ITEM.model = Model("models/lagmite/lagmite.mdl")
 ITEM.width = 1
 ITEM.height = 1
 ITEM.description = "itemFlashlightDesc"

@@ -4,6 +4,7 @@ ITEM.description = "itemDoorBreachDesc"
 ITEM.model = Model("models/props_wasteland/prison_padlock001a.mdl")
 ITEM.width = 1
 ITEM.height = 1
+ITEM.price = 475
 
 ITEM.functions.Place = {
 	OnRun = function(itemTable)
