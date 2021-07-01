@@ -7,6 +7,19 @@ PLUGIN.description = "A standalone radio plugin with extended functionality over
 
 ix.util.Include("thirdparty/sh_netstream2.lua")
 
+ix.lang.AddTable("english", {
+	itemHandheldRadioDesc = "",
+})
+ix.lang.AddTable("korean", {
+	["Activate"] = "활성화/비활성화",
+	["Channel"] = "채널 설정",
+	["Frequency"] = "주파수",
+	["Listen"] = "듣기 모드",
+	["Silence"] = "음소거",
+	["Handheld Radio"] = "휴대용 무전기",
+	itemHandheldRadioDesc = "",
+})
+
 -- Anonymous names, if radio callsigns are anonymous
 local radioanon = {"Somebody", "Someone", "A voice", "A person"}
 local radioTypes = {"walkietalkie","longrange","duplexradio","duplexwalkie","hybridradio","hybridwalkie"}

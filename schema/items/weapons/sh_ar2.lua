@@ -13,34 +13,43 @@ ITEM.iconCam = {
 	pos	= Vector(0, 200, 0)
 }
 
-ITEM.lock = true
+ITEM.lock = 1
 
 ITEM.functions.Equip = {
 	name = "Equip",
 	tip = "equipTip",
 	icon = "icon16/tick.png",
 	OnRun = function(item)
-		item:Equip(item.player)
-		return false
+		local client = item.player
+
+		if (!client:IsCombine() and item.lock == 1) then
+			client:NotifyLocalized("needComkey")
+			return false
+		else
+			item:Equip(client)
+			return false
+		end
 	end,
 	OnCanRun = function(item)
 		local client = item.player
 
 		return !IsValid(item.entity) and IsValid(client) and item:GetData("equip") != true and
-			hook.Run("CanPlayerEquipItem", client, item) != false and (client:IsCombine() or !item.lock)
+			hook.Run("CanPlayerEquipItem", client, item) != false
 	end
 }
 
 ITEM.functions.Unlock = {
+	icon = "icon16/key_go.png",
 	OnRun = function(item)
 		local client = item.player
 		local character = client:GetCharacter()
 		local inventory = character:GetInventory()
 		local hasItem = inventory:HasItem("comkey")
 
-		if (!client:IsCombine() and item.lock) then
-			if (hasItem) then
-				item.lock = false
+		if (item.lock) then
+			if (client:IsCombine() or hasItem) then
+				item.lock = 0
+				client:EmitSound("weapons/ar2/ar2_reload_push.wav")
 				return false
 			end
 		else
@@ -48,6 +57,11 @@ ITEM.functions.Unlock = {
 
 			return false
 		end
+	end,
+	OnCanRun = function(item)
+		local client = item.player
+
+		return !IsValid(item.entity) and IsValid(client) and item:GetData("equip") != true and item.lock != 0
 	end
 }
 

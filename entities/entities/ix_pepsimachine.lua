@@ -2,7 +2,7 @@
 AddCSLuaFile()
 
 ENT.Type = "anim"
-ENT.PrintName = "Vending Machine"
+ENT.PrintName = "Pepsi Machine"
 ENT.Category = "HL2 RP"
 ENT.Spawnable = true
 ENT.AdminOnly = true
@@ -12,9 +12,7 @@ ENT.bNoPersist = true
 ENT.MaxRenderDistance = math.pow(256, 2)
 ENT.MaxStock = 20
 ENT.Items = {
-	{"WATER - 1", "water", 1},
-	{"FIZZY - 3", "water_sparkling", 3},
-	{"BEER - 6", "water_special", 6}
+	{"PEPSI - 10", "pepsi", 3}
 }
 
 function ENT:GetStock(id)
@@ -27,7 +25,7 @@ end
 
 if (SERVER) then
 	function ENT:Initialize()
-		self:SetModel("models/props_interiors/VendingMachineSoda01a.mdl")
+		self:SetModel("models/leak_props/props_interior/vendingmachinesoda01a.mdl")
 		self:PhysicsInit(SOLID_VPHYSICS)
 		self:SetSolid(SOLID_VPHYSICS)
 		self:SetUseType(SIMPLE_USE)
@@ -41,14 +39,14 @@ if (SERVER) then
 	end
 
 	function ENT:SpawnFunction(client, trace)
-		local vendor = ents.Create("ix_vendingmachine")
+		local vendor = ents.Create("ix_pepsimachine")
 
 		vendor:SetPos(trace.HitPos + Vector(0, 0, 48))
 		vendor:SetAngles(Angle(0, (vendor:GetPos() - client:GetPos()):Angle().y - 180, 0))
 		vendor:Spawn()
 		vendor:Activate()
 
-		Schema:SaveVendingMachines()
+		Schema:SavePepsiMachines()
 		return vendor
 	end
 

@@ -10,9 +10,9 @@ ENT.PhysgunDisable = true
 ENT.bNoPersist = true
 
 ENT.MaxRenderDistance = math.pow(256, 2)
-ENT.MaxStock = 4
+ENT.MaxStock = 20
 ENT.Items = {
-	{"Coffee", "coffee", 10}
+	{"COFFEE - 10", "coffee", 10}
 }
 
 function ENT:GetStock(id)

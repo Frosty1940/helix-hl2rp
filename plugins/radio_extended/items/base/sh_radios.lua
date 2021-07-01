@@ -320,6 +320,7 @@ ITEM.functions.AdMode = { -- Sorry, ordering
 }
 
 ITEM.functions.Frequency = {
+	icon = "icon16/feed_link.png",
 	OnRun = function(itemTable)
 	
 		local character = itemTable.player:GetCharacter()
@@ -379,6 +380,7 @@ ITEM.functions.Frequency = {
 }
 
 ITEM.functions.Channel = {
+	icon = "icon16/feed_go.png",
 	OnRun = function(itemTable)
 	
 		local character = itemTable.player:GetCharacter()
@@ -428,6 +430,7 @@ ITEM.functions.Channel = {
 }
 
 ITEM.functions.Silence = {
+	icon = "icon16/bell_delete.png",
 	OnRun = function(itemTable)
 		--netstream.Start(itemTable.player, "Frequency", itemTable:GetData("silenced", "000.0"))
 		if (itemTable:GetData("enabled")) then
@@ -456,6 +459,7 @@ ITEM.functions.Silence = {
 }
 
 ITEM.functions.Listen = {
+	icon = "icon16/ipod_sound.png",
 	OnRun = function(itemTable)
 		-- If it's not active, make it so
 		local character = itemTable.player:GetCharacter()
@@ -508,6 +512,7 @@ ITEM.functions.Listen = {
 }
 
 ITEM.functions.Toggle = {
+	icon = "icon16/tick.png",
 	OnRun = function(itemTable)
 		-- local character = itemTable.player:GetCharacter()
 		-- local inventory = character:GetInventory()
@@ -641,6 +646,7 @@ function ITEM.postHooks.Toggle(item,status)
 end
 
 ITEM.functions.Activate = {
+	icon = "icon16/accept.png",
 	OnRun = function(itemTable)
 		-- local character = itemTable.player:GetCharacter()
 		-- local inventory = character:GetInventory()

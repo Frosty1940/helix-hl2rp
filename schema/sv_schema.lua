@@ -80,6 +80,16 @@ function Schema:SaveCoffeeMachines()
 	ix.data.Set("coffeeMachines", data)
 end
 
+function Schema:SavePepsiMachines()
+	local data = {}
+
+	for _, v in ipairs(ents.FindByClass("ix_pepsimachine")) do
+		data[#data + 1] = {v:GetPos(), v:GetAngles(), v:GetAllStock()}
+	end
+
+	ix.data.Set("pepsiMachines", data)
+end
+
 -- data loading
 function Schema:LoadRationDispensers()
 	for _, v in ipairs(ix.data.Get("rationDispensers") or {}) do
@@ -132,6 +142,17 @@ end
 function Schema:LoadCoffeeMachines()
 	for _, v in ipairs(ix.data.Get("coffeeMachines") or {}) do
 		local vendor = ents.Create("ix_coffeemachine")
+
+		vendor:SetPos(v[1])
+		vendor:SetAngles(v[2])
+		vendor:Spawn()
+		vendor:SetStock(v[3])
+	end
+end
+
+function Schema:LoadPepsiMachines()
+	for _, v in ipairs(ix.data.Get("pepsiMachines") or {}) do
+		local vendor = ents.Create("ix_pepsimachine")
 
 		vendor:SetPos(v[1])
 		vendor:SetAngles(v[2])

@@ -5,6 +5,7 @@ function Schema:LoadData()
 	self:LoadCombineLocks()
 	self:LoadForceFields()
 	self:LoadCoffeeMachines()
+	self:LoadPepsiMachines()
 
 	Schema.CombineObjectives = ix.data.Get("combineObjectives", {}, false, true)
 end
@@ -15,6 +16,7 @@ function Schema:SaveData()
 	self:SaveCombineLocks()
 	self:SaveForceFields()
 	self:SaveCoffeeMachines()
+	self:SavePepsiMachines()
 end
 
 function Schema:PlayerSwitchFlashlight(client, enabled)

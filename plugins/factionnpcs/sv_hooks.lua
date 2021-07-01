@@ -26,7 +26,13 @@ local combineNPCs = {
 	"npc_turret_ceiling",
 	"npc_turret_ground",
 	"npc_combine_camera",
-	"combine_mine"
+	"combine_mine",
+	"npc_vj_hlvr_suppressor",
+	"npc_vj_hlvr_captain",
+	"npc_vj_hlvr_heavy",
+	"npc_vj_hlvr_grunt",
+	"npc_vj_hlvr_grunt_police",
+	"npc_combine_sniper",
 }
 
 local rebelNPCs = {
@@ -60,15 +66,15 @@ function PLUGIN:UpdateRelations(client)
 		if(v:IsNPC()) then
 			if(self:IsNPCCombine(v)) then
 				if(client:IsCombine() or client:Team() == FACTION_ADMIN or client:Team() == FACTION_CONSCRIPT) then
-					v:AddEntityRelationship(client, 3)
+					v:AddEntityRelationship(client, D_LI, 99)
 				else
-					v:AddEntityRelationship(client, 1)
+					v:AddEntityRelationship(client, D_HT, 99)
 				end
 			elseif(self:IsNPCRebel(v)) then
 				if(client:IsCombine() or client:Team() == FACTION_ADMIN or client:Team() == FACTION_CONSCRIPT) then
-					v:AddEntityRelationship(client, 1)
+					v:AddEntityRelationship(client, D_HT, 99)
 				else
-					v:AddEntityRelationship(client, 3)
+					v:AddEntityRelationship(client, D_LI, 99)
 				end
 			end
 		end

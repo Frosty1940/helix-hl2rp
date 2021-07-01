@@ -175,6 +175,7 @@ LANGUAGE = {
 	acharacters = "계정", 
 	primary = "주무기",
 	sidearm = "보조무기",
+	Unlock = "잠금 해제하기",
 
 	[".9mm Pistol"] = "9mm 권총",
 	pistolDesc = "9mm 탄약을 사용하는 자동권총입니다.",
