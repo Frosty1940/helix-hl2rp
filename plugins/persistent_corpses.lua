@@ -207,8 +207,19 @@ if (SERVER) then
 					if (counter < ix.config.Get("deathItemMaxDrop", 1)) then
 						if math.random(100) < ix.config.Get("deathItemDropChance", 50) then
 							if (ix.config.Get("dropWeaponOnly", true) then
-								if ((item:GetData("equip", false) and (item.base == "base_weapon")) then
-									item:SetData("equip", false)
+								if (item.base == "base_weapon") then
+									if (item:GetData("equip", false) then
+										item:SetData("equip", false)
+									end
+									item:Transfer()
+									if (ix.config.Get("dropItemsOnDeath")) then
+										item:Transfer()
+										if item:GetEntity() then
+											item:GetEntity():SetPos(client:GetPos() + Vector( math.Rand(-8,8), math.Rand(-8,8), counter * 5 ))
+										end
+									else
+										item:remove()
+									end
 								end
 							else
 								if (item:GetData("equip", false)) then
@@ -219,15 +230,15 @@ if (SERVER) then
 									end
 									item:SetData("equip", false)
 								end
-							end
-
-							if (ix.config.Get("dropItemsOnDeath")) then
-								item:Transfer()
-								if item:GetEntity() then
-									item:GetEntity():SetPos(client:GetPos() + Vector( math.Rand(-8,8), math.Rand(-8,8), counter * 5 ))
+								
+								if (ix.config.Get("dropItemsOnDeath")) then
+									item:Transfer()
+									if item:GetEntity() then
+										item:GetEntity():SetPos(client:GetPos() + Vector( math.Rand(-8,8), math.Rand(-8,8), counter * 5 ))
+									end
+								else
+									item:remove()
 								end
-							else
-								item:remove()
 							end
 							table.Add(itemNames, {item.name})
 							counter = counter + 1
