@@ -1,0 +1,16 @@
+if (CLIENT) then return; end;
+
+local PLUGIN = PLUGIN;
+
+-- Called at an interval while a player is connected.
+function PLUGIN:PlayerPostThink(player)
+    local raised = player:IsWepRaised();
+
+    if (!raised) then
+        player:DrawViewModel(false);
+        player.notDrawingViewModel = true;
+    elseif (raised and player.notDrawingViewModel) then
+        player:DrawViewModel(true);
+        player.notDrawingViewModel = false;
+    end
+end
