@@ -56,9 +56,9 @@ function Schema:CharacterLoaded(character)
 	end
 end
 
-function Schema:PlayerFootstep(client, position, foot, soundName, volume)
-	return true
-end
+-- function Schema:PlayerFootstep(client, position, foot, soundName, volume)
+-- 	return true
+-- end
 
 local COLOR_BLACK_WHITE = {
 	["$pp_colour_addr"] = 0,
@@ -132,8 +132,19 @@ function Schema:PreDrawOpaqueRenderables()
 end
 
 function Schema:ShouldDrawCrosshair()
-	if (scannerFirstPerson) then
-		return false
+	local client = LocalPlayer()
+	local weapon = client:GetActiveWeapon()
+	
+	if (weapon and weapon:IsValid()) then
+		local class = weapon:GetClass()
+		
+		if (class:find("ix_") or class:find("weapon_physgun") or class:find("gmod_tool")) then
+			return true
+		elseif (!client:IsWepRaised()) then
+			return true
+		else
+			return false
+		end
 	end
 end
 

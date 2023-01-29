@@ -262,3 +262,17 @@ ix.command.Add("CharSetDesc", {
 		target:GetCharacter():SetDescription(description)
 	end
 })
+
+ix.command.Add("CharSetId", {
+	adminOnly = true,
+	arguments = {
+		ix.type.player,
+	},
+	OnRun = function(self, client, target)
+		local id = Schema:ZeroNumber(math.random(1, 99999), 5)
+		local character = target:GetCharacter()
+		
+		character:SetData("cid", id)
+		client:NotifyLocalized(id)
+	end
+})

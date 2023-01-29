@@ -161,8 +161,8 @@ function Schema:PlayerFootstep(client, position, foot, soundName, volume)
 		return true
 	end
 
-	client:EmitSound(soundName)
-	return true
+	--client:EmitSound(soundName)
+	return false
 end
 
 function Schema:PlayerSpawn(client)

@@ -20,7 +20,7 @@ function FACTION:OnCharacterCreated(client, character)
 end
 
 function FACTION:GetDefaultName(client)
-	return "c17:MPF-RCT.UNKNOWN" .. Schema:ZeroNumber(math.random(1, 999), 3), true
+	return "c17:MPF-RCT.UNKNOWN:" .. Schema:ZeroNumber(math.random(1, 999), 3), true
 end
 
 function FACTION:OnTransfered(character)

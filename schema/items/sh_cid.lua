@@ -14,7 +14,14 @@ ITEM.functions.Use = {
 		local target = util.TraceLine(data).Entity
 
 		if (IsValid(target) and target:IsPlayer() and target:GetCharacter() and target:Team() == FACTION_CITIZEN) then
-			itemTable:SetData("id", target:GetCharacter():GetData("cid", 00000))
+			id = Schema:ZeroNumber(math.random(1, 99999), 5)
+			if (target:GetCharacter():GetData("cid", 00000)) then
+				id = target:GetCharacter():GetData("cid", 00000)
+				itemTable:SetData("id", id)
+			else
+				target:GetCharacter():SetData("cid", id)
+				itemTable:SetData("id", id)
+			end
 			itemTable:SetData("name", target:GetCharacter():GetName())
 		end
 

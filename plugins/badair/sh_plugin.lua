@@ -4,7 +4,7 @@ PLUGIN.author = "Black Tea and Subleader"
 PLUGIN.desc = "Remastered Bad Air"
 PLUGIN.toxicAreas = PLUGIN.toxicAreas or {}
 
-ix.util.Include("cl_plugin.lua")
+-- ix.util.Include("cl_plugin.lua")
 
 local PLAYER = FindMetaTable("Player")
 

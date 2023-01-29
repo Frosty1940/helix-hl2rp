@@ -34,7 +34,7 @@ ix.config.Add("dropItemsOnDeath", false, "Whether or not to drop specific items 
 
 ix.config.Add("dropWeaponOnly", false, "Wheter or not to drop weapons only on death.", nil, {
 	category = "Persistent Corpses"
-}}
+})
 
 ix.config.Add("deathWeaponDura", false, "If true weapons will take damage.", nil, {
 	category = "Persistent Corpses"
@@ -206,9 +206,9 @@ if (SERVER) then
 				if (item.noDeathDrop != true) then
 					if (counter < ix.config.Get("deathItemMaxDrop", 1)) then
 						if math.random(100) < ix.config.Get("deathItemDropChance", 50) then
-							if (ix.config.Get("dropWeaponOnly", true) then
+							if (ix.config.Get("dropWeaponOnly", true)) then
 								if (item.base == "base_weapon") then
-									if (item:GetData("equip", false) then
+									if (item:GetData("equip", false)) then
 										item:SetData("equip", false)
 									end
 									item:Transfer()

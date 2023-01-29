@@ -26,6 +26,8 @@ if (SERVER) then
 
 		if (index and index >= 1) then
 			position = door:GetBonePosition(index)
+		else
+			return nil, normal
 		end
 
 		position = position + normal:Forward() * 7.2 + normal:Up() * 10 + normal:Right() * 2
