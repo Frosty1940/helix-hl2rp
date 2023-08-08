@@ -24,7 +24,7 @@ function FACTION:GetDefaultName(client)
 	return "OTA.OWS-UNKNOWN:" .. Schema:ZeroNumber(math.random(1, 999), 2), true
 end
 
-function FACTION:OnTransfered(character)
+function FACTION:OnTransferred(character)
 	character:SetName(self:GetDefaultName())
 	character:SetModel(self.models[1])
 end
