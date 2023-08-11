@@ -21,6 +21,7 @@ if SERVER then
 	}--fill this table
 
 	function PLUGIN:ScalePlayerDamage(ply,hitgroup,dmginfo )
+		if (ply:IsAdmin() and ply:GetMoveType() == MOVETYPE_NOCLIP) then return end
 		local char = ply:GetCharacter()
 		if char then
 			if resFactions[char:GetFaction()] then return end

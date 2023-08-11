@@ -70,5 +70,10 @@ ITEM.functions.heal = {
 			client:NotifyLocalized("cNotValid")
 			return false
 		end
+	end,
+	OnCanRun =  function(item)
+		local ent = item.player:GetEyeTraceNoCursor().Entity
+		
+		return ent:IsRagdoll()
 	end
 }
