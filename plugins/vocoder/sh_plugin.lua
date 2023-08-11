@@ -101,7 +101,7 @@ function PLUGIN:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 end
 
 netstream.Hook("PlayerChatTextChanged", function(client, key)
-	if (client:IsCombine() and !client.bTypingBeep
+	if (client:GetMoveType() != MOVETYPE_NOCLIP and client:IsCombine() and !client.bTypingBeep
 	and (key == "y" or key == "w" or key == "r" or key == "t")) then
 		if (client:Team() == FACTION_MPF) then
 			client:EmitSound("NPC_MetroPolice.Radio.On")
@@ -114,7 +114,7 @@ netstream.Hook("PlayerChatTextChanged", function(client, key)
 end)
 
 netstream.Hook("PlayerFinishChat", function(client)
-	if (client:IsCombine() and client.bTypingBeep) then
+	if (client:GetMoveType() != MOVETYPE_NOCLIP and client:IsCombine() and client.bTypingBeep) then
 		if (client:Team() == FACTION_MPF) then
 			client:EmitSound("NPC_MetroPolice.Radio.Off")
 		else

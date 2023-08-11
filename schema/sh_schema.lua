@@ -43,7 +43,11 @@ ix.anim.SetModelClass("models/jq/hlvr/characters/combine/grunt/combine_grunt_hlv
 ix.anim.SetModelClass("models/jq/hlvr/characters/combine/heavy/combine_heavy_hlvr_npc.mdl", "overwatch")
 ix.anim.SetModelClass("models/jq/hlvr/characters/combine/suppressor/combine_suppressor_hlvr_npc.mdl", "overwatch")
 
+ix.anim.SetModelClass("models/armacham/scientists/scientists_1.mdl", "player")
+ix.anim.SetModelClass("models/armacham/security/enemy/guard_1.mdl", "overwatch")
+
 ALWAYS_RAISED["gmod_gphone"] = true
+ALWAYS_RAISED["weapon_portalgun"] = true
 
 game.AddAmmoType({name = "5.56x45mm"})
 game.AddAmmoType({name = "7.62x51mm"})

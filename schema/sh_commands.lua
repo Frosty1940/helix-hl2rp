@@ -82,6 +82,8 @@ do
 
 				ix.chat.Send(client, "request", message)
 				ix.chat.Send(client, "request_eavesdrop", message)
+
+				client:EmitSound("buttons/combine_button7.wav")
 			else
 				return "@notNow"
 			end

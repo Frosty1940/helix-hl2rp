@@ -130,7 +130,7 @@ local function metroTalk()
 		nextSound = CurTime() + math.random(15,45)
 
 		for k,v in pairs(player.GetAll()) do
-			if v:Team() == FACTION_MPF then
+			if (v:Team() == FACTION_MPF and v:GetMoveType() != MOVETYPE_NOCLIP) then
 				v:EmitSound( metroSounds[ math.random( #metroSounds ) ] , 40)
 			end
 		end
@@ -146,7 +146,7 @@ local function overwatchTalk()
 	if CurTime() > nextSound then
 	
 		nextSound = CurTime() + math.random(10,20)
-		if LocalPlayer():Team() == FACTION_OTA then
+		if (LocalPlayer():Team() == FACTION_OTA and LocalPlayer():GetMoveType() != MOVETYPE_NOCLIP) then
 		
 			surface.PlaySound( overwatchSounds[ math.random( #overwatchSounds ) ] )
 			

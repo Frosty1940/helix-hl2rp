@@ -19,11 +19,11 @@ local drownSounds = {
 }
 
 function PLUGIN:GetPlayerPainSound(client)
-	if (client:IsCombine() and (Schema:IsCombineRank(client:Name(), "SCN") or Schema:IsCombineRank(client:Name(), "SHEILD")))  then
-		return false
-	elseif (client:GetCharacter() and client:GetCharacter():IsVortigaunt()) then
-		return false
-	end
+	local char = client:GetCharacter()
+	
+	if (client:IsAdmin() and client:GetMoveType() == MOVETYPE_NOCLIP) then return false end
+	
+	if ((client:IsCombine() and (Schema:IsCombineRank(client:Name(), "SCN") or Schema:IsCombineRank(client:Name(), "SHEILD"))) or (char and char:IsVortigaunt())) then return false end
 
 	if (client:WaterLevel() >= 3) then
 		return drownSounds[math.random(1, #drownSounds)]
@@ -31,11 +31,13 @@ function PLUGIN:GetPlayerPainSound(client)
 end
 
 function PLUGIN:PlayerHurt(client, attacker, health, damage)
-	if (client:IsCombine())  then
-		return false
-	elseif (client:GetCharacter() and client:GetCharacter():IsVortigaunt()) then
-		return false
-	end
+	ix.log.Add(client, "playerHurt", damage, attacker:GetName() ~= "" and attacker:GetName() or attacker:GetClass())
+
+	local char = client:GetCharacter()
+	
+	if (client:IsAdmin() and client:GetMoveType() == MOVETYPE_NOCLIP) then return false end
+
+	if ((client:IsCombine()) or (char and char:IsVortigaunt()))  then return false end
 
 	if ((client.ixNextPain or 0) < CurTime() and health > 0) then
 		local painSound = hook.Run("GetPlayerPainSound", client) or painSounds[math.random(1, #painSounds)]
@@ -48,5 +50,4 @@ function PLUGIN:PlayerHurt(client, attacker, health, damage)
 		client.ixNextPain = CurTime() + 0.33
 	end
 
-	ix.log.Add(client, "playerHurt", damage, attacker:GetName() ~= "" and attacker:GetName() or attacker:GetClass())
 end
