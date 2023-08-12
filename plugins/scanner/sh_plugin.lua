@@ -14,9 +14,18 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ]]
 
+ix.lang.AddTable("english", {
+	cmdPhotoCache = "Opens the scanner photo cache.",
+	combineOnly = "Only Combine Players can view the scanner photo cache!",
+})
+ix.lang.AddTable("korean", {
+	cmdPhotoCache = "저장된 스캐너 사진을 확인합니다.",
+	cacheCmbOnly = "콤바인 플레이어만 저장된 스캐너 사진을 확인할 수 있습니다!",
+})
+
 if ( CLIENT ) then
-    PLUGIN.PICTURE_WIDTH = 580
-    PLUGIN.PICTURE_HEIGHT = 420
+	PLUGIN.PICTURE_WIDTH = 580
+	PLUGIN.PICTURE_HEIGHT = 420
 end
 
 ix.util.Include("sv_photos.lua")
@@ -24,13 +33,13 @@ ix.util.Include("cl_photos.lua")
 ix.util.Include("sv_hooks.lua")
 ix.util.Include("cl_hooks.lua")
 
-ix.command.Add("PhotoChache", {
-    description = "Opens the scanner photo cache.",
-    OnRun = function(self, ply)
-        if !(ply:IsCombine() or IsValid(ply.ixScn)) then
-            return "Only Combine Players can view the scanner photo cache!"
-        end
-        
-        ply:ConCommand("ix_scanner_photocache")
-    end
+ix.command.Add("PhotoCache", {
+	description = "@cmdPhotoCache",
+	OnRun = function(self, ply)
+		if !(ply:IsCombine() or IsValid(ply.ixScn)) then
+			return "@cacheCmbOnly"
+		end
+		
+		ply:ConCommand("ix_scanner_photocache")
+	end
 })

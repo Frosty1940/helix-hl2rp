@@ -1,5 +1,5 @@
 PLUGIN.name = "More Hurt Effects"
-PLUGIN.author = "Pokernut, Frosty"
+PLUGIN.author = "Pokernut"
 PLUGIN.description = "Add more hurt effects."
 
 if (SERVER) then

@@ -3,7 +3,7 @@ PLUGIN.description = "Rewrites and improves on Source's handling of footsteps."
 PLUGIN.author = "TankNut"
 
 ix.config.Add("footstepVolumeMultiplier", 1, "A volume multiplier to use for footsteps.", nil, {
-	data = {min = 0, max = 2, decimals = 1},
+	data = {min = 0, max = 3, decimals = 1},
 	category = "Footsteps",
 })
 

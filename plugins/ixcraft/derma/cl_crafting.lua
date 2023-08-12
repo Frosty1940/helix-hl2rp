@@ -30,7 +30,7 @@ function PANEL:SetRecipe(recipeTable)
 	self.name:SetTextColor(color_white)
 	self.name:SetFont("ixMenuButtonFont")
 	self.name:SetExpensiveShadow(1, Color(0, 0, 0, 200))
-	self.name:SetText(recipeTable.GetName and recipeTable:GetName() or L(recipeTable.name))
+	self.name:SetText(L(recipeTable.GetName and recipeTable:GetName() or recipeTable.name))
 
 	self:SetBackgroundColor(recipeTable:OnCanCraft(LocalPlayer()) and color_green or color_red)
 end
@@ -101,7 +101,7 @@ function PANEL:Init()
 	for category, realName in SortedPairs(self.categoryPanels) do
 		local button = self.categories:Add("ixMenuButton")
 		button:Dock(TOP)
-		button:SetText(category)
+		button:SetText(L(category))
 		button:SizeToContents()
 		button.Paint = function(this, w, h)
 			surface.SetDrawColor(self.selected == this and ix.config.Get("color") or color_transparent)

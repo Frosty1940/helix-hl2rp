@@ -24,9 +24,9 @@ function Schema:PlayerSwitchFlashlight(client, enabled)
 end
 
 function Schema:PlayerUse(client, entity)
-	if (IsValid(client.ixScanner)) then
-		return false
-	end
+	-- if (IsValid(client.ixScanner)) then
+	-- 	return false
+	-- end
 
 	if ((client:IsCombine() or client:GetCharacter():GetInventory():HasItem("comkey") or client:GetCharacter():GetInventory():HasItem("unionkey")) and entity:IsDoor() and IsValid(entity.ixLock) and client:KeyDown(IN_SPEED)) then
 		entity.ixLock:Toggle(client)
@@ -87,19 +87,19 @@ function Schema:PostPlayerLoadout(client)
 			client:SetHealth(40)
 			client:SetMaxArmor(100)
 			client:SetArmor(self:IsCombineRank(client:Name(), "RCT") and 50 or 100)
-		elseif (client:IsScanner()) then
-			client:SetMaxHealth(30)
-			client:SetHealth(30)
-			client:SetMaxArmor(200)
-			client:SetArmor(200)
-			client:GetCharacter():SetAttrib("str", 0)
-			client:GetCharacter():SetAttrib("end", 0)
-			client:GetCharacter():SetAttrib("stm", 0)
-			client:GetCharacter():SetAttrib("int", 0)
+		-- elseif (client:IsScanner()) then
+		-- 	client:SetMaxHealth(30)
+		-- 	client:SetHealth(30)
+		-- 	client:SetMaxArmor(200)
+		-- 	client:SetArmor(200)
+		-- 	client:GetCharacter():SetAttrib("str", 0)
+		-- 	client:GetCharacter():SetAttrib("end", 0)
+		-- 	client:GetCharacter():SetAttrib("stm", 0)
+		-- 	client:GetCharacter():SetAttrib("int", 0)
 
-			client.ixScanner:SetHealth(client:Health())
-			client.ixScanner:SetMaxHealth(client:GetMaxHealth())
-			client:StripWeapons()
+		-- 	client.ixScanner:SetHealth(client:Health())
+		-- 	client.ixScanner:SetMaxHealth(client:GetMaxHealth())
+		-- 	client:StripWeapons()
 		else
 			client:SetArmor(100)
 		end
@@ -126,11 +126,11 @@ function Schema:PostPlayerLoadout(client)
 	end
 end
 
-function Schema:PrePlayerLoadedCharacter(client, character, oldCharacter)
-	if (IsValid(client.ixScanner)) then
-		client.ixScanner:Remove()
-	end
-end
+-- function Schema:PrePlayerLoadedCharacter(client, character, oldCharacter)
+-- 	if (IsValid(client.ixScanner)) then
+-- 		client.ixScanner:Remove()
+-- 	end
+-- end
 
 function Schema:PlayerLoadedCharacter(client, character, oldCharacter)
 	local faction = character:GetFaction()
@@ -176,9 +176,9 @@ function Schema:PlayerDeath(client, inflicter, attacker)
 		self:AddCombineDisplayMessage("@cLostBiosignal")
 		self:AddCombineDisplayMessage("@cLostBiosignalLocation", Color(255, 0, 0, 255), location)
 
-		if (IsValid(client.ixScanner) and client.ixScanner:Health() > 0) then
-			client.ixScanner:TakeDamage(999)
-		end
+		-- if (IsValid(client.ixScanner) and client.ixScanner:Health() > 0) then
+		-- 	client.ixScanner:TakeDamage(999)
+		-- end
 
 		local sounds = {"npc/overwatch/radiovoice/on1.wav", "npc/overwatch/radiovoice/lostbiosignalforunit.wav"}
 		local chance = math.random(1, 7)
@@ -199,11 +199,11 @@ function Schema:PlayerDeath(client, inflicter, attacker)
 	end
 end
 
-function Schema:PlayerNoClip(client)
-	if (IsValid(client.ixScanner)) then
-		return false
-	end
-end
+-- function Schema:PlayerNoClip(client)
+-- 	if (IsValid(client.ixScanner)) then
+-- 		return false
+-- 	end
+-- end
 
 function Schema:EntityTakeDamage(entity, dmgInfo)
 	if (IsValid(entity.ixPlayer) and entity.ixPlayer:IsScanner()) then
@@ -247,11 +247,11 @@ function Schema:GetPlayerPainSound(client)
 	if (client:IsCombine()) then
 		local sound = "NPC_MetroPolice.Pain"
 
-		if (Schema:IsCombineRank(client:Name(), "SCN")) then
-			sound = "NPC_CScanner.Pain"
-		elseif (Schema:IsCombineRank(client:Name(), "SHIELD")) then
-			sound = "NPC_SScanner.Pain"
-		end
+		-- if (Schema:IsCombineRank(client:Name(), "SCN")) then
+		-- 	sound = "NPC_CScanner.Pain"
+		-- elseif (Schema:IsCombineRank(client:Name(), "SHIELD")) then
+		-- 	sound = "NPC_SScanner.Pain"
+		-- end
 
 		return sound
 	elseif (client:GetCharacter() and client:GetCharacter():IsVortigaunt()) then
@@ -263,11 +263,11 @@ function Schema:GetPlayerDeathSound(client)
 	if (client:IsCombine()) then
 		local sound = "NPC_MetroPolice.Die"
 
-		if (Schema:IsCombineRank(client:Name(), "SCN")) then
-			sound = "NPC_CScanner.Die"
-		elseif (Schema:IsCombineRank(client:Name(), "SHIELD")) then
-			sound = "NPC_SScanner.Die"
-		end
+		-- if (Schema:IsCombineRank(client:Name(), "SCN")) then
+		-- 	sound = "NPC_CScanner.Die"
+		-- elseif (Schema:IsCombineRank(client:Name(), "SHIELD")) then
+		-- 	sound = "NPC_SScanner.Die"
+		-- end
 
 		for k, v in ipairs(player.GetAll()) do
 			if (v:IsCombine()) then
@@ -346,47 +346,47 @@ function Schema:CanPlayerJoinClass(client, class, info)
 	end
 end
 
-local SCANNER_SOUNDS = {
-	"npc/scanner/scanner_blip1.wav",
-	"npc/scanner/scanner_scan1.wav",
-	"npc/scanner/scanner_scan2.wav",
-	"npc/scanner/scanner_scan4.wav",
-	"npc/scanner/scanner_scan5.wav",
-	"npc/scanner/combat_scan1.wav",
-	"npc/scanner/combat_scan2.wav",
-	"npc/scanner/combat_scan3.wav",
-	"npc/scanner/combat_scan4.wav",
-	"npc/scanner/combat_scan5.wav",
-	"npc/scanner/cbot_servoscared.wav",
-	"npc/scanner/cbot_servochatter.wav"
-}
+-- local SCANNER_SOUNDS = {
+-- 	"npc/scanner/scanner_blip1.wav",
+-- 	"npc/scanner/scanner_scan1.wav",
+-- 	"npc/scanner/scanner_scan2.wav",
+-- 	"npc/scanner/scanner_scan4.wav",
+-- 	"npc/scanner/scanner_scan5.wav",
+-- 	"npc/scanner/combat_scan1.wav",
+-- 	"npc/scanner/combat_scan2.wav",
+-- 	"npc/scanner/combat_scan3.wav",
+-- 	"npc/scanner/combat_scan4.wav",
+-- 	"npc/scanner/combat_scan5.wav",
+-- 	"npc/scanner/cbot_servoscared.wav",
+-- 	"npc/scanner/cbot_servochatter.wav"
+-- }
 
-function Schema:KeyPress(client, key)
-	if (IsValid(client.ixScanner) and (client.ixScannerDelay or 0) < CurTime()) then
-		local source
+-- function Schema:KeyPress(client, key)
+-- 	if (IsValid(client.ixScanner) and (client.ixScannerDelay or 0) < CurTime()) then
+-- 		local source
 
-		if (key == IN_USE) then
-			source = SCANNER_SOUNDS[math.random(1, #SCANNER_SOUNDS)]
-			client.ixScannerDelay = CurTime() + 1.75
-		elseif (key == IN_RELOAD) then
-			source = "npc/scanner/scanner_talk"..math.random(1, 2)..".wav"
-			client.ixScannerDelay = CurTime() + 10
-		elseif (key == IN_WALK) then
-			if (client:GetViewEntity() == client.ixScanner) then
-				client:SetViewEntity(NULL)
-			else
-				client:SetViewEntity(client.ixScanner)
-			end
-		end
+-- 		if (key == IN_USE) then
+-- 			source = SCANNER_SOUNDS[math.random(1, #SCANNER_SOUNDS)]
+-- 			client.ixScannerDelay = CurTime() + 1.75
+-- 		elseif (key == IN_RELOAD) then
+-- 			source = "npc/scanner/scanner_talk"..math.random(1, 2)..".wav"
+-- 			client.ixScannerDelay = CurTime() + 10
+-- 		elseif (key == IN_WALK) then
+-- 			if (client:GetViewEntity() == client.ixScanner) then
+-- 				client:SetViewEntity(NULL)
+-- 			else
+-- 				client:SetViewEntity(client.ixScanner)
+-- 			end
+-- 		end
 
-		if (source) then
-			client.ixScanner:EmitSound(source)
-		end
-	end
-end
+-- 		if (source) then
+-- 			client.ixScanner:EmitSound(source)
+-- 		end
+-- 	end
+-- end
 
 function Schema:PlayerSpawnObject(client)
-	if (client:IsRestricted() or IsValid(client.ixScanner)) then
+	if (client:IsRestricted()) then
 		return false
 	end
 end

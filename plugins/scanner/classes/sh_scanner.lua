@@ -1,8 +1,13 @@
 local PLUGIN = PLUGIN
 
-CLASS.name = "Scanner"
+CLASS.name = "Metropolice Scanner"
+CLASS.description = "A metropolice scanner, it utilises Combine technology."
 CLASS.faction = FACTION_MPF
-CLASS.isDefault = true
+CLASS.isDefault = false
+
+function CLASS:CanSwitchTo(client)
+	return Schema:IsCombineRank(client:Name(), "SCN")
+end
 
 function ScannerCreate(ply)
     local scanner = ix.plugin.list.scanner

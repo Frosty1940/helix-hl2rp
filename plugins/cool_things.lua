@@ -1,5 +1,5 @@
 PLUGIN.name = "Miscellaneous"
-PLUGIN.author = "ZeMysticalTaco, Frosty"
+PLUGIN.author = "ZeMysticalTaco"
 PLUGIN.description = "Cool things."
 PLUGIN.SaveEnts = PLUGIN.SaveEnts or {}
 

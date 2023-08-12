@@ -12,7 +12,7 @@ function PLUGIN:PopulateRecipeTooltip(tooltip, recipe)
 
 	local name = tooltip:AddRow("name")
 	name:SetImportant()
-	name:SetText(recipe.category..": "..(recipe.GetName and recipe:GetName() or L(recipe.name)))
+	name:SetText(L(recipe.category..": "..(recipe.GetName and recipe:GetName() or recipe.name)))
 	name:SetMaxWidth(math.max(name:GetMaxWidth(), ScrW() * 0.5))
 	name:SizeToContents()
 
@@ -22,13 +22,13 @@ function PLUGIN:PopulateRecipeTooltip(tooltip, recipe)
 		end
 
 		local errorRow = tooltip:AddRow("errorRow")
-		errorRow:SetText(L(failString))
+		errorRow:SetText(failString)
 		errorRow:SetBackgroundColor(Color(255,24,0))
 		errorRow:SizeToContents()
 	end
 
 	local description = tooltip:AddRow("description")
-	description:SetText(recipe.GetDescription and recipe:GetDescription() or L(recipe.description))
+	description:SetText(L(recipe.GetDescription and recipe:GetDescription() or recipe.description))
 	description:SizeToContents()
 
 	if (recipe.tools) then
@@ -122,12 +122,12 @@ end
 function PLUGIN:PopulateStationTooltip(tooltip, station)
 	local name = tooltip:AddRow("name")
 	name:SetImportant()
-	name:SetText(station.GetName and station:GetName() or L(station.name))
+	name:SetText(L(station.GetName and station:GetName() or station.name))
 	name:SetMaxWidth(math.max(name:GetMaxWidth(), ScrW() * 0.5))
 	name:SizeToContents()
 
 	local description = tooltip:AddRow("description")
-	description:SetText(station.GetDescription and station:GetDescription() or L(station.description))
+	description:SetText(L(station.GetDescription and station:GetDescription() or station.description))
 	description:SizeToContents()
 
 	if (station.PopulateTooltip) then

@@ -1,7 +1,9 @@
 
+local font = ix.config.Get("font", "Roboto")
+
 hook.Add("LoadFonts", "ixCombineViewObjectives", function()
 	surface.CreateFont("ixCombineViewObjectives", {
-		font = "Courier New",
+		font = font,
 		size = 16,
 		antialias = true,
 		weight = 400

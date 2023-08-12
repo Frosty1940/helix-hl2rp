@@ -1,5 +1,5 @@
 PLUGIN.name = "Combine Light"
-PLUGIN.author = "robinkooli, Frosty"
+PLUGIN.author = "robinkooli"
 PLUGIN.description = "Portable light sources used to illuminate dark areas in support of Combine operations."
 
 ix.lang.AddTable("english", {

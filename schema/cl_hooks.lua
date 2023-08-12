@@ -74,7 +74,7 @@ local COLOR_BLACK_WHITE = {
 
 local combineOverlay = ix.util.GetMaterial("effects/combine_binocoverlay")
 local cinematicOverlay = ix.util.GetMaterial("nco/cinover")
-local scannerFirstPerson = false
+-- local scannerFirstPerson = false
 
 function Schema:RenderScreenspaceEffects()
 	local colorModify = {}
@@ -88,10 +88,10 @@ function Schema:RenderScreenspaceEffects()
 		colorModify["$pp_colour_contrast"] = 1
 	end
 
-	if (scannerFirstPerson) then
-		COLOR_BLACK_WHITE["$pp_colour_brightness"] = 0.05 + math.sin(RealTime() * 10) * 0.01
-		colorModify = COLOR_BLACK_WHITE
-	end
+	-- if (scannerFirstPerson) then
+	-- 	COLOR_BLACK_WHITE["$pp_colour_brightness"] = 0.05 + math.sin(RealTime() * 10) * 0.01
+	-- 	colorModify = COLOR_BLACK_WHITE
+	-- end
 
 	DrawColorModify(colorModify)
 
@@ -110,26 +110,26 @@ function Schema:RenderScreenspaceEffects()
 	end
 end
 
-function Schema:PreDrawOpaqueRenderables()
-	local viewEntity = LocalPlayer():GetViewEntity()
+-- function Schema:PreDrawOpaqueRenderables()
+-- 	local viewEntity = LocalPlayer():GetViewEntity()
 
-	if (IsValid(viewEntity) and viewEntity:GetClass():find("scanner")) then
-		self.LastViewEntity = viewEntity
-		self.LastViewEntity:SetNoDraw(true)
+-- 	if (IsValid(viewEntity) and viewEntity:GetClass():find("scanner")) then
+-- 		self.LastViewEntity = viewEntity
+-- 		self.LastViewEntity:SetNoDraw(true)
 
-		scannerFirstPerson = true
-		return
-	end
+-- 		scannerFirstPerson = true
+-- 		return
+-- 	end
 
-	if (self.LastViewEntity != viewEntity) then
-		if (IsValid(self.LastViewEntity)) then
-			self.LastViewEntity:SetNoDraw(false)
-		end
+-- 	if (self.LastViewEntity != viewEntity) then
+-- 		if (IsValid(self.LastViewEntity)) then
+-- 			self.LastViewEntity:SetNoDraw(false)
+-- 		end
 
-		self.LastViewEntity = nil
-		scannerFirstPerson = false
-	end
-end
+-- 		self.LastViewEntity = nil
+-- 		scannerFirstPerson = false
+-- 	end
+-- end
 
 function Schema:ShouldDrawCrosshair()
 	local client = LocalPlayer()
@@ -148,11 +148,11 @@ function Schema:ShouldDrawCrosshair()
 	end
 end
 
-function Schema:AdjustMouseSensitivity()
-	if (scannerFirstPerson) then
-		return 0.3
-	end
-end
+-- function Schema:AdjustMouseSensitivity()
+-- 	if (scannerFirstPerson) then
+-- 		return 0.3
+-- 	end
+-- end
 
 -- creates labels in the status screen
 function Schema:CreateCharacterInfo(panel)

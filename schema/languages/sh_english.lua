@@ -94,6 +94,9 @@ LANGUAGE = {
 	item556AmmoDesc = "An Ammo Box that contains %s of 5.56×45mm NATO Rifle Rounds.",
 	item762x39AmmoDesc = "An Ammo Box that contains %s of 7.62×39mm M43 Rifle Rounds.",
 
+	itemPermitConsumablesDesc = "A permit allowing you to sell consumable goods.",
+	itemPermitAlcoholDesc = "A permit allowing you to sell alcohol drinks.",
+
 	nvgogDesc = "An optical amplified night vision. Cannot use a flashlight when worn.",
 	irnvGogDesc = "A thermal imaging night vision. Cannot use a flashlight when worn.",
 

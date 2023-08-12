@@ -49,4 +49,17 @@ function FACTION:OnNameChanged(client, oldValue, value)
 	end
 end
 
+function FACTION:ModifyPlayerStep(client, data)
+	-- Don't replace sounds while climbing ladders or wading through water
+	if data.ladder or data.submerged then
+		return
+	end
+
+	-- Only replace running sounds
+	if data.running then
+		data.snd = data.foot and "NPC_MetroPolice.RunFootstepRight" or "NPC_MetroPolice.RunFootstepLeft"
+		data.volume = data.volume * 0.6 -- Very loud otherwise
+	end
+end
+
 FACTION_MPF = FACTION.index

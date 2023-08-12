@@ -1,6 +1,6 @@
 
 PLUGIN.name = "Pain Sounds"
-PLUGIN.author = "Germanium, Frosty"
+PLUGIN.author = "Germanium"
 PLUGIN.description = "scream louder mother."
 
 local painSounds = {

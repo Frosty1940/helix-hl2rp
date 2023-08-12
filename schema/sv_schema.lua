@@ -161,104 +161,104 @@ function Schema:LoadPepsiMachines()
 	end
 end
 
-function Schema:CreateScanner(client, class)
-	class = class or "npc_cscanner"
+-- function Schema:CreateScanner(client, class)
+-- 	class = class or "npc_cscanner"
 
-	local entity = ents.Create(class)
+-- 	local entity = ents.Create(class)
 
-	if (!IsValid(entity)) then
-		return
-	end
+-- 	if (!IsValid(entity)) then
+-- 		return
+-- 	end
 
-	entity:SetPos(client:GetPos())
-	entity:SetAngles(client:GetAngles())
-	entity:SetColor(client:GetColor())
-	entity:Spawn()
-	entity:Activate()
-	entity.ixPlayer = client
-	entity:SetNetVar("player", client) -- Draw the player info when looking at the scanner.
-	entity:CallOnRemove("ScannerRemove", function()
-		if (IsValid(client)) then
-			local position = entity.position or client:GetPos()
+-- 	entity:SetPos(client:GetPos())
+-- 	entity:SetAngles(client:GetAngles())
+-- 	entity:SetColor(client:GetColor())
+-- 	entity:Spawn()
+-- 	entity:Activate()
+-- 	entity.ixPlayer = client
+-- 	entity:SetNetVar("player", client) -- Draw the player info when looking at the scanner.
+-- 	entity:CallOnRemove("ScannerRemove", function()
+-- 		if (IsValid(client)) then
+-- 			local position = entity.position or client:GetPos()
 
-			client:UnSpectate()
-			client:SetViewEntity(NULL)
+-- 			client:UnSpectate()
+-- 			client:SetViewEntity(NULL)
 
-			if (entity:Health() > 0) then
-				client:Spawn()
-			else
-				client:KillSilent()
-			end
+-- 			if (entity:Health() > 0) then
+-- 				client:Spawn()
+-- 			else
+-- 				client:KillSilent()
+-- 			end
 
-			timer.Simple(0, function()
-				client:SetPos(position)
-			end)
-		end
-	end)
+-- 			timer.Simple(0, function()
+-- 				client:SetPos(position)
+-- 			end)
+-- 		end
+-- 	end)
 
-	local uniqueID = "ix_Scanner" .. client:UniqueID()
-	entity.name = uniqueID
-	entity.ixCharacterID = client:GetCharacter():GetID()
+-- 	local uniqueID = "ix_Scanner" .. client:UniqueID()
+-- 	entity.name = uniqueID
+-- 	entity.ixCharacterID = client:GetCharacter():GetID()
 
-	local target = ents.Create("path_track")
-	target:SetPos(entity:GetPos())
-	target:Spawn()
-	target:SetName(uniqueID)
-	entity:CallOnRemove("RemoveTarget", function()
-		if (IsValid(target)) then
-			target:Remove()
-		end
-	end)
+-- 	local target = ents.Create("path_track")
+-- 	target:SetPos(entity:GetPos())
+-- 	target:Spawn()
+-- 	target:SetName(uniqueID)
+-- 	entity:CallOnRemove("RemoveTarget", function()
+-- 		if (IsValid(target)) then
+-- 			target:Remove()
+-- 		end
+-- 	end)
 
-	entity:SetHealth(client:Health())
-	entity:SetMaxHealth(client:GetMaxHealth())
-	entity:Fire("setfollowtarget", uniqueID)
-	entity:Fire("inputshouldinspect", false)
-	entity:Fire("setdistanceoverride", "48")
-	entity:SetKeyValue("spawnflags", 8208)
+-- 	entity:SetHealth(client:Health())
+-- 	entity:SetMaxHealth(client:GetMaxHealth())
+-- 	entity:Fire("setfollowtarget", uniqueID)
+-- 	entity:Fire("inputshouldinspect", false)
+-- 	entity:Fire("setdistanceoverride", "48")
+-- 	entity:SetKeyValue("spawnflags", 8208)
 
-	client.ixScanner = entity
-	client:Spectate(OBS_MODE_CHASE)
-	client:SpectateEntity(entity)
-	entity:CallOnRemove("RemoveThink", function()
-		timer.Remove(uniqueID)
-	end)
+-- 	client.ixScanner = entity
+-- 	client:Spectate(OBS_MODE_CHASE)
+-- 	client:SpectateEntity(entity)
+-- 	entity:CallOnRemove("RemoveThink", function()
+-- 		timer.Remove(uniqueID)
+-- 	end)
 
-	timer.Create(uniqueID, 0.33, 0, function()
-		if (!IsValid(client) or !IsValid(entity) or client:GetCharacter():GetID() != entity.ixCharacterID) then
-			if (IsValid(entity)) then
-				entity:Remove()
-			end
+-- 	timer.Create(uniqueID, 0.33, 0, function()
+-- 		if (!IsValid(client) or !IsValid(entity) or client:GetCharacter():GetID() != entity.ixCharacterID) then
+-- 			if (IsValid(entity)) then
+-- 				entity:Remove()
+-- 			end
 
-			timer.Remove(uniqueID)
-			return
-		end
+-- 			timer.Remove(uniqueID)
+-- 			return
+-- 		end
 
-		local factor = 128
+-- 		local factor = 128
 
-		if (client:KeyDown(IN_SPEED)) then
-			factor = 64
-		end
+-- 		if (client:KeyDown(IN_SPEED)) then
+-- 			factor = 64
+-- 		end
 
-		if (client:KeyDown(IN_FORWARD)) then
-			target:SetPos((entity:GetPos() + client:GetAimVector() * factor) - Vector(0, 0, 64))
-			entity:Fire("setfollowtarget", uniqueID)
-		elseif (client:KeyDown(IN_BACK)) then
-			target:SetPos((entity:GetPos() + client:GetAimVector() * -factor) - Vector(0, 0, 64))
-			entity:Fire("setfollowtarget", uniqueID)
-		elseif (client:KeyDown(IN_JUMP)) then
-			target:SetPos(entity:GetPos() + Vector(0, 0, factor))
-			entity:Fire("setfollowtarget", uniqueID)
-		elseif (client:KeyDown(IN_DUCK)) then
-			target:SetPos(entity:GetPos() - Vector(0, 0, factor))
-			entity:Fire("setfollowtarget", uniqueID)
-		end
+-- 		if (client:KeyDown(IN_FORWARD)) then
+-- 			target:SetPos((entity:GetPos() + client:GetAimVector() * factor) - Vector(0, 0, 64))
+-- 			entity:Fire("setfollowtarget", uniqueID)
+-- 		elseif (client:KeyDown(IN_BACK)) then
+-- 			target:SetPos((entity:GetPos() + client:GetAimVector() * -factor) - Vector(0, 0, 64))
+-- 			entity:Fire("setfollowtarget", uniqueID)
+-- 		elseif (client:KeyDown(IN_JUMP)) then
+-- 			target:SetPos(entity:GetPos() + Vector(0, 0, factor))
+-- 			entity:Fire("setfollowtarget", uniqueID)
+-- 		elseif (client:KeyDown(IN_DUCK)) then
+-- 			target:SetPos(entity:GetPos() - Vector(0, 0, factor))
+-- 			entity:Fire("setfollowtarget", uniqueID)
+-- 		end
 
-		client:SetPos(entity:GetPos())
-	end)
+-- 		client:SetPos(entity:GetPos())
+-- 	end)
 
-	return entity
-end
+-- 	return entity
+-- end
 
 function Schema:SearchPlayer(client, target)
 	if (!target:GetCharacter() or !target:GetCharacter():GetInventory()) then

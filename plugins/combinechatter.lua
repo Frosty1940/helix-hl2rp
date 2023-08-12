@@ -3,7 +3,7 @@ local PLUGIN = PLUGIN
 
 PLUGIN.name = "Combine Chatter"
 PLUGIN.description = "Combine have regular radio feedback."
-PLUGIN.author = "Blt950, Frosty"
+PLUGIN.author = "Blt950"
 
 local metroSounds = {
 	"npc/combine_soldier/vo/prison_soldier_visceratorsA5.wav",

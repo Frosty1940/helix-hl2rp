@@ -21,7 +21,7 @@ ix.lang.AddTable("korean", {
 	["Enslaved Vortigaunt"] = "노예 보르티곤트",
 	["Vortigaunt"] = "보르티곤트",
 	vortigauntDesc = "젠에서 온 이차원 생물입니다.",
-	vortigeseFormat = "%s님의 보르트어 \"%s\"",
+	vortigeseFormat = "%s의 보르트어 \"%s\"",
 	dontKnowVort = "당신은 보르트어를 모릅니다!",
 })
 

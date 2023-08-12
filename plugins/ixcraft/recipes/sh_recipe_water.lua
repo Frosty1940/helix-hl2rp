@@ -19,5 +19,5 @@ RECIPE:PostHook("OnCanCraft", function(recipeTable, client)
 		end
 	end
 
-	return false, L("noWorkbench")
+	return false, "@noWorkbench"
 end)

@@ -1,5 +1,5 @@
 PLUGIN.name = "Alcohol"
-PLUGIN.author = "AleXXX_007, Frosty"
+PLUGIN.author = "AleXXX_007"
 PLUGIN.description = "Adds alcohol with effects."
 
 ix.lang.AddTable("english", {
@@ -13,7 +13,7 @@ ix.lang.AddTable("english", {
 	itemWineDesc = "An alcoholic beverage made by fermenting the juice of grapes.",
 })
 ix.lang.AddTable("korean", {
-	["Alcohol"] = "술",
+	["Alcohol"] = "주류",
 	Drink = "마시기",
 	["Beer"] = "맥주",
 	itemBeerDesc = "보리와 같은 곡물을 발효시키고 향신료인 홉을 첨가시켜 맛을 낸 술입니다.",

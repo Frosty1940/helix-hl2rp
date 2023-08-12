@@ -10,7 +10,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 local PLUGIN = PLUGIN
 
 PLUGIN.name = "Persistent Corpses"
-PLUGIN.author = "`impulse, Frosty"
+PLUGIN.author = "`impulse"
 PLUGIN.description = "Makes player corpses stay on the map after the player has respawned."
 PLUGIN.hardCorpseMax = 64
 
@@ -66,8 +66,8 @@ do
 	})
 
 	ix.lang.AddTable("korean", {
-		itemLost = "당신은 아이템 %s을(를) 잃었습니다.",
-		moneyLost = "당신은 %s을(를) 잃었습니다.",
+		itemLost = "당신은 %s(을)를 잃었습니다.",
+		moneyLost = "당신은 %s(을)를 잃었습니다.",
 	})
 end
 

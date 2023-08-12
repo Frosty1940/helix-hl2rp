@@ -1,5 +1,5 @@
 PLUGIN.name = "Disallow item taking"
-PLUGIN.author = "github.com/John1344, Frosty"
+PLUGIN.author = "github.com/John1344"
 PLUGIN.description = "Adds /disallowitemtaking command"
 
 ix.lang.AddTable("english", {

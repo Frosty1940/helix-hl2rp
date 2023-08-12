@@ -1,5 +1,5 @@
 LANGUAGE = {
-	schemaName = "하프 라이프 2 역할극",
+	schemaName = "하프 라이프 2 RP",
 	schemaDesc = "17번 지구에 오신 것을 환영합니다.",
 	tying = "구속하는 중...",
 	unTying = "구속 풀어주는 중...",
@@ -74,7 +74,7 @@ LANGUAGE = {
 	["Consumeable"] = "일용품",
 	["Consumables"] = "일용품",
 	["Storage"] = "가방",
-	["Permits"] = "허가서",
+	["Permits"] = "허가증",
 	["Clothing"] = "의상",
 	["Containers"] = "보관함",
 
@@ -239,6 +239,11 @@ LANGUAGE = {
 	item556AmmoDesc = "5.56 × 45 mm NATO 소총탄 %s발이 든 탄약 상자입니다.",
 	["7.62×39mm Ammo Box"] = "7.62 × 39 mm 탄약 상자",
 	item762x39AmmoDesc = "7.62 × 39 mm M43 소총탄 %s발이 든 탄약 상자입니다.",
+
+	["Consumables Permit"] = "일용품 보급 허가증",
+	itemPermitConsumablesDesc = "일용품을 사고 팔 수 있도록 허가하는 증명서입니다.",
+	["Alcohol Permit"] = "주류 보급 허가증",
+	itemPermitAlcoholDesc = "주류를 사고 팔 수 있도록 허가하는 증명서입니다.",
 
 	["Suitcase"] = "여행 가방",
 	suitcaseDesc = "작은 여행용 가방입니다.",

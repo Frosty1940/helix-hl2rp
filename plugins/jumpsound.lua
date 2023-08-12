@@ -1,63 +1,48 @@
+local PLUGIN = PLUGIN
+PLUGIN.name = "Jump Sound"
+PLUGIN.author = "enaruu"
+
 if SERVER then
-    local breathSounds = {
-        ["default"] = {
-            "jump1.mp3",
-            "jump2.mp3",
-            "jump3.mp3",
-            "jump4.mp3",
-            "jump5.mp3"
-        },
-        ["combine"] = {
-            "breath1gas.ogg",
-            "breath2gas.ogg",
-            "breath3gas.ogg",
-            "breath4gas.ogg"
-        }
-    }
+	local jumpSounds = {
+		["default"] = {
+			"physics/body/body_medium_impact_soft1.wav",
+			"physics/body/body_medium_impact_soft2.wav",
+			"physics/body/body_medium_impact_soft3.wav",
+			"physics/body/body_medium_impact_soft4.wav",
+			"physics/body/body_medium_impact_soft5.wav",
+			"physics/body/body_medium_impact_soft6.wav",
+			"physics/body/body_medium_impact_soft7.wav"
+		},
+		["combine"] = {
+			"npc/combine_soldier/gear1.wav",
+			"npc/combine_soldier/gear2.wav",
+			"npc/combine_soldier/gear3.wav",
+			"npc/combine_soldier/gear4.wav",
+			"npc/combine_soldier/gear6.wav",
+			"npc/combine_soldier/gear6.wav"
+		}
+	}
 
-    local jumpCooldown = {}
+	local jumpCooldown = {}
 
-    hook.Add("KeyPress", "JumpBreathsPlugin", function(ply, key)
-        if key == IN_JUMP and ply:Alive() and ply:IsOnGround() and (not jumpCooldown[ply] or jumpCooldown[ply] <= CurTime()) and ply:GetMoveType() ~= MOVETYPE_NOCLIP then
-            local chance = math.random(1, 10)
+	hook.Add("KeyPress", "JumpSoundsPlugin", function(ply, key)
+		if ply:IsValid() and key == IN_JUMP and ply:Alive() and ply:GetCharacter() and ply:IsOnGround() and ply:GetMoveType() ~= MOVETYPE_NOCLIP then
 
-            local soundCategory = ply:IsCombine() and "combine" or "default"
-            local breathSound = breathSounds[soundCategory]
+			local soundCategory = ply:IsCombine() and "combine" or "default"
+			local jumpSound = jumpSounds[soundCategory]
 
-            if chance <= 4 then
-                ply:EmitSound(breathSound[1])
-            elseif chance <= 1 then
-                ply:EmitSound(breathSound[5])    
-            elseif chance <= 7 then
-                ply:EmitSound(breathSound[2])
-            elseif chance <= 9 then
-                ply:EmitSound(breathSound[3])
-            else 
-                ply:EmitSound(breathSound[4])
-            end
+			ply:EmitSound(jumpSound[math.random(1, #jumpSound)])
+		end
+	end)
 
-            jumpCooldown[ply] = CurTime() + 1
-        end
-    end)
+	hook.Add("OnLand", "JumpSoundsPlugin", function(ply, water, vec)
+		if ply:IsValid() and ply:Alive() and ply:GetCharacter() and ply:IsOnGround() then
+			local chance = math.random(1, 10)
 
-    hook.Add("OnLand", "JumpBreathsPlugin", function(ply, water, vec)
-        if ply:Alive() and ply:IsOnGround() and (not jumpCooldown[ply] or jumpCooldown[ply] <= CurTime()) then
-            local chance = math.random(1, 10)
+			local soundCategory = ply:IsCombine() and "combine" or "default"
+			local jumpSound = jumpSounds[soundCategory]
 
-            local soundCategory = ply:IsCombine() and "combine" or "default"
-            local breathSound = breathSounds[soundCategory]
-
-            if chance <= 4 then
-                ply:EmitSound(breathSound[1])
-            elseif chance <= 7 then 
-                ply:EmitSound(breathSound[2])
-            elseif chance <= 9 then 
-                ply:EmitSound(breathSound[3])
-            else 
-                ply:EmitSound(breathSound[4])
-            end
-
-            jumpCooldown[ply] = CurTime() + 1 
-        end
-    end)
+			ply:EmitSound(jumpSound[math.random(1, #jumpSound)])
+		end
+	end)
 end

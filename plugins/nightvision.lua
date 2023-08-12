@@ -1,5 +1,5 @@
 PLUGIN.name = "Night Vision - Helix"
-PLUGIN.author = "Black Tea, Frosty"
+PLUGIN.author = "Black Tea"
 PLUGIN.description = "The conversion of the cSpy's Night Vision scripts."
 
 if (CLIENT) then

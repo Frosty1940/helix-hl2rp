@@ -1,6 +1,6 @@
 
 PLUGIN.name = "Toggle Duck"
-PLUGIN.author = "Pokernut, Frosty"
+PLUGIN.author = "Pokernut"
 PLUGIN.description = "Add Toggle Duck/Crouch function."
 
 ix.lang.AddTable("english", {

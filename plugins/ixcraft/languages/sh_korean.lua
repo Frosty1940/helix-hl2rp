@@ -2,9 +2,9 @@
 LANGUAGE = {
 	crafting = "제작 및 조리",
 	["CraftMissingFlag"] = "%s 플래그가 없습니다.",
-	["CraftMissingTool"] = "%s이(가) 없습니다.",
-	["CraftMissingItem"] = "%s이(가) 없습니다.",
-	["CraftSuccess"] = "%s을(를) 성공적으로 만들었습니다.",
+	["CraftMissingTool"] = "%s(이)가 없습니다.",
+	["CraftMissingItem"] = "%s(이)가 없습니다.",
+	["CraftSuccess"] = "%s(을)를 성공적으로 만들었습니다.",
 
 	["CraftTools"] = "도구",
 	["CraftRequirements"] = "재료",

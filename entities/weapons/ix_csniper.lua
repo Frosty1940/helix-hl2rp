@@ -1,7 +1,7 @@
 AddCSLuaFile()
 
 SWEP.PrintName 				= "Overwatch Sniper Rifle"
-SWEP.Author 				= "TankNut, Frosty"
+SWEP.Author 				= "TankNut"
 
 SWEP.RenderGroup 			= RENDERGROUP_BOTH
 

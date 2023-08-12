@@ -2,7 +2,7 @@
 local PLUGIN = PLUGIN
 
 PLUGIN.name = "Perma Remove"
-PLUGIN.author = "alexgrist, Frosty"
+PLUGIN.author = "alexgrist"
 PLUGIN.description = "Allows staff to permenantly remove map entities."
 
 ix.lang.AddTable("english", {

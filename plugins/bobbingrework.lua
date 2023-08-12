@@ -1,3 +1,16 @@
+local PLUGIN = PLUGIN
+PLUGIN.name = "View Bobbing"
+PLUGIN.author = "enaruu"
+
+ix.lang.AddTable("english", {
+	optEnableViewBobbing = "Enable View Bobbing",
+	optdEnableViewBobbing = "Wether or not simulate natural character head bobing in first person view.",
+})
+ix.lang.AddTable("korean", {
+	optEnableViewBobbing = "머리 흔들림 켜기",
+	optdEnableViewBobbing = "일인칭 시점에서 자연스러운 캐릭터 머리 흔들림을 재현합니다.",
+})
+
 local BobbingSpeed = 4.5 
 local BobbingAmount = 0.1 
 local RollSmoothing = 0.2 

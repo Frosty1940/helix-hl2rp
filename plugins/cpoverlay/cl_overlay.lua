@@ -8,6 +8,7 @@ surface.CreateFont("HUDSmooth", {
 	size = 18,
 	antialias = true,
 	weight = 350,
+	extended,
 })
 
 local weps = { -- this table is for the weapons printnames, to be shown correctly on the armament info.

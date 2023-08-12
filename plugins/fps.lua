@@ -1,5 +1,5 @@
 PLUGIN.name = "Show FPS"
-PLUGIN.author = "L7D, Pokernut, Frosty"
+PLUGIN.author = "L7D, Pokernut"
 PLUGIN.description = "Show FPS."
 
 if (CLIENT) then

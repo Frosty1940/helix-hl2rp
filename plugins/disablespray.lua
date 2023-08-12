@@ -1,5 +1,5 @@
 PLUGIN.name = "Disable Spray"
-PLUGIN.author = "Pokernut, Frosty"
+PLUGIN.author = "Pokernut"
 PLUGIN.description = "Disables player spray."
 
 ix.config.Add("disableSpray", true, "Whether or not player spray is enabled.", nil, {

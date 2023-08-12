@@ -5,7 +5,7 @@ Created by LiGyH.
 --]]
 
 PLUGIN.name = "Hunger+++ (merged with Survival System)"
-PLUGIN.author = "LiGyH, ZeMysticalTaco, Frosty"
+PLUGIN.author = "LiGyH, ZeMysticalTaco"
 PLUGIN.description = "A survival system consisting of hunger and thirst."
 
 ix.lang.AddTable("english", {
@@ -68,6 +68,7 @@ if SERVER then
 
 	function PLUGIN:PlayerSpawn(client)
 		local char = client:GetCharacter()
+		local enabled = client:Team() != FACTION_OTA and !Schema:IsCombineRank(client:Name(), "SCN")
 		
 		if (client.resetHunger) then
 			char:SetData("hunger", 100)
@@ -79,6 +80,15 @@ if SERVER then
 			char:SetData("thirst", 100)
 			client:SetLocalVar("thirst", 100)
 			client.resetThirst = false
+		end
+
+		if (enabled) then
+			char:SetData("hunger", 100)
+			client:SetLocalVar("hunger", 100)
+			char:SetData("thirst", 100)
+			client:SetLocalVar("thirst", 100)
+			client.resetThirst = false
+			client.resetHunger = false
 		end
 	end
 
@@ -104,8 +114,9 @@ if SERVER then
 
 	function playerMeta:TickThirst(amount)
 		local char = self:GetCharacter()
+		local enabled = self:Team() != FACTION_OTA and !Schema:IsCombineRank(self:Name(), "SCN")
 
-		if (char) then
+		if (char and enabled) then
 			char:SetData("thirst", char:GetData("thirst", 100) - amount)
 			self:SetLocalVar("thirst", char:GetData("thirst", 100) - amount)
 
@@ -118,8 +129,9 @@ if SERVER then
 
 	function playerMeta:TickHunger(amount)
 		local char = self:GetCharacter()
+		local enabled = self:Team() != FACTION_OTA and !Schema:IsCombineRank(self:Name(), "SCN")
 
-		if (char) then
+		if (char and enabled) then
 			char:SetData("hunger", char:GetData("hunger", 100) - amount)
 			self:SetLocalVar("hunger", char:GetData("hunger", 100) - amount)
 

@@ -14,40 +14,28 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ]]
 
-ix.lang.AddTable("english", {
-	wakeUpMsg1 = "You wake up from a long nap and recover from your sleep.",
-	wakeUpMsg2 = "You stand up and sniffing the fresh air from the world.",
-	wakeUpMsg3 = "You start to stand up and recover from your sleep.",
-	wakeUpMsg4 = "You are sweating from all the scare you have been getting from your dream and you wake up.",
-	wakeUpMsg5 = "You were dreaming of someone and you heard their voice, you started to wake up.",
-	wakeUpMsg6 = "You hear a small whisper in your ear, after that you hear loud footsteps fading away, you wake up being scared.",
-	wakeUpMsg7 = "You hear a loud helicopter overhead of yourself and you instantly wake up.",
-	wakeUpMsg8 = "You heard a growling and you started to wake up but scared.",
-	wakeUpMsg9 = "You heard a loud siren and you are scared of the noise.",
-})
-ix.lang.AddTable("korean", {
-	wakeUpMsg1 = "긴 낮잠에서 깨어나 몸을 일으킵니다.",
-	wakeUpMsg2 = "서늘한 바람을 느끼며 정신을 차립니다.",
-	wakeUpMsg3 = "자리에서 일어나며 잠에서 깨어납니다.",
-	wakeUpMsg4 = "악몽을 꾸다 화들짝 놀라 식은 땀을 흘리며 잠에서 깨어납니다.",
-	wakeUpMsg5 = "멍하니 있다 어떤 익숙한 목소리를 듣고 정신을 차렸지만 그 사람의 모습은 온데간데 찾아볼 수 없었습니다.",
-	wakeUpMsg6 = "귓가에 작은 속삭임이 들리다가 갑자기 누군가 달아나는 듯한 큰 발소리에 정신을 차립니다.",
-	wakeUpMsg7 = "머리 위를 지나는 시끄러운 헬리콥터 소리에 곧장 정신이 듭니다.",
-	wakeUpMsg8 = "좀비가 내는 그르륵 소리에 깜짝 놀라 정신을 차립니다.",
-	wakeUpMsg9 = "시끄러운 사이렌 소리에 놀라 정신이 듭니다.",
-})
-
 -- Feel free to change any of these messages.
-local wakeupmessages = {
-	"wakeUpMsg1",
-	"wakeUpMsg2",
-	"wakeUpMsg3",
-	"wakeUpMsg4",
-	"wakeUpMsg5",
-	"wakeUpMsg6",
-	"wakeUpMsg7",
-	"wakeUpMsg8",
-	"wakeUpMsg9"
+local wakeupMessages = {
+	"You wake up from a long nap and recover from your sleep.",
+	"You stand up and sniffing the fresh air from the world.",
+	"You start to stand up and recover from your sleep.",
+	"You are sweating from all the scare you have been getting from your dream and you wake up.",
+	"You were dreaming of someone and you heard their voice, you started to wake up.",
+	"You hear a small whisper in your ear, after that you hear loud footsteps fading away, you wake up being scared.",
+	"You hear a loud helicopter overhead of yourself and you instantly wake up.",
+	"You heard a growling and you started to wake up but scared.",
+	"You heard a loud siren and you are scared of the noise.",
+}
+local wakeupMessagesKor = {
+	"긴 낮잠에서 깨어나 몸을 일으킵니다.",
+	"서늘한 바람을 느끼며 정신을 차립니다.",
+	"자리에서 일어나며 잠에서 깨어납니다.",
+	"악몽을 꾸다 화들짝 놀라 식은 땀을 흘리며 잠에서 깨어납니다.",
+	"멍하니 있다 어떤 익숙한 목소리를 듣고 정신을 차렸지만 그 사람의 모습은 온데간데 찾아볼 수 없었습니다.",
+	"귓가에 작은 속삭임이 들리다가 갑자기 누군가 달아나는 듯한 큰 발소리에 정신을 차립니다.",
+	"머리 위를 지나는 시끄러운 헬리콥터 소리에 곧장 정신이 듭니다.",
+	"좀비가 내는 그르륵 소리에 깜짝 놀라 정신을 차립니다.",
+	"시끄러운 사이렌 소리에 놀라 정신이 듭니다.",
 }
 
 function PLUGIN:PlayerSpawn(ply)
@@ -55,4 +43,8 @@ function PLUGIN:PlayerSpawn(ply)
 
 	ply:ConCommand("play music/stingers/hl1_stinger_song16.mp3")
 	ply:ScreenFade(SCREENFADE.IN, color_black, 3, 2)
-	ply:ChatPrint(L(table.Random(wakeupmessages)))
+
+	local msg = table.Random(wakeupMessagesKor)
+
+	-- ply:ChatPrint("─ "..msg)
+end

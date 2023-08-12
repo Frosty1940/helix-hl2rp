@@ -4,7 +4,7 @@ PLUGIN.name = "Menu Voces"
 PLUGIN.author = "UltraDev"
 PLUGIN.description = "View menu voices press [N]."
 
-PLUGIN.bind = KEY_C
+PLUGIN.bind = KEY_N
 
 if (CLIENT) then
 	function PLUGIN:PlayerButtonDown(client, button)
