@@ -116,6 +116,7 @@ LANGUAGE = {
 	cidDesc3 = "\n NAME: ",
 
 	itemCombineKeycardDesc = "A Combine security keycard.",
+	itemBinocularsDesc = "A device that you hold up to your eyes and look through to see things that are far away.",
 	itemUnionKeycardDesc = "A Civil Workers Union security keycard.",
 
 	bookDesc = "A readable book.",
