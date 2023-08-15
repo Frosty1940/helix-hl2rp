@@ -57,11 +57,15 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 				end
 			end
 		end
+
+		if (speaker:IsCombine()) then
+			return string.format("<:: %s ::>", text)
+		end
 	end
 	
 	if (chatType == "broadcast") then
 		netstream.Start(nil, "PlaySound", "aurawatch/admin/announce.wav")
-	end    
+	end
 end
 
 netstream.Hook("PlayerChatTextChanged", function(client, key)

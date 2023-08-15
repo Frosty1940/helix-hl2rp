@@ -1,4 +1,4 @@
-PLUGIN.name = "Improved Voice Commands with Vocoder"
+PLUGIN.name = "ixVoice with Vocoder"
 PLUGIN.description = "Let's users string multiple voice commands together. The name of the plugin same with each plugins by DoopieWop and sanny but core contents has been newly rewritten and replaced by Ronald and Frosty. Please respect their copyrights as well as ours."
 PLUGIN.author = "Ronald and Frosty"
 PLUGIN.schema = "HL2 RP"
