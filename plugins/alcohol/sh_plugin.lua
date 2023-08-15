@@ -68,11 +68,13 @@ end
 
 if (SERVER) then
 	function PLUGIN:PostPlayerLoadout(client)
+		if not client:GetCharacter() then return end
 		client:SetLocalVar("drunk", 0)
 		client:GetCharacter():SetData("drunk", 0)
 	end
 	
 	function PLUGIN:PlayerDeath(client)
+		if not client:GetCharacter() then return end
 		client:SetLocalVar("drunk", 0)
 		client:GetCharacter():SetData("drunk", 0)
 	end

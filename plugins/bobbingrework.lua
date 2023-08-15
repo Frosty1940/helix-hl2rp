@@ -30,6 +30,8 @@ hook.Add("CalcView", "ViewBobbingPlugin", function(ply, origin, angles, fov)
 	local bobbingOffset = math.sin(CurTime() * BobbingSpeed * customBobbingSpeed) * BobbingAmount
 	local verticalBobbingOffset = math.sin(CurTime() * BobbingSpeed * 2 * customBobbingSpeed) * verticalBobbingAmount
 
+	if (IsValid(ply.ixScn)) then return end
+
 	if (ix.option.Get("EnableViewBobbing", true) and !ply:InVehicle() and ply:GetMoveType() != MOVETYPE_NOCLIP) then
 		if ply:KeyDown(IN_FORWARD) or ply:KeyDown(IN_BACK) or ply:KeyDown(IN_MOVELEFT) or ply:KeyDown(IN_MOVERIGHT) then
 			rollAngle = Lerp(RollSmoothing, rollAngle, bobbingOffset * 3)

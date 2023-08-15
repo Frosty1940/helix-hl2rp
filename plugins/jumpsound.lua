@@ -13,6 +13,12 @@ if SERVER then
 			"physics/body/body_medium_impact_soft6.wav",
 			"physics/body/body_medium_impact_soft7.wav"
 		},
+		["vort"] = {
+			"npc/vort/vort_foot1.wav",
+			"npc/vort/vort_foot2.wav",
+			"npc/vort/vort_foot3.wav",
+			"npc/vort/vort_foot4.wav"
+		},
 		["combine"] = {
 			"npc/combine_soldier/gear1.wav",
 			"npc/combine_soldier/gear2.wav",
@@ -28,7 +34,7 @@ if SERVER then
 	hook.Add("KeyPress", "JumpSoundsPlugin", function(ply, key)
 		if ply:IsValid() and key == IN_JUMP and ply:Alive() and ply:GetCharacter() and ply:IsOnGround() and ply:GetMoveType() ~= MOVETYPE_NOCLIP then
 
-			local soundCategory = ply:IsCombine() and "combine" or "default"
+			local soundCategory = (ply:GetCharacter():IsVortigaunt() and "vort") or (ply:IsCombine() and "combine") or "default"
 			local jumpSound = jumpSounds[soundCategory]
 
 			ply:EmitSound(jumpSound[math.random(1, #jumpSound)])
@@ -39,7 +45,7 @@ if SERVER then
 		if ply:IsValid() and ply:Alive() and ply:GetCharacter() and ply:IsOnGround() then
 			local chance = math.random(1, 10)
 
-			local soundCategory = ply:IsCombine() and "combine" or "default"
+			local soundCategory = (ply:GetCharacter():IsVortigaunt() and "vort") or (ply:IsCombine() and "combine") or "default"
 			local jumpSound = jumpSounds[soundCategory]
 
 			ply:EmitSound(jumpSound[math.random(1, #jumpSound)])

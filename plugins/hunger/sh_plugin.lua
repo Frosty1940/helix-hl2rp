@@ -68,7 +68,7 @@ if SERVER then
 
 	function PLUGIN:PlayerSpawn(client)
 		local char = client:GetCharacter()
-		local enabled = client:Team() != FACTION_OTA and !Schema:IsCombineRank(client:Name(), "SCN")
+		local enabled = client:GetCharacter() and client:Team() != FACTION_OTA and !Schema:IsCombineRank(client:Name(), "SCN")
 		
 		if (client.resetHunger) then
 			char:SetData("hunger", 100)
