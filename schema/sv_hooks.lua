@@ -168,7 +168,7 @@ end
 function Schema:PlayerSpawn(client)
 	local inv = client:GetCharacter():GetInventory()
 
-	client:SetCanZoom(client:IsCombine() or client:IsAdmin() or inv:HasItem("binoculars"))
+	client:SetCanZoom(client:GetCharacter() and (client:IsCombine() or client:IsAdmin() or inv:HasItem("binoculars")))
 end
 
 function Schema:PlayerDeath(client, inflicter, attacker)

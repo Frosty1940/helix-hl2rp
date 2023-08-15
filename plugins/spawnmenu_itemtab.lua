@@ -43,7 +43,7 @@ if( SERVER ) then
 		if( !CAMI.PlayerHasAccess( client, "Spawn Menu: Items - Spawning", nil ) ) then return end;
 		for _, t in pairs( ix.item.list ) do
 			if( t.uniqueID == u ) then
-				ix.item.Spawn( t.uniqueID, client:GetShootPos() + client:GetAimVector() * 84 + Vector( 0, 0, 16 ) );
+				ix.item.Spawn( t.uniqueID, client:GetEyeTraceNoCursor( ).HitPos + Vector( 0, 0, 1 ) );
 				ix.log.Add( client, "spawnmenuspawnitem", t.name )
 				break;
 			end
