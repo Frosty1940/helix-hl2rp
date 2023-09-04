@@ -118,6 +118,13 @@ LANGUAGE = {
 	itemCombineKeycardDesc = "A Combine security keycard.",
 	itemBinocularsDesc = "A device that you hold up to your eyes and look through to see things that are far away.",
 	itemUnionKeycardDesc = "A Civil Workers Union security keycard.",
+	itemEMPDesc = "An EMP Tool, which can be used against combine technology!",
+	empOverloadDoorSucceed = "You have successfully overloaded the door.",
+	empOverloadDoorFailed = "You need to look at a overloadable door to use the EMP!",
+	empOverloadCameraSucceed = "You have successfully overloaded the camera.",
+	empOverloadCameraFailed = "You need to look at a overloadable camera to use the EMP!",
+	empFailed = "The EMP attempt failed.",
+	empOverloading = "Overloading...",
 
 	bookDesc = "A readable book.",
 

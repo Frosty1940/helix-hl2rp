@@ -17,55 +17,151 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 -- doubled the items in the table so that they are more common than anything else. If you get what I mean.
 PLUGIN.randomLoot = {}
 PLUGIN.randomLoot.common = {
-    "metalplate",
-    "metalplate",
-    "metalplate",
-    "cloth",
-    "cloth",
-    "cloth",
-    "wood",
-    "wood",
-    "plastic",
-    "glue",
-    "pipe",
-    "gear",
-    "water",
-    "gunpowder",
+	"acid",
+	"acid",
+	"adhesive",
+	"adhesive",
+	"adhesive",
+	"adhesive",
+	"aluminium",
+	"aluminium",
+	"bucket",
+	"bucket",
+	"cafeteriatray",
+	"cafeteriatray",
+	"camera",
+	"cigarettecarton",
+	"cigarettecarton",
+	"cigarettepack",
+	"cigarettepack",
+	"cigarettepack",
+	"cloth",
+	"cloth",
+	"cloth",
+	"cloth",
+	"cloth",
+	"coffeecup",
+	"coffeecup",
+	"coffeecup",
+	"coffeecup",
+	"coffeepot",
+	"coffeepot",
+	"coffeepot",
+	"coffeepot",
+	"ducttape",
+	"ducttape",
+	"empty_can",
+	"empty_can",
+	"empty_can",
+	"empty_can",
+	"empty_can",
+	"empty_can",
+	"fryingpan",
+	"fryingpan",
+	"glass",
+	"glass",
+	"glass",
+	"glass",
+	"hotplate",
+	"leather",
+	"leather",
+	"money",
+	"money",
+	"money",
+	"oil",
+	"oil",
+	"oil",
+	"oil",
+	"pan",
+	"pan",
+	"plastic",
+	"plastic",
+	"plastic",
+	"plastic",
+	"pressurecooker",
+	"pressurecooker",
+	"request_device",
+	"sensormodule",
+	"sensormodule",
+	"steel",
+	"steel",
+	"steel",
+	"steel",
+	"turpentine",
+	"turpentine",
+	"turpentine",
+	"water_empty",
+	"water_empty",
+	"water_empty",
+	"water_empty",
+	"water_empty",
+	"water_empty",
+	"water_sparkling_empty",
+	"water_sparkling_empty",
+	"water_sparkling_empty",
+	"water_sparkling_empty",
+	"water_special_empty",
+	"water_special_empty",
+	"water_special_empty",
+	"wood",
+	"wood",
+	"wood",
+	"wood",
+	"wood",
+	"wrench",
 }
 
 PLUGIN.randomLoot.rare = {
-    "bulletcasing",
-    "bulletcasing",
-    "refinedmetal",
-    "refinedmetal",
-    "splint",
-    "splint",
-    "pistolammo",
-    "pistolammo",
-    "bandage",
-    "electronics",
-    "ration",
-    "gnome",
+	"antidepressants",
+	"antidepressants",
+	"antidepressants",
+	"ballisticfiber",
+	"ballisticfiber",
+	"battery",
+	"battery",
+	"battery",
+	"book",
+	"book",
+	"book",
+	"emp",
+	"gunpowder",
+	"gunpowder",
+	"gunpowder",
+	"phone",
+	"handheld_radio",
 }
 
 ix.util.Include("sv_plugin.lua")
 
+ix.lang.AddTable("english", {
+	ixlootNotEating = "You cannot loot anything while you are eating!",
+	ixlootNoItem = "There is nothing in the container!",
+	ixlootNotFaction = "Your Faction is not allowed to loot containers.",
+	ixlootGained = "You have gained %s.",
+})
+ix.lang.AddTable("korean", {
+	ixlootNotEating = "뭔가를 먹고 있을 때는 살펴볼 수 없습니다!",
+	ixlootNoItem = "아무것도 들어있지 않습니다!",
+	ixlootNotFaction = "해당 팩션은 보관함을 살펴볼 수 없습니다.",
+	ixlootGained = "다음을 얻었습니다: %s.",
+})
+
 if ( CLIENT ) then
-    function PLUGIN:PopulateEntityInfo(ent, tooltip)
-        local ply = LocalPlayer()
-        local ent = ent:GetClass()
+	function PLUGIN:PopulateEntityInfo(ent, tooltip)
+		local ply = LocalPlayer()
+		local ent = ent:GetClass()
 
-        if ( ply:IsCombine() or ply:IsDispatch() ) then
-            return false
-        end
+		if ( ply:IsCombine() or ply:IsDispatch() ) then
+			return false
+		end
 
-        if not ( ent:find("ix_loot") ) then
-            return false
-        end
+		if not ( ent:find("ix_loot") ) then
+			return false
+		end
 
-        local title = tooltip:AddRow("loot")
-        title:SetText("Lootable Container")
-        title:SetImportant()
-        title:SizeToContents()
-    end
+		local title = tooltip:AddRow("loot")
+		title:SetText("Lootable Container")
+		title:SetImportant()
+		title:SizeToContents()
+	end
 end
