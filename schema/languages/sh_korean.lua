@@ -51,6 +51,10 @@ LANGUAGE = {
 
 	voices = "음성 대사",
 
+	cmdCharSpawn = "대상 플레이어를 스폰 지점에 소환합니다.",
+	cmdRevive = "대상 플레이어를 사망 지점에 부활시킵니다.",
+	cmdCharSetId = "대상 플레이어에게 시민 ID를 부여하거나 이미 있는 경우 새 ID 카드를 발급합니다.",
+
 	charSpawn01 = "당신은 당신 자신을 부활 지점에 부활시켰습니다.",
 	charSpawn02 = "당신은 %s님을 부활 지점에 부활시켰습니다.",
 	charSpawn03 = "%s님이 당신을 부활 지점에 부활시켰습니다.",
@@ -293,9 +297,10 @@ LANGUAGE = {
 	empOverloadDoorSucceed = "잠금장치를 해제했습니다.",
 	empOverloadDoorFailed = "콤바인 잠금장치가 달려 있는 문에 사용해야 합니다!",
 	["Overload Camera"] = "카메라 종료",
-	empOverloadDoorSucceed = "카메라의 전원을 껐습니다.",
-	empOverloadDoorFailed = "전원이 켜진 콤바인 카메라에 사용해야 합니다!",
+	empOverloadCameraSucceed = "카메라의 전원을 껐습니다.",
+	empOverloadCameraFailed = "전원이 켜진 콤바인 카메라에 사용해야 합니다!",
 	empFailed = "EMP 장비 사용에 실패했습니다.",
+	empBroken = "EMP 장비가 망가졌습니다!",
 	empOverloading = "사용 중...",
 	["Book"] = "책",
 	bookDesc = "가볍게 읽을 만한 책입니다.\n독서를 통해 지능을 향상시킬 수 있습니다.",

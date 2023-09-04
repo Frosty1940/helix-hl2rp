@@ -204,6 +204,7 @@ do
 end
 
 ix.command.Add("CharSpawn", {
+	description = "@cmdCharSpawn",
 	adminOnly = true,
 	arguments = {
 		ix.type.player
@@ -221,6 +222,7 @@ ix.command.Add("CharSpawn", {
 })
 
 ix.command.Add("Revive", {
+	description = "@cmdRevive",
 	adminOnly = true,
 	arguments = {
 		ix.type.player
@@ -266,6 +268,7 @@ ix.command.Add("CharSetDesc", {
 })
 
 ix.command.Add("CharSetId", {
+	description = "@cmdCharSetId",
 	adminOnly = true,
 	arguments = {
 		ix.type.player,
@@ -273,6 +276,18 @@ ix.command.Add("CharSetId", {
 	OnRun = function(self, client, target)
 		local id = Schema:ZeroNumber(math.random(1, 99999), 5)
 		local character = target:GetCharacter()
+		local inventory = character:GetInventory()
+
+		if character:GetData("cid", id) then
+			id = character:GetData("cid", id)
+		end
+
+		if !inventory:HasItem("cid") then
+			inventory:Add("cid", 1, {
+				name = character:GetName(),
+				id = id
+			})
+		end
 		
 		character:SetData("cid", id)
 		client:NotifyLocalized(id)

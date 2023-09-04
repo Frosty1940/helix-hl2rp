@@ -25,24 +25,21 @@ local wakeupMessages = {
 	-- "hears a loud helicopter overhead of yourself and you instantly wake up.",
 	-- "heard a growling and you started to wake up but scared.",
 	-- "heard a loud siren and you are scared of the noise.",
-	"긴 낮잠에서 깨어나 몸을 일으킵니다.",
 	"서늘한 바람을 느끼며 정신을 차립니다.",
-	"자리에서 일어나며 잠에서 깨어납니다.",
-	"악몽을 꾸다 화들짝 놀라 식은 땀을 흘리며 잠에서 깨어납니다.",
-	"멍하니 있다 어떤 익숙한 목소리를 듣고 정신을 차렸지만 그 사람의 모습은 온데간데 찾아볼 수 없었습니다.",
-	"귓가에 작은 속삭임이 들리다가 갑자기 누군가 달아나는 듯한 큰 발소리에 정신을 차립니다.",
-	"머리 위를 지나는 시끄러운 헬리콥터 소리에 곧장 정신이 듭니다.",
-	"그르륵 거리는 꺼림칙한 소리에 화들짝 놀라 정신을 차립니다.",
-	"시끄러운 사이렌 소리에 놀라 정신이 듭니다.",
+	"길을 걷다가 문득 무언가 떠올린 듯한 표정을 짓더니 멈춰섭니다.",
+	"하품을 크게 하고 주변을 두리번거립니다.",
+	"눈을 크게 끔뻑이고는 발길을 재촉합니다.",
+	"순간 인기척을 느끼고 뒤를 돌아봅니다",
 }
 
 function PLUGIN:PlayerSpawn(ply)
 	if not ( ply:IsValid() or ply:Alive() or ply:GetCharacter() ) then return end
+	if ply:IsCombine() then return end -- no reason to do some weird actions
 
 	ply:ConCommand("play music/stingers/hl1_stinger_song16.mp3")
 	ply:ScreenFade(SCREENFADE.IN, color_black, 3, 2)
 	
 	local msg = table.Random(wakeupMessages)
 
-	ply:PlayerSay("/me "..msg)
+	hook.Run("PlayerSay", ply, "/me "..msg)
 end

@@ -51,6 +51,10 @@ LANGUAGE = {
 
 	voices = "Voices",
 
+	cmdCharSpawn = "Spawns target player on spawnpoint.",
+	cmdRevive = "Revives target player on his/her death spot.",
+	cmdCharSetId = "Sets target player cid or if he/she has id already then gives a new citizen id card.",
+
 	charSpawn01 = "You spawned yourself at the spawnpoint.",
 	charSpawn02 = "You spawned %s at the spawnpoint.",
 	charSpawn03 = "%s spawned you at the spawnpoint.",
@@ -124,6 +128,7 @@ LANGUAGE = {
 	empOverloadCameraSucceed = "You have successfully overloaded the camera.",
 	empOverloadCameraFailed = "You need to look at a overloadable camera to use the EMP!",
 	empFailed = "The EMP attempt failed.",
+	empBroken = "The EMP Tool has broken!",
 	empOverloading = "Overloading...",
 
 	bookDesc = "A readable book.",

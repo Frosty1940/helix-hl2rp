@@ -15,13 +15,13 @@ ITEM.functions.Use = {
 
 		if (IsValid(target) and target:IsPlayer() and target:GetCharacter() and target:Team() == FACTION_CITIZEN) then
 			id = Schema:ZeroNumber(math.random(1, 99999), 5)
+			
 			if (target:GetCharacter():GetData("cid", 00000)) then
 				id = target:GetCharacter():GetData("cid", 00000)
-				itemTable:SetData("id", id)
-			else
-				target:GetCharacter():SetData("cid", id)
-				itemTable:SetData("id", id)
 			end
+				
+			target:GetCharacter():SetData("cid", id)
+			itemTable:SetData("id", id)
 			itemTable:SetData("name", target:GetCharacter():GetName())
 		end
 
