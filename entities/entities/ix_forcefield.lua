@@ -60,12 +60,12 @@ if (SERVER) then
 		self:DeleteOnRemove(self.dummy)
 
 		local verts = {
-			{pos = Vector(0, 0, -25)},
+			{pos = Vector(0, 0, -40)},
 			{pos = Vector(0, 0, 150)},
 			{pos = self:WorldToLocal(self.dummy:GetPos()) + Vector(0, 0, 150)},
 			{pos = self:WorldToLocal(self.dummy:GetPos()) + Vector(0, 0, 150)},
-			{pos = self:WorldToLocal(self.dummy:GetPos()) - Vector(0, 0, 25)},
-			{pos = Vector(0, 0, -25)}
+			{pos = self:WorldToLocal(self.dummy:GetPos()) - Vector(0, 0, 40)},
+			{pos = Vector(0, 0, -40)}
 		}
 
 		self:PhysicsFromMesh(verts)
@@ -186,6 +186,7 @@ if (SERVER) then
 	hook.Add("ShouldCollide", "ix_forcefields", function(a, b)
 		local client
 		local entity
+		local ragdoll
 
 		if (a:IsPlayer()) then
 			client = a
@@ -232,13 +233,17 @@ else
 			data.filter = self
 		local trace = util.TraceLine(data)
 
+		local verts = {
+	            {pos = Vector(0, 0, -40)},
+	            {pos = Vector(0, 0, 150)},
+	            {pos = self:WorldToLocal(trace.HitPos) + Vector(0, 0, 150)},
+	            {pos = self:WorldToLocal(trace.HitPos) + Vector(0, 0, 150)},
+	            {pos = self:WorldToLocal(trace.HitPos) - Vector(0, 0, 40)},
+	            {pos = Vector(0, 0, -40)}
+	        }
+
+		self:PhysicsFromMesh(verts)
 		self:EnableCustomCollisions(true)
-		self:PhysicsInitConvex({
-			vector_origin,
-			Vector(0, 0, 150),
-			trace.HitPos + Vector(0, 0, 150),
-			trace.HitPos
-		})
 	end
 
 	function ENT:Draw()
