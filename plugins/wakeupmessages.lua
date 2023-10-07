@@ -31,15 +31,21 @@ local wakeupMessages = {
 	"눈을 크게 끔뻑이고는 발길을 재촉합니다.",
 	"순간 인기척을 느끼고 뒤를 돌아봅니다",
 }
+local wakeupMessagesCombine = {
+	"10-8",
+}
 
 function PLUGIN:PlayerSpawn(ply)
 	if not ( ply:IsValid() or ply:Alive() or ply:GetCharacter() ) then return end
-	if ply:IsCombine() then return end -- no reason to do some weird actions
 
 	ply:ConCommand("play music/stingers/hl1_stinger_song16.mp3")
 	ply:ScreenFade(SCREENFADE.IN, color_black, 3, 2)
 	
-	local msg = table.Random(wakeupMessages)
-
-	hook.Run("PlayerSay", ply, "/me "..msg)
+	if ply:IsCombine() then
+		local msg = table.Random(wakeupMessagesCombine)
+		hook.Run("PlayerSay", ply, ""..msg)
+	else
+		local msg = table.Random(wakeupMessages)
+		hook.Run("PlayerSay", ply, "/me "..msg)
+	end
 end

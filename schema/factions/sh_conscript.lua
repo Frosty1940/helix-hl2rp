@@ -2,8 +2,8 @@
 FACTION.name = "Conscript"
 FACTION.description = "A regular human citizen enlisted as a soldier to Combine Overwatch."
 FACTION.color = Color(77, 93, 83, 255)
-FACTION.pay = 7
-FACTION.isDefault = false
+FACTION.pay = 0
+FACTION.isDefault = true
 FACTION.isGloballyRecognized = true
 FACTION.runSounds = {[0] = "NPC_MetroPolice.RunFootstepLeft", [1] = "NPC_MetroPolice.RunFootstepRight"}
 FACTION.models = {

@@ -166,9 +166,7 @@ function Schema:PlayerFootstep(client, position, foot, soundName, volume)
 end
 
 function Schema:PlayerSpawn(client)
-	local inv = client:GetCharacter():GetInventory()
-
-	client:SetCanZoom(client:GetCharacter() and (client:IsCombine() or client:IsAdmin() or inv:HasItem("binoculars")))
+	client:SetCanZoom(client:GetCharacter() and (client:IsCombine() or client:IsAdmin() or client:GetCharacter():GetInventory():HasItem("binoculars")))
 end
 
 function Schema:PlayerDeath(client, inflicter, attacker)
