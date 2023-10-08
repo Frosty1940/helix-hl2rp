@@ -215,6 +215,10 @@ LANGUAGE = {
 	oicwDesc = "미군의 OICW 프로그램에 의해 미국의 얼라이언트 시스템스와 독일의 헤클러&코흐에서 공동으로 개발되었던 돌격소총입니다.\n5.56 × 45 mm NATO 소총탄을 사용합니다.",
 	["Panzerfaust 3"] = "판처파우스트 3",
 	panzerfaustDesc = "관통력이 매우 뛰어난 장갑관통로켓을 발사하는 무유도 대전차 로켓 발사기입니다.",
+	["Molotov"] = "화염병",
+	itemMolotovDesc = "휘발유를 채우고 천으로 마개를 끼운 유리병입니다.",
+	["Gascan"] = "기름통",
+	itemGascanDesc = "휘발유가 든 빨간 강철통입니다.",
 	
 	ammoDesc = "%s 탄약 %s발이 들어있는 상자입니다.",
 	["Pulse-Rifle Energy"] = "펄스 소총 탄창",

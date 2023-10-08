@@ -1,6 +1,5 @@
 ITEM.name = "EMP Tool"
 ITEM.description = "itemEMPDesc"
-ITEM.category = "Tools"
 ITEM.model = "models/alyx_emptool_prop.mdl"
 ITEM.skin = 0
 ITEM.width = 1

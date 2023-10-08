@@ -22,7 +22,7 @@ ITEM.functions.Equip = {
 	OnRun = function(item)
 		local client = item.player
 
-		if (!client:IsCombine() and item.lock == 1) then
+		if (!client:IsCombine() and item.lock and item:GetData("unlocked") != true) then
 			client:NotifyLocalized("needComkey")
 			return false
 		else
@@ -46,12 +46,11 @@ ITEM.functions.Unlock = {
 		local inventory = character:GetInventory()
 		local hasItem = inventory:HasItem("comkey")
 
-		if (item.lock) then
-			if (client:IsCombine() or hasItem) then
-				item.lock = 0
-				client:EmitSound("weapons/ar2/ar2_reload_push.wav")
-				return false
-			end
+		if (client:IsCombine() or hasItem) then
+			item:SetData("unlocked", true)
+			client:EmitSound("weapons/ar2/ar2_reload_push.wav")
+
+			return false
 		else
 			client:NotifyLocalized("needComkey")
 
@@ -61,7 +60,7 @@ ITEM.functions.Unlock = {
 	OnCanRun = function(item)
 		local client = item.player
 
-		return !IsValid(item.entity) and IsValid(client) and item:GetData("equip") != true and item.lock != 0
+		return !IsValid(item.entity) and IsValid(client) and item:GetData("equip") != true and item.lock and item:GetData("unlocked") != true
 	end
 }
 

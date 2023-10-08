@@ -9,6 +9,8 @@ function PLUGIN:CalcView(client, origin, angles, fov)
 	local eyeAtt = client:GetAttachment(client:LookupAttachment("eyes"))
 	local forwardVec = client:GetAimVector()
 	local FT = FrameTime()
+
+	if ix.option.Get("thirdpersonEnabled", false) then return end
 	
 	if (!ix.option.Get("enableImmersiveFirstPerson", true) or !client:Alive() or client:InVehicle() or !eyeAtt) then
 		return
@@ -32,6 +34,8 @@ end
 function PLUGIN:HudPaint()
 	local tr, pos
 	local td = {}
+
+	if ix.option.Get("thirdpersonEnabled", false) then return end
 
 	if (!ix.option.Get("customCrosshair", true)) then
 		return

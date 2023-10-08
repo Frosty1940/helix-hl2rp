@@ -82,6 +82,8 @@ LANGUAGE = {
 	mp5kDesc = "Heckler & Koch Maschinenpistole 5 Kurz\nA shortened machine pistol version of the MP5A2 was introduced, designed for close quarters battle use by clandestine operations and special services.\nIt fires 9×19mm Parabellum pistol rounds.",
 	oicwDesc = "One of a series of prototypes of a new type of assault rifle that fired 20 mm HE airbursting projectiles.\nIt fires 5.56×45mm NATO Rifle Rounds.",
 	panzerfaustDesc = "An non-guided anti-tank rocket launchar that fires high effective armor piercing rockets.",
+	molotovDesc = "A glass bottle filled with gasoline and stopped with a cloth.",
+	gascanDesc = "A red steel canister filled with gasoline.",
 
 	smg1ammoDesc = "A Box that contains %s of SMG Ammo.",
 	ar2ammoDesc = "A Cartridge that contains %s of Pulse Plug.",

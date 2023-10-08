@@ -6,6 +6,7 @@ ITEM.weaponCategory = "grenade"
 ITEM.classes = {CLASS_SGS, CLASS_OWS, CLASS_EMP, CLASS_REBEL}
 ITEM.width = 1
 ITEM.height = 1
+ITEM.isGrenade = false
 ITEM.price = 150
 ITEM.factions = {FACTION_CONSCRIPT}
 
