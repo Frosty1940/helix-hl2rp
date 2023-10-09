@@ -1,4 +1,4 @@
-PLUGIN.name = "Legs wyjebnik"
+PLUGIN.name = "Legshoot"
 PLUGIN.author = "Lechu2375"
 PLUGIN.description = "Now hitting right in the legs causes injures."
 PLUGIN.license =  "MIT not for use on Kaktusownia opensource.org/licenses/MIT"
