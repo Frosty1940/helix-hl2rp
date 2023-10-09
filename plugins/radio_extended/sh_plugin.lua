@@ -18,6 +18,7 @@ ix.lang.AddTable("korean", {
 	["Silence"] = "음소거",
 	["Handheld Radio"] = "휴대용 무전기",
 	itemHandheldRadioDesc = "",
+	["Walkie Talkie"] = "워키토키",
 })
 
 -- Anonymous names, if radio callsigns are anonymous
