@@ -6,7 +6,7 @@ function PLUGIN:EntityTakeDamage(ent,dmg)
 	local character = ent:GetCharacter()
 	local dmgAmount = dmg:GetDamage()
 	if((ent:Health()-dmgAmount)<0) then
-		if(IsValid(ent.ixRagdoll)) then
+		if(IsValid(ent.ixRagdoll) and (ent:Health()/ent:GetMaxHealth() > 0)) then
 			ent:Kill()
 			ent.CanGetUp = true
 			local uid = "dietime"..character:GetID() 
@@ -19,6 +19,7 @@ function PLUGIN:EntityTakeDamage(ent,dmg)
 		ent:SetHealth(30)
 		local time = ix.config.Get("TimeToRevive", 30)
 		ent:SetRagdolled(true)
+		ent.ixRagdoll:SetNetVar("revivable", true)
 		net.Start("DrawDeathText")
 		net.WriteBool(true)
 		net.Send(ent)
@@ -45,4 +46,7 @@ function PLUGIN:PostPlayerDeath(ply)
 	net.WriteBool(false)
 	net.Send(ply)
 	ply.CanGetUp = true
+end
+function PLUGIN:DoPlayerDeath(ply)
+	ply.ixRagdoll:SetNetVar("revivable", false)
 end

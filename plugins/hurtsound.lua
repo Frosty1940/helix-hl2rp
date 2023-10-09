@@ -34,6 +34,9 @@ function PLUGIN:PlayerHurt(client, attacker, health, damage)
 	ix.log.Add(client, "playerHurt", damage, attacker:GetName() ~= "" and attacker:GetName() or attacker:GetClass())
 
 	local char = client:GetCharacter()
+	local deathTime = client:GetNetVar("deathTime")
+
+	if not (client:Alive()) then return false end
 	
 	if (client:IsAdmin() and client:GetMoveType() == MOVETYPE_NOCLIP) then return false end
 

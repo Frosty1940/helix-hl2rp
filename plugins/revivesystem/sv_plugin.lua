@@ -5,6 +5,7 @@ function PLUGIN:PlayerUse(client, entity)
 	if (!client:IsRestricted() and entity:IsRagdoll() and !entity:GetNetVar("reviving")) then
 		if !entity:GetNetVar("player") then return end
 		if not entity:GetNetVar("player"):Alive() then return end
+		if not entity:GetNetVar("revivable", true) == true then return end
 
 		local uid = "dietime"..entity:GetNetVar("player"):GetCharacter():GetID()
 
